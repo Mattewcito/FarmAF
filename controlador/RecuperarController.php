@@ -49,7 +49,6 @@ if ($_POST['funcion'] == 'recuperar') {
         $mensaje='
         <!DOCTYPE>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -142,7 +141,6 @@ if ($_POST['funcion'] == 'recuperar') {
         }
     </style>
 </head>
-
 <body class="clean-body u_body"
     style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f9f9f9;color: #000000">
 
@@ -406,7 +404,6 @@ if ($_POST['funcion'] == 'recuperar') {
                                                             </p>
                                                         </div>
 </body>
-
 </html>
         ';
         $mail->isHTML(true);                                  //Set email format to HTML
