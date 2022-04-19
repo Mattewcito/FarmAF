@@ -91,7 +91,6 @@
             }
             e.preventDefault();
     });
-
     $('#form-pass').submit(e=>{
         let oldpass=$('#oldpass').val();
         let newpass=$('#newpass').val();
@@ -142,5 +141,4 @@
     
         e.preventDefault();
     })
-
     })
