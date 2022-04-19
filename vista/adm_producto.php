@@ -7,6 +7,26 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
   <?php
   include_once 'Comple/nav.php';
   ?>
+  <div class="modal fade" id="modalFormatoReporte" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="card card-success">
+          <div class="card-header">
+            <h3 class="card-title">Elegir formato de reporte</h3>
+            <button data-dismiss="modal" aria-label="close-class" class="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="form-group text-center">
+              <button id="button-reporte" class="btn btn-outline-danger">Formato PDF<i class="far fa-file-pdf ml-2"></i></button>
+              <BUtton id="button-reporteExcel" class="btn btn-outline-success">Formato Excel<i class="far fa-file-excel ml-2"></i></BUtton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="modal fade" id="crearlote" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
