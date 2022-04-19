@@ -249,5 +249,6 @@ class Usuario{
         $query->execute(array(':codigo'=>$codigo,':email'=>$email,':dni'=>$dni));
         //echo 'remplazado';
     }
+    
 }
 ?>
