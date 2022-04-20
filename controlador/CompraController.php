@@ -53,7 +53,7 @@ if($_POST['funcion']=='registrar_compra'){
                 }
             }
             $subtotal = $prod->cantidad*$prod->precio;
-            $conexion->exec("INSERT INTO venta_producto(cantidad,subtotal,producto_id_producto,venta_id_venta) VALUES('$prod->cantidad','$subtotal','$prod->id','$id_venta')");
+            $conexion->exec("INSERT INTO venta_producto(precio,cantidad,subtotal,producto_id_producto,venta_id_venta) VALUES('$prod->precio','$prod->cantidad','$subtotal','$prod->id','$id_venta')");
         }
         $conexion->commit();
 

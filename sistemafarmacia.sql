@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2022 a las 00:10:33
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 20-04-2022 a las 03:36:49
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,10 @@ INSERT INTO `detalle_venta` (`id_detalle`, `det_cantidad`, `det_vencimiento`, `i
 (17, 2, '2022-06-24', 26, 2, 8, 24),
 (18, 7, '2022-07-28', 28, 7, 8, 24),
 (20, 1, '2022-06-24', 26, 2, 8, 30),
-(21, 1, '2022-07-28', 28, 7, 8, 34);
+(21, 1, '2022-07-28', 28, 7, 8, 34),
+(22, 1, '2022-06-24', 26, 2, 8, 37),
+(23, 1, '2022-06-24', 26, 2, 8, 38),
+(24, 2, '2022-07-09', 25, 2, 8, 38);
 
 -- --------------------------------------------------------
 
@@ -102,8 +105,7 @@ CREATE TABLE `lote` (
 --
 
 INSERT INTO `lote` (`id_lote`, `stock`, `vencimiento`, `lote_id_prod`, `lote_id_prov`) VALUES
-(25, 5, '2022-07-09', 2, 8),
-(26, 2, '2022-06-24', 2, 8),
+(25, 3, '2022-07-09', 2, 8),
 (28, 19, '2022-07-28', 7, 8);
 
 -- --------------------------------------------------------
@@ -240,7 +242,7 @@ CREATE TABLE `usuario` (
   `edad` date NOT NULL,
   `dni_us` varchar(45) NOT NULL,
   `contrasena_us` varchar(255) NOT NULL,
-  `telefono_us` int(11) DEFAULT NULL,
+  `telefono_us` varchar(20) DEFAULT NULL,
   `residencia_us` varchar(45) DEFAULT NULL,
   `correo_us` varchar(25) DEFAULT NULL,
   `sexo_us` varchar(25) DEFAULT NULL,
@@ -254,8 +256,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_us`, `apellidos_us`, `edad`, `dni_us`, `contrasena_us`, `telefono_us`, `residencia_us`, `correo_us`, `sexo_us`, `adicional_us`, `avatar`, `us_tipo`) VALUES
-(1, 'Brayan', 'Zapata', '1996-10-14', 'root', '$2y$10$oSQYlBG7NCQuzp11/SIX/.El2a3z7p7qi3s9XXjupTYDfAgVnfoMi', 2723128, 'calle 46 #20-20', 'brayzapata@gmail.com', 'Masculino', 'vsdxad', '624f70c21a70a-icon-5359553_960_720.webp', 3),
-(2, 'Manuel ', 'Gonzales', '1997-05-15', 'manuel', '$2y$10$htEFMffJxGWogZVHYQIc/.yK9Jl2jyM/mj91O180IRAbpxTeejvH6', 2312589, 'calle 50A #16-54', 'manugon@gmail.com', 'Masculino', 'Amante del futbol ', '624f711720f2e-images.png', 1),
+(1, 'Brayan', 'Zapata', '1996-10-14', 'root', '$2y$10$R9pcV1uvoaU7lUbP3A.jT.JHYyEXXxTI33s11LU.htzlQPwz/zd1W', '3017245403', 'calle 46 #20-20', 'brianmer242003@gmail.com', 'Masculino', 'Ing sistemas', '625eb3c61f9de-WhatsApp Image 2022-04-19 at 7.18.38 AM.jpeg', 3),
+(2, 'Manuel ', 'Gonzales', '1997-05-15', 'manuel', '$2y$10$htEFMffJxGWogZVHYQIc/.yK9Jl2jyM/mj91O180IRAbpxTeejvH6', '2312589', 'calle 50A #16-54', 'manugon@gmail.com', 'Masculino', 'Amante del futbol ', '624f711720f2e-images.png', 1),
 (3, 'Daniel', 'perez ', '1994-07-19', 'daniel', '$2y$10$eyuoKHB2GZuj1n6DjH7nAesgyTg9Xvt5NP9WOPpvVbCMmnoTBVgTy', NULL, NULL, NULL, NULL, NULL, '624f743c7eb85-icono-del-usuario-en-estilo-plano-de-moda-aislado-fondo-gris-símbolo-123663211.jpg', 2),
 (5, 'Michelle', 'Echeverri Gomez', '1992-09-17', 'michelle', '$2y$10$88mVA.iVVyZmTyu6z6aAkOBUx3hxLmNRi0pB/RLyJDvUQv/vOAQ6K', NULL, NULL, NULL, NULL, NULL, '624f71d91163d-images.png', 1);
 
@@ -293,7 +295,9 @@ INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`)
 (30, '2022-04-07 00:36:30', 'xxxx', 0, 1300, 1),
 (34, '2022-03-07 00:49:03', 'xxx3', 0, 56000, 1),
 (35, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2),
-(36, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 2);
+(36, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 2),
+(37, '2022-04-15 21:56:37', 'Brayan Daniel', 32434343, 1300, 1),
+(38, '2022-04-19 08:15:24', 'fdkfdfdfdf', 32434343, 3900, 1);
 
 -- --------------------------------------------------------
 
@@ -327,7 +331,9 @@ INSERT INTO `venta_producto` (`id_ventaproducto`, `cantidad`, `subtotal`, `produ
 (19, 2, 2600, 2, 24),
 (20, 7, 392000, 7, 24),
 (22, 1, 1300, 2, 30),
-(23, 1, 56000, 7, 34);
+(23, 1, 56000, 7, 34),
+(24, 1, 1300, 2, 37),
+(25, 3, 3900, 2, 38);
 
 --
 -- Índices para tablas volcadas
@@ -417,7 +423,7 @@ ALTER TABLE `venta_producto`
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `laboratorio`
@@ -471,13 +477,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_producto`
 --
 ALTER TABLE `venta_producto`
-  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Restricciones para tablas volcadas

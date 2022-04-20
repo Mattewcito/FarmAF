@@ -10,8 +10,7 @@ $(document).ready(function(){
             $('#venta_anual').html(vistas.venta_anual);
         })
     }
-     funcion="listar";
-
+    funcion="listar";
     let datatable = $('#tabla_venta').DataTable( {
         "ajax": {
             "url": "../controlador/VentaController.php",

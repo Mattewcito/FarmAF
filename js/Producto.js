@@ -80,6 +80,9 @@ $(document).ready(function(){
                 $('#add').show(1000);
                 $('#add').hide(3000);
                 $('#form-crear-producto').trigger('reset');
+                $('#laboratorio').val('').trigger('change');
+                $('#tipo').val('').trigger('change');
+                $('#presentacion').val('').trigger('change');
                 buscar_producto();
             }
             if(response=='edit'){
@@ -87,6 +90,9 @@ $(document).ready(function(){
                 $('#edit_prod').show(1000);
                 $('#edit_prod').hide(3000);
                 $('#form-crear-producto').trigger('reset');
+                $('#laboratorio').val('').trigger('change');
+                $('#tipo').val('').trigger('change');
+                $('#presentacion').val('').trigger('change');
                 buscar_producto();
             }
             if(response=='noadd'){
@@ -261,7 +267,7 @@ $(document).ready(function(){
             }).then((result) => {
             if (result.value) {
                 $.post('../controlador/ProductoController.php',{id,funcion},(response)=>{
-                    
+                    console.log(response);
                     if(response=='borrado'){
                         swalWithBootstrapButtons.fire(
                             'Eliminado!',
@@ -273,7 +279,7 @@ $(document).ready(function(){
                     else{
                         swalWithBootstrapButtons.fire(
                             'No se pudo eliminar!',
-                            'El producto '+nombre+' no fue eliminado porque esta siendo usado en un lote',
+                            'El producto '+nombre+' no fue eliminado porque tiene Stock disponibles',
                             'success'
                         )
                     }
@@ -321,18 +327,18 @@ $(document).ready(function(){
     });
     $(document).on('click','#button-reporteExcel',(e)=>{
         // Mostrar_Loader("generarReportePDF");
-         funcion = 'reporte_productoExcel';
-         $.post('../controlador/ProductoController.php',{funcion},(response)=>{
-             console.log(response);
-             if(response==""){
+        funcion = 'reporte_productoExcel';
+        $.post('../controlador/ProductoController.php',{funcion},(response)=>{
+            console.log(response);
+            if(response==""){
                  //Cerrar_Loader("exito_reporte");
-                 window.open('../Excel/reporte_productos.xlsx','_blank');
-             }
-             else{
+                window.open('../Excel/reporte_productos.xlsx','_blank');
+            }
+            else{
                  //Cerrar_Loader("error_reporte");
-             }
-         })
-     });
+            }
+        })
+    });
     function Mostrar_Loader(Mensaje){
         var texto = null;
         var mostrar = false;

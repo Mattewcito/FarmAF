@@ -7,7 +7,7 @@ class VentaProducto{
         $this->acceso=$db->pdo;
     }
     function ver($id){
-        $sql="SELECT precio,cantidad,producto.nombre as producto,concentracion,adicional, laboratorio.nombre as laboratorio, presentacion.nombre as presentacion, 
+        $sql="SELECT venta_producto.precio as precio,cantidad,producto.nombre as producto,concentracion,adicional, laboratorio.nombre as laboratorio, presentacion.nombre as presentacion, 
         tipo_producto.nombre as tipo, subtotal 
         FROM venta_producto
         JOIN producto on producto_id_producto = id_producto and venta_id_venta =:id
