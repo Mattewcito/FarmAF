@@ -397,13 +397,12 @@ if($_POST['funcion']=='reporte_producto'){
     $dompdf = new Dompdf();
     $dompdf->loadHtml($html);
     $dompdf->setPaper('A4', 'portrait');
-
     $dompdf->render();
     $contenido = $dompdf->output();
     $nombreDelDocumento = "../pdf/pdf-".$_POST['funcion'].".pdf";
     $bytes = file_put_contents($nombreDelDocumento, $contenido); 
-    }
-    if($_POST['funcion']=='reporte_productoExcel'){
+  }
+  if($_POST['funcion']=='reporte_productoExcel'){
       $nombre_archivo = 'reporte_productos.xlsx';
       $producto->reporte_producto();
       $contador=0;
@@ -428,23 +427,23 @@ if($_POST['funcion']=='reporte_producto'){
       $spreadsheet = new Spreadsheet();
       $Sheet = $spreadsheet->getActiveSheet();
       $Sheet->setTitle('Reporte de productos');
-      $Sheet->setCellValue('A1', 'Reporte de productos en Excel');
-      $Sheet->getStyle('A1')->getFont()->setSize(17);
-      $Sheet->fromArray(array_keys($json[0]),NULL,'A4');
-      $Sheet->getStyle('A4:I4')
+      $Sheet->setCellValue('D1', 'Reporte de productos en Excel');
+      $Sheet->getStyle('D1')->getFont()->setSize(17);
+      $Sheet->fromArray(array_keys($json[0]),NULL,'A3');
+      $Sheet->getStyle('A3:I3')
       ->getFill()
       ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
       ->getStartColor()
-      ->setARGB('2D9F39');
-      $Sheet->getStyle('A4:I4')
-      ->getFont()
+      ->setARGB('161a39');
+      $Sheet->getStyle('A3:I3')
+      ->getFont()->setSize(14)
       ->getColor()
       ->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_WHITE);
       foreach ($json as $key => $producto) {
         $celda = (int)$key+5;
         if($producto['stock']==''){
           $Sheet->getStyle('A'.$celda. ':I'.$celda)
-          ->getFont()
+          ->getFont()->setSize(12)
           ->getColor()
           ->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_RED);
         }

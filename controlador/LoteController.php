@@ -16,7 +16,9 @@ if($_POST['funcion']=='editar'){
 if($_POST['funcion']=='buscar'){
     $lote->buscar();
     $json=array();
-    $fecha_actual = new DateTime();
+    date_default_timezone_set('America/Bogota');
+    $fecha = date('Y-m-d H:i:s');
+    $fecha_actual = new DateTime($fecha);
     foreach ($lote->objetos as $objeto) {
         $vencimiento = new DateTime($objeto->vencimiento);
         $diferencia = $vencimiento->diff($fecha_actual);
