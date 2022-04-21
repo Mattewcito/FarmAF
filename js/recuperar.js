@@ -2,6 +2,8 @@ $(document).ready(function(){
     $('#aviso1').hide();
     $('#aviso2').hide();
     $('#form-recuperar').submit(e=>{
+        $('#aviso1').hide();
+        $('#aviso2').hide();
         Mostrar_Loader('Recuperar_password');
         let email = $('#email').val();
         let dni = $('#dni').val();
