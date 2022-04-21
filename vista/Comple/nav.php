@@ -176,6 +176,14 @@
               </p>
             </a>
           </li>
+          <li id="gestion_usuario" class="nav-item">
+            <a href="adm_cliente.php" class="nav-link">
+              <i class="nav-icon fas fa-user-friends"></i>
+              <p>
+                Gestion Cliente
+              </p>
+            </a>
+          </li>
           <li class="nav-header">Ventas</li>
           <li class="nav-item">
             <a href="adm_venta.php" class="nav-link">
