@@ -67,7 +67,6 @@ if($_POST['funcion']=='Cambiar_logo'){
 if($_POST['funcion']=='borrar'){
     $id=$_POST['id'];
     $proveedor->borrar($id);
-
 }
 if($_POST['funcion']=='rellenar_proveedores'){
     $proveedor->rellenar_proveedores();
