@@ -7,6 +7,48 @@ if($_SESSION['us_tipo']==1||$_SESSION['us_tipo']==3){
 <?php
 include_once 'Comple/nav.php';
 ?>
+<div class="modal fade" id="editarcliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="card card-success">
+          <div class="card-header">
+              <h3 class="card-title">Editar cliente</h3>
+              <button data-dismiss="modal" aria-label="close-class" class="close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="card-body">
+              <div class="alert alert-success text-center" id="edit-cli" style='display:none;'>
+                <span> <i class="fas fa-check m-1"></i>Se edito correctamente</span>
+              </div>
+              <div class="alert alert-danger text-center" id="noedit-cli" style='display:none;'>
+                <span> <i class="fas fa-times m-1"></i>No se pudo editar</span>
+              </div>
+          <form id="form-editar">
+              <div class="form-group">
+                  <label for="telefono_edit">Telefono</label>
+                  <input id="telefono_edit" type="number" class="form-control" placeholder="Ingrese el telefono" required>
+              </div>
+              <div class="form-group">
+                  <label for="correo_edit">Correo</label>
+                  <input id="correo_edit" type="email" class="form-control" placeholder="Ingrese el correo">
+              </div>
+              <div class="form-group">
+                  <label for="adicional_edit">Adicional</label>
+                  <input id="adicional_edit" type="text" class="form-control" placeholder="Ingrese adicional" required>
+              </div>
+              <input type="hidden" id="id_cliente">
+          </div>
+          <div class="card-footer">
+              <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
+              <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
+          </form>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+
 <div class="modal fade" id="crearcliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -18,14 +60,11 @@ include_once 'Comple/nav.php';
               </button>
           </div>
           <div class="card-body">
-              <div class="alert alert-success text-center" id="add-prov" style='display:none;'>
+              <div class="alert alert-success text-center" id="add-cli" style='display:none;'>
                 <span> <i class="fas fa-check m-1"></i>Se agrego correctamente</span>
               </div>
-              <div class="alert alert-danger text-center" id="noadd-prov" style='display:none;'>
+              <div class="alert alert-danger text-center" id="noadd-cli" style='display:none;'>
                 <span> <i class="fas fa-times m-1"></i>El cliente ya existe</span>
-              </div>
-              <div class="alert alert-success text-center" id="edit-prove" style='display:none;'>
-                <span> <i class="fas fa-check m-1"></i>Se modifico correctamente</span>
               </div>
           <form id="form-crear">
               <div class="form-group">

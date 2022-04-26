@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2022 a las 02:34:36
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 26-04-2022 a las 22:17:14
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,9 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id`, `nombre`, `apellidos`, `dni`, `edad`, `telefono`, `correo`, `sexo`, `adicional`, `avatar`, `estado`) VALUES
-(1, 'Juan Diego', 'Herrera Lopez', 15563221, '1993-11-03', 301754086, 'JuanLopzzz@gmail.com', 'Masculino', NULL, NULL, 'A');
+(1, 'Juan Diego', 'Herrera Lopez', 15563221, '1993-11-03', 301754086, 'JuanLopzzz@gmail.com', 'Masculino', NULL, NULL, 'A'),
+(2, 'Pablo', 'Vasquez', 48978, '1992-04-04', 2723128, 'pablovasquez@gmail.com', 'Masculino', 'Cliente frecuente', 'prov_default.png', 'A'),
+(3, 'Dylan', 'Gomez', 10204569, '1993-05-28', 2996587, 'dylango19@gmail.com', 'Masculino', 'Nuevo cliente', 'prov_default.png', 'I');
 
 -- --------------------------------------------------------
 
@@ -310,33 +312,34 @@ CREATE TABLE `venta` (
   `cliente` varchar(50) NOT NULL,
   `dni` int(11) NOT NULL,
   `total` float NOT NULL,
-  `vendedor` int(11) NOT NULL
+  `vendedor` int(11) NOT NULL,
+  `id_cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `venta`
 --
 
-INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`) VALUES
-(8, '2022-04-01 16:19:27', 'Ernesto perez', 0, 36400, 1),
-(9, '2022-03-01 16:25:21', 'FRAILEJON', 1234, 2600, 1),
-(11, '2022-04-01 17:11:45', 'Andrea', 0, 280000, 3),
-(12, '2022-03-01 17:12:33', 'ema', 0, 280000, 1),
-(13, '2022-04-01 17:13:23', 'steven', 0, 280000, 5),
-(19, '2022-04-02 19:27:39', 'Mario Ruiz', 13232, 341200, 5),
-(20, '2022-04-02 19:41:51', 'Dario', 23232, 56000, 1),
-(21, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2),
-(22, '2022-04-02 19:42:40', 'Lucas', 21133, 56000, 5),
-(24, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 1),
-(26, '2022-03-06 17:34:36', 'Juana Martinez', 429625, 69000, 1),
-(30, '2022-04-07 00:36:30', 'xxxx', 0, 1300, 1),
-(34, '2022-03-07 00:49:03', 'xxx3', 0, 56000, 1),
-(35, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2),
-(36, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 2),
-(37, '2022-04-15 21:56:37', 'Brayan Daniel', 32434343, 1300, 1),
-(38, '2022-04-19 08:15:24', 'fdkfdfdfdf', 32434343, 3900, 1),
-(39, '2022-04-19 21:11:23', 'asasdas', 0, 1400, 1),
-(40, '2022-04-19 21:52:57', 'x', 0, 2600, 1);
+INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`, `id_cliente`) VALUES
+(8, '2022-04-01 16:19:27', 'Ernesto perez', 0, 36400, 1, NULL),
+(9, '2022-03-01 16:25:21', 'FRAILEJON', 1234, 2600, 1, NULL),
+(11, '2022-04-01 17:11:45', 'Andrea', 0, 280000, 3, NULL),
+(12, '2022-03-01 17:12:33', 'ema', 0, 280000, 1, NULL),
+(13, '2022-04-01 17:13:23', 'steven', 0, 280000, 5, NULL),
+(19, '2022-04-02 19:27:39', 'Mario Ruiz', 13232, 341200, 5, NULL),
+(20, '2022-04-02 19:41:51', 'Dario', 23232, 56000, 1, NULL),
+(21, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2, NULL),
+(22, '2022-04-02 19:42:40', 'Lucas', 21133, 56000, 5, NULL),
+(24, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 1, NULL),
+(26, '2022-03-06 17:34:36', 'Juana Martinez', 429625, 69000, 1, NULL),
+(30, '2022-04-07 00:36:30', 'xxxx', 0, 1300, 1, NULL),
+(34, '2022-03-07 00:49:03', 'xxx3', 0, 56000, 1, NULL),
+(35, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2, NULL),
+(36, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 2, NULL),
+(37, '2022-04-15 21:56:37', 'Brayan Daniel', 32434343, 1300, 1, NULL),
+(38, '2022-04-19 08:15:24', 'fdkfdfdfdf', 32434343, 3900, 1, NULL),
+(39, '2022-04-19 21:11:23', 'asasdas', 0, 1400, 1, NULL),
+(40, '2022-04-19 21:52:57', 'x', 0, 2600, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -453,7 +456,8 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `venta`
   ADD PRIMARY KEY (`id_venta`),
-  ADD KEY `vendedor` (`vendedor`);
+  ADD KEY `vendedor` (`vendedor`),
+  ADD KEY `id_cliente` (`id_cliente`);
 
 --
 -- Indices de la tabla `venta_producto`
@@ -471,7 +475,7 @@ ALTER TABLE `venta_producto`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_venta`
@@ -574,7 +578,8 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `venta`
 --
 ALTER TABLE `venta`
-  ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`vendedor`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`vendedor`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `venta_ibfk_3` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`);
 
 --
 -- Filtros para la tabla `venta_producto`
