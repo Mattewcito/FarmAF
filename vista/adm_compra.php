@@ -41,18 +41,12 @@ include_once 'Comple/nav.php';
                                 <div class="form-group row">
                                     <span>Cliente: </span>
                                     <div class="input-group-append col-md-6">
-                                        <input type="text" class="form-control" id="cliente" placeholder="Ingresa nombre">
-                                    </div>
+                                        <select id="cliente" class="form-control select2" style="width:100%"></select>
                                 </div>
-                                <div class="form-group row">
-                                    <span>DNI: </span>
-                                    <div class="input-group-append col-md-6">
-                                        <input type="number" class="form-control" id="dni" placeholder="Ingresa DNI">
-                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <span>Vendedor: </span>
-                                    <h3 class="col-md-6">usuario</h3>
+                                    <h3 class="col-md-6"><?php echo $_SESSION["nombre_us"];?></h3>
                                 </div>
                             </div>
                         </header>

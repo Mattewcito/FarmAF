@@ -29,15 +29,13 @@
 .datos_cp {
   font-weight: bold;
   color: rgb(0, 0, 0);
+  margin-left: 100px;
+
 }
 .datos_cp span {
   color: #1c741c;
-  text-align: right;
-  width: 150px;
-  margin-right: 100px;
-  display: inline-block;
   font-size: 20px;
-
+  margin-right: 100px;
 }
 
 .correo {

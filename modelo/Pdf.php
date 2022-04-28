@@ -3,9 +3,11 @@ include_once 'Venta.php';
 include_once 'VentaProducto.php';
 include_once ("../vendor/autoload.php");
 include_once ("../modelo/Pdf.php");
+include_once 'Cliente.php';
 function getHtml($id_venta){
     $venta = new Venta();
     $venta_producto=new VentaProducto();
+    $cliente = new Cliente();
     $venta->buscar_id($id_venta);
     $venta_producto->ver($id_venta);
     $plantilla='
@@ -189,13 +191,24 @@ function getHtml($id_venta){
         <div><a href="mailto:company@example.com">laasuncion@gmail.com</a></div>
       </div>';
       foreach ($venta->objetos as $objeto) {
-    
+        if (empty($objeto->id_cliente)) {
+          $cliente_nombre=$objeto->cliente;
+          $cliente_dni=$objeto->dni;
+      }
+      else {
+          $cliente->buscar_datos_cliente($objeto->id_cliente);
+          foreach ($cliente->objetos as $cli) {
+              $cliente_nombre=$cli->nombre.' '.$cli->apellidos;
+              $cliente_dni=$cli->dni;
+          }
+          
+      }
       $plantilla.='
     
       <div id="project">
         <div><span>Codigo de Venta: </span>'.$objeto->id_venta.'</div>
-        <div><span>Cliente: </span>'.$objeto->cliente.'</div>
-        <div><span>DNI: </span>'.$objeto->dni.'</div>
+        <div><span>Cliente: </span>'.$cliente_nombre.'</div>
+        <div><span>DNI: </span>'.$cliente_dni.'</div>
         <div><span>Fecha y Hora: </span>'.$objeto->fecha.'</div>
         <div><span>Vendedor: </span>'.$objeto->vendedor.'</div>
       </div>';

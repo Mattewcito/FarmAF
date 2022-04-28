@@ -4,6 +4,7 @@ $(document).ready(function(){
     vendedor_mes();
     ventas_anual();
     producto_mas_vendido();
+    cliente_mes();
     async function producto_mas_vendido(){
         funcion='producto_mas_vendido';
         let lista=['','','','',''];
@@ -15,10 +16,10 @@ $(document).ready(function(){
             return response.json();
         }).then(function(productos){
             let i=0;
-           productos.forEach(producto => {
+            productos.forEach(producto => {
                 lista[i]=producto;
                 i++;
-           });
+            });
         })
         let CanvasG4=$('#Grafico4').get(0).getContext('2d');
         let datos={
@@ -406,6 +407,74 @@ $(document).ready(function(){
             type:'pie',
             data:datos,
             options:opciones,
+        })
+    }
+    async function cliente_mes(){
+        funcion='cliente_mes';
+        let lista=['','',''];
+        const response = await fetch('../controlador/VentaController.php',{
+            method:'POST',
+            headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            body:'funcion='+funcion
+        }).then(function(response){
+            return response.json();
+        }).then(function(clientes){
+            let i=0
+            clientes.forEach(cliente => {
+                lista[i]=cliente;
+                i++;
+            });
+        })
+        let CanvasG2=$('#Grafico5').get(0).getContext('2d');
+        let datos={
+            labels:[
+                'Mes actual'
+            ],
+            datasets:[
+                {
+                    label               : lista[0].cliente_nombre,
+                    backgroundColor     : '#1C293A',
+                    borderColor         : '#324A69',
+                    pointRadius         : false,
+                    pointColor          : '#6C9EE0',
+                    pointStrockeColor   : '6C9EE0',
+                    pointHighlightFill  : '#fff',
+                    pointHighlightStroke: '#324A69',
+                    data                : [lista[0].cantidad]   
+                },
+                {
+                    label               : lista[1].cliente_nombre,
+                    backgroundColor     : '#1C293A',
+                    borderColor         : '#324A69',
+                    pointRadius         : false,
+                    pointColor          : '#6C9EE0',
+                    pointStrockeColor   : '6C9EE0',
+                    pointHighlightFill  : '#fff',
+                    pointHighlightStroke: '#324A69',
+                    data                : [lista[1].cantidad]  
+                },
+                {
+                    label               : lista[2].cliente_nombre,
+                    backgroundColor     : '#1C293A',
+                    borderColor         : '#324A69',
+                    pointRadius         : false,
+                    pointColor          : '#6C9EE0',
+                    pointStrockeColor   : '6C9EE0',
+                    pointHighlightFill  : '#fff',
+                    pointHighlightStroke: '#324A69',
+                    data                : [lista[2].cantidad]   
+                },
+            ]
+        }
+        let opciones={
+            responsive: true,
+            maintainAspectRatio: false,
+            datasetFill:false,
+        }
+        let G2 = new Chart(CanvasG2,{
+            type: 'bar',
+            data:datos,
+            options:opciones
         })
     }
 })

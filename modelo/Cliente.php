@@ -1,5 +1,5 @@
 <?php
-include 'Conexion.php';
+include_once 'Conexion.php';
 class Cliente{
     var $objetos;
     public function __construct(){
@@ -66,8 +66,7 @@ class Cliente{
         }
        
     }
-    function borrar($id)
-    {
+    function borrar($id){
         $sql="UPDATE cliente SET estado='I' WHERE id=:id";
         $query= $this->acceso->prepare($sql);
         $query->execute(array(':id'=>$id));
@@ -77,6 +76,22 @@ class Cliente{
         else{
             echo 'noborrado';
         }
+        
+    }
+    function llenar_clientes(){
+        $sql="SELECT * FRom cliente WHERE estado='A' ORDEr BY nombre ASC";
+        $query= $this->acceso->prepare($sql);
+        $query->execute();
+        $this->objetos=$query->fetchall();
+        return $this->objetos;
+        
+    }
+    function buscar_datos_cliente($id_cliente){
+        $sql="SELECT * FROM cliente WHERE id=:id_cliente";
+        $query= $this->acceso->prepare($sql);
+        $query->execute(array(':id_cliente'=>$id_cliente));
+        $this->objetos=$query->fetchall();
+        return $this->objetos;
         
     }
 }

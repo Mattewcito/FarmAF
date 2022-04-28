@@ -6,10 +6,10 @@ class Venta{
         $db = new Conexion();
         $this->acceso=$db->pdo;
     }
-    function Crear($nombre,$dni,$total,$fecha,$vendedor){
-            $sql="INSERT INTO venta(fecha,cliente,dni,total,vendedor) VALUES (:fecha,:cliente,:dni,:total,:vendedor)";
+    function Crear($cliente,$total,$fecha,$vendedor){
+            $sql="INSERT INTO venta(fecha,total,vendedor,id_cliente) VALUES (:fecha,:total,:vendedor,:cliente)";
             $query = $this->acceso->prepare($sql);
-            $query->execute(array(':fecha'=>$fecha,':cliente'=>$nombre,':dni'=>$dni,':total'=>$total,':vendedor'=>$vendedor));
+            $query->execute(array(':fecha'=>$fecha,':cliente'=>$cliente,':total'=>$total,':vendedor'=>$vendedor));
             
     }
     function ultima_venta(){
@@ -26,7 +26,7 @@ class Venta{
         echo 'delete';
     }
     function buscar(){
-        $sql="SELECT id_venta,fecha,cliente,dni,total, CONCAT(usuario.nombre_us,'',usuario.apellidos_us) as vendedor FROM venta join usuario on vendedor=id_usuario";
+        $sql="SELECT id_venta,fecha,cliente,dni,total, CONCAT(usuario.nombre_us,'',usuario.apellidos_us) as vendedor,id_cliente FROM venta join usuario on vendedor=id_usuario";
         $query = $this->acceso->prepare($sql);
         $query->execute();
         $this->objetos=$query->fetchall();
@@ -80,7 +80,7 @@ class Venta{
         return $this->objetos;
     }
     function buscar_id($id_venta){
-        $sql="SELECT id_venta,fecha,cliente,dni,total, CONCAT(usuario.nombre_us,'',usuario.apellidos_us) as vendedor FROM venta join usuario on vendedor=id_usuario
+        $sql="SELECT id_venta,fecha,cliente,dni,total, CONCAT(usuario.nombre_us,'',usuario.apellidos_us) as vendedor,id_cliente FROM venta join usuario on vendedor=id_usuario
         and id_venta=:id_venta";
         $query = $this->acceso->prepare($sql);
         $query->execute(array(':id_venta'=>$id_venta));
@@ -115,6 +115,20 @@ class Venta{
         JOIN producto ON id_producto=producto_id_producto
         WHERE year(fecha)=year(curdate()) AND month(fecha) = month(curdate())
         GROUP BY producto_id_producto ORDER BY total DESC LIMIT 5";
+        $query = $this->acceso->prepare($sql);
+        $query->execute();
+        $this->objetos=$query->fetchall();
+        return $this->objetos;
+    }
+    function cliente_mes(){
+        $sql="SELECT CONCAT(cliente.nombre,' ',cliente.apellidos) as cliente_nombre ,sum(total) as cantidad 
+        FROM `venta` 
+        join cliente on id_cliente=id 
+        where month(fecha)=month(curdate()) 
+        and year(fecha)=year(curdate()) 
+        group by id_cliente 
+        ORDER BY `cantidad`  
+        DESC LIMIT 3";
         $query = $this->acceso->prepare($sql);
         $query->execute();
         $this->objetos=$query->fetchall();

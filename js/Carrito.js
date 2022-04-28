@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    $('.select2').select2();
+    llenar_clientes();
     calcularTotal();
     Contar_productos();
     RecuperarLS_carrito_compra();
@@ -214,9 +216,7 @@ $(document).ready(function () {
         $('#vuelto').html(vuelto.toFixed(2));
     }
     function Procesar_compra(){
-        let nombre,dni;
-        nombre=$('#cliente').val();
-        dni=$('#dni').val();
+        let cliente = $('#cliente').val();
         if(RecuperarLS().length == 0){
             Swal.fire({
                 icon: 'error',
@@ -226,17 +226,17 @@ $(document).ready(function () {
                     location.href = '../vista/adm_catalogo.php'
                 })
         }
-        else if(nombre == ''){
+        else if(cliente == ''){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: '¡Se necesita un nombre para procesar la compra!',
+                text: '¡Se necesita un cliente para procesar la compra!',
                 })
         }
         else {
             Verificar_stock().then(error=>{
                 if(error==0){
-                    Registrar_compra(nombre,dni);
+                    Registrar_compra(cliente);
                     Verificar_stock();
                     Swal.fire({
                         position: 'center',
@@ -272,13 +272,27 @@ $(document).ready(function () {
         return error;
     }
     
-    function Registrar_compra(nombre,dni){
+    function Registrar_compra(cliente){
         funcion='registrar_compra';
         let total=$('#total').get(0).textContent;
         let productos=RecuperarLS();
         let json = JSON.stringify(productos);
-        $.post('../controlador/CompraController.php',{funcion,total,nombre,dni,json},(response)=>{
+        $.post('../controlador/CompraController.php',{funcion,total,cliente,json},(response)=>{
             console.log(response);
+        })
+    }
+    function llenar_clientes(){
+        funcion='llenar_clientes';
+        $.post('../controlador/ClienteController.php',{funcion},(response)=>{
+            console.log(response);
+            let clientes = JSON.parse(response);
+            let template = '';
+            clientes.forEach(cliente=>{
+                    template += `
+                <option value="${cliente.id}" >${cliente.nombre}</option>
+                `
+            });
+            $('#cliente').html(template);
         })
     }
 })
