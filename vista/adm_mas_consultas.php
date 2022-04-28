@@ -56,6 +56,12 @@ if ($_SESSION['us_tipo'] == 3) {
                                 <canvas id='Grafico4' style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <h2>Top cliente del mes</h2>
+                                <div class="chart-responsive">
+                                <canvas id='Grafico5' style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">

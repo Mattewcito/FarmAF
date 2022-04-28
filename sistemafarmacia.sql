@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-04-2022 a las 22:17:14
+-- Tiempo de generación: 28-04-2022 a las 19:09:57
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -48,7 +48,7 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`id`, `nombre`, `apellidos`, `dni`, `edad`, `telefono`, `correo`, `sexo`, `adicional`, `avatar`, `estado`) VALUES
 (1, 'Juan Diego', 'Herrera Lopez', 15563221, '1993-11-03', 301754086, 'JuanLopzzz@gmail.com', 'Masculino', NULL, NULL, 'A'),
 (2, 'Pablo', 'Vasquez', 48978, '1992-04-04', 2723128, 'pablovasquez@gmail.com', 'Masculino', 'Cliente frecuente', 'prov_default.png', 'A'),
-(3, 'Dylan', 'Gomez', 10204569, '1993-05-28', 2996587, 'dylango19@gmail.com', 'Masculino', 'Nuevo cliente', 'prov_default.png', 'I');
+(3, 'Dylan', 'Gomez', 10204569, '1993-05-28', 2996587, 'dylango19@gmail.com', 'Masculino', 'Nuevo cliente', 'prov_default.png', 'A');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,11 @@ INSERT INTO `detalle_venta` (`id_detalle`, `det_cantidad`, `det_vencimiento`, `i
 (23, 1, '2022-06-24', 26, 2, 8, 38),
 (24, 2, '2022-07-09', 25, 2, 8, 38),
 (25, 1, '2022-07-09', 25, 2, 8, 39),
-(26, 2, '2022-07-09', 25, 2, 8, 40);
+(26, 2, '2022-07-09', 25, 2, 8, 40),
+(27, 1, '2021-10-15', 30, 8, 8, 41),
+(28, 6, '2022-07-28', 28, 7, 8, 42),
+(29, 14, '2021-10-15', 30, 8, 8, 43),
+(30, 12, '2022-07-28', 28, 7, 8, 43);
 
 -- --------------------------------------------------------
 
@@ -138,8 +142,8 @@ CREATE TABLE `lote` (
 --
 
 INSERT INTO `lote` (`id_lote`, `stock`, `vencimiento`, `lote_id_prod`, `lote_id_prov`) VALUES
-(28, 19, '2022-07-28', 7, 8),
-(30, 120, '2021-10-15', 8, 8);
+(28, 1, '2022-07-28', 7, 8),
+(30, 105, '2021-10-15', 8, 8);
 
 -- --------------------------------------------------------
 
@@ -339,7 +343,10 @@ INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`,
 (37, '2022-04-15 21:56:37', 'Brayan Daniel', 32434343, 1300, 1, NULL),
 (38, '2022-04-19 08:15:24', 'fdkfdfdfdf', 32434343, 3900, 1, NULL),
 (39, '2022-04-19 21:11:23', 'asasdas', 0, 1400, 1, NULL),
-(40, '2022-04-19 21:52:57', 'x', 0, 2600, 1, NULL);
+(40, '2022-04-19 21:52:57', 'x', 0, 2600, 1, NULL),
+(41, '2022-04-26 21:46:27', '', 0, 20500, 1, 2),
+(42, '2022-04-28 11:51:17', '', 0, 336000, 1, 1),
+(43, '2022-04-28 11:51:44', '', 0, 959000, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -378,7 +385,11 @@ INSERT INTO `venta_producto` (`id_ventaproducto`, `precio`, `cantidad`, `subtota
 (24, 0, 1, 1300, 2, 37),
 (25, 0, 3, 3900, 2, 38),
 (26, 1400, 1, 1400, 2, 39),
-(27, 1300, 2, 2600, 2, 40);
+(27, 1300, 2, 2600, 2, 40),
+(28, 20500, 1, 20500, 8, 41),
+(29, 56000, 6, 336000, 7, 42),
+(30, 20500, 14, 287000, 8, 43),
+(31, 56000, 12, 672000, 7, 43);
 
 --
 -- Índices para tablas volcadas
@@ -481,7 +492,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `laboratorio`
@@ -535,13 +546,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_producto`
 --
 ALTER TABLE `venta_producto`
-  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restricciones para tablas volcadas
