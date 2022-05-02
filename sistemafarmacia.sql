@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2022 a las 19:09:57
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 02-05-2022 a las 05:20:26
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,6 +53,22 @@ INSERT INTO `cliente` (`id`, `nombre`, `apellidos`, `dni`, `edad`, `telefono`, `
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `compra`
+--
+
+CREATE TABLE `compra` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(100) NOT NULL,
+  `fecha_compra` date NOT NULL,
+  `fecha_entrega` date NOT NULL,
+  `total` float NOT NULL,
+  `id_estado_pago` int(11) NOT NULL,
+  `id_proveedor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `detalle_venta`
 --
 
@@ -96,6 +112,25 @@ INSERT INTO `detalle_venta` (`id_detalle`, `det_cantidad`, `det_vencimiento`, `i
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `estado_pago`
+--
+
+CREATE TABLE `estado_pago` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `estado_pago`
+--
+
+INSERT INTO `estado_pago` (`id`, `nombre`) VALUES
+(1, 'cancelado'),
+(2, 'No cancelado');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `laboratorio`
 --
 
@@ -130,20 +165,14 @@ INSERT INTO `laboratorio` (`id_laboratorio`, `nombre`, `avatar`, `estado`) VALUE
 --
 
 CREATE TABLE `lote` (
-  `id_lote` int(11) NOT NULL,
-  `stock` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `codigo` varchar(100) NOT NULL,
+  `cantidad` int(11) NOT NULL,
   `vencimiento` date NOT NULL,
-  `lote_id_prod` int(11) NOT NULL,
-  `lote_id_prov` int(11) NOT NULL
+  `precio_compra` float NOT NULL,
+  `id_compra` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `lote`
---
-
-INSERT INTO `lote` (`id_lote`, `stock`, `vencimiento`, `lote_id_prod`, `lote_id_prov`) VALUES
-(28, 1, '2022-07-28', 7, 8),
-(30, 105, '2021-10-15', 8, 8);
 
 -- --------------------------------------------------------
 
@@ -402,11 +431,25 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_estado_pago` (`id_estado_pago`,`id_proveedor`),
+  ADD KEY `id_proveedor` (`id_proveedor`);
+
+--
 -- Indices de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
   ADD PRIMARY KEY (`id_detalle`),
   ADD KEY `id_det_venta` (`id_det_venta`);
+
+--
+-- Indices de la tabla `estado_pago`
+--
+ALTER TABLE `estado_pago`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `laboratorio`
@@ -418,9 +461,9 @@ ALTER TABLE `laboratorio`
 -- Indices de la tabla `lote`
 --
 ALTER TABLE `lote`
-  ADD PRIMARY KEY (`id_lote`),
-  ADD KEY `lote_id_prod` (`lote_id_prod`,`lote_id_prov`),
-  ADD KEY `lote_id_prov` (`lote_id_prov`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_compra` (`id_compra`),
+  ADD KEY `id_producto` (`id_producto`);
 
 --
 -- Indices de la tabla `presentacion`
@@ -489,10 +532,22 @@ ALTER TABLE `cliente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
   MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de la tabla `estado_pago`
+--
+ALTER TABLE `estado_pago`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `laboratorio`
@@ -504,7 +559,7 @@ ALTER TABLE `laboratorio`
 -- AUTO_INCREMENT de la tabla `lote`
 --
 ALTER TABLE `lote`
-  MODIFY `id_lote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `presentacion`
@@ -559,6 +614,13 @@ ALTER TABLE `venta_producto`
 --
 
 --
+-- Filtros para la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_estado_pago`) REFERENCES `estado_pago` (`id`),
+  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedor` (`id_proveedor`);
+
+--
 -- Filtros para la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
@@ -568,8 +630,8 @@ ALTER TABLE `detalle_venta`
 -- Filtros para la tabla `lote`
 --
 ALTER TABLE `lote`
-  ADD CONSTRAINT `lote_ibfk_2` FOREIGN KEY (`lote_id_prod`) REFERENCES `producto` (`id_producto`),
-  ADD CONSTRAINT `lote_ibfk_3` FOREIGN KEY (`lote_id_prov`) REFERENCES `proveedor` (`id_proveedor`);
+  ADD CONSTRAINT `lote_ibfk_1` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id`),
+  ADD CONSTRAINT `lote_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
 
 --
 -- Filtros para la tabla `producto`

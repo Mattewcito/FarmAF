@@ -4,10 +4,10 @@ $(document).ready(function(){
         let funcion='mostrar_consultas';
         $.post('../controlador/VentaController.php', {funcion},(response)=>{
             const vistas = JSON.parse(response);
-            $('#venta_dia_vendedor').html(vistas.venta_dia_vendedor);
-            $('#venta_diaria').html(vistas.venta_diaria);
-            $('#venta_mensual').html(vistas.venta_mensual);
-            $('#venta_anual').html(vistas.venta_anual);
+            $('#venta_dia_vendedor').html((vistas.venta_dia_vendedor*1).toFixed(2));
+            $('#venta_diaria').html((vistas.venta_diaria*1).toFixed(2));
+            $('#venta_mensual').html((vistas.venta_mensual*1).toFixed(2));
+            $('#venta_anual').html((vistas.venta_anual*1).toFixed(2));
         })
     }
     funcion="listar";

@@ -292,7 +292,7 @@ $(document).ready(function () {
                 <option value="${cliente.id}" >${cliente.nombre}</option>
                 `
             });
-            $('#cliente').html(template);
+            $('#producto').html(template);
         })
     }
 })
