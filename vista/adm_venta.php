@@ -205,5 +205,5 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
   header('Location: ../vista/login.php');
 }
 ?>
-<script src="../js/datatables.js"></script>
+
 <script src="../js/Venta.js"></script>

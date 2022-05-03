@@ -7,40 +7,7 @@ if ($_SESSION['us_tipo'] == 3) {
   <?php
   include_once 'Comple/nav.php';
   ?>
-    <div class="modal fade" id="editarlote" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="card card-success">
-          <div class="card-header">
-            <h3 class="card-title">Editar lote</h3>
-            <button data-dismiss="modal" aria-label="close-class" class="close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="card-body">
-            <div class="alert alert-success text-center" id="add-lote" style='display:none;'>
-              <span> <i class="fas fa-check m-1"></i>Se modifico correctamente</span>
-            </div>
-            <form id="form-editar-lote">
-            <div class="form-group">
-                <label for="codigo_lote">Codigo lote: </label>
-                <label id="codigo_lote">Codigo lote</label>
-              </div>
-              <div class="form-group">
-                <label for="stock">Stock: </label>
-                <input id="stock" type="number" class="form-control" placeholder="Ingrese stock">
-              </div>
-              <input type="hidden" id="id_lote_prod">
-          </div>
-          <div class="card-footer">
-            <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
-            <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <!-- CONTENIDO -->
   <div class="content-wrapper">
     <section class="content-header">
@@ -72,7 +39,21 @@ if ($_SESSION['us_tipo'] == 3) {
             </div>
           </div>
           <div class="card-body">
-            <div id="lotes" class="row d-flex align-items-stretch"></div>
+           <table id="compras" class="table table-dark table-hover">
+             <thead>
+               <tr>
+                 <th>#</th>
+                 <th>ID | Codigo</th>
+                 <th>Fecha de compra</th>
+                 <th>Fecha de entrega</th>
+                 <th>Total</th>
+                 <th>Estado</th>
+                 <th>Proveedor</th>
+                 <th>Operaciones</th>
+               </tr>
+             </thead>
+             <tbody></tbody>
+           </table>
           </div>
           <div class="card-footer"></div>
         </div>
@@ -88,4 +69,4 @@ if ($_SESSION['us_tipo'] == 3) {
   header('Location: ../vista/login.php');
 }
 ?>
-<script src="../js/Lote.js"></script>
+<script src="../js/Compras.js"></script>
