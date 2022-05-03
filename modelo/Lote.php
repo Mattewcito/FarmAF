@@ -90,5 +90,14 @@ class Lote{
                 }
             }
         }
+        /////////////////////Actualizacion////////////////
+        function crear_lote($codigo,$cantidad,$vencimiento,$precio_compra,$id_compra,$id_producto){
+            $sql="INSERT INTO lote(codigo,cantidad,cantidad_lote,vencimiento,precio_compra,id_compra,id_producto) values (:codigo,:cantidad,:cantidad_lote,:vencimiento,:precio_compra,:id_compra,:id_producto)";
+            $query = $this->acceso->prepare($sql);
+            $query->execute(array(':codigo'=>$codigo,':cantidad'=>$cantidad,':cantidad_lote'=>$cantidad,':vencimiento'=>$vencimiento,':precio_compra'=>$precio_compra,':id_compra'=>$id_compra,':id_producto'=>$id_producto));
+            echo 'add';
+        }
     }
+    
+    
 ?>
