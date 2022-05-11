@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2022 a las 15:47:04
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 11-05-2022 a las 06:42:51
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,7 +72,7 @@ CREATE TABLE `compra` (
 
 INSERT INTO `compra` (`id`, `codigo`, `fecha_compra`, `fecha_entrega`, `total`, `id_estado_pago`, `id_proveedor`) VALUES
 (1, '98745', '2022-05-04', '2022-05-12', 20500, 1, 7),
-(2, '123589', '2022-05-04', '2022-05-06', 56000, 1, 8);
+(2, '123589', '2022-05-04', '2022-05-06', 56000, 2, 8);
 
 -- --------------------------------------------------------
 

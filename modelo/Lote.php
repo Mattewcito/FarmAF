@@ -97,7 +97,20 @@ class Lote{
             $query->execute(array(':codigo'=>$codigo,':cantidad'=>$cantidad,':cantidad_lote'=>$cantidad,':vencimiento'=>$vencimiento,':precio_compra'=>$precio_compra,':id_compra'=>$id_compra,':id_producto'=>$id_producto));
             echo 'add';
         }
-    }
+        function ver($id){
+            $sql="SELECT l.codigo as codigo, l.cantidad as cantidad, vencimiento, precio_compra, p.nombre as producto, concentracion, adicional,
+            la.nombre as laboratorio, t.nombre as tipo, pre.nombre as presentacion
+            FROM lote as l
+            join producto as p on l.id_producto=p.id_producto and id_compra=:id
+            join laboratorio as la on prod_lab=id_laboratorio
+            join tipo_producto as t on prod_tip_prod=id_tip_prod
+            join presentacion as pre on prod_present=id_presentacion";
+            $query = $this->acceso->prepare($sql);
+            $query->execute(array(':id'=>$id));
+            $this->objetos=$query->fetchall();
+            return $this->objetos;
+        }
+}
     
     
 ?>

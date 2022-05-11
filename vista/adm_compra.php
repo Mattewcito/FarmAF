@@ -7,6 +7,7 @@ if($_SESSION['us_tipo']==1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3){
 <?php
 include_once 'Comple/nav.php';
 ?> 
+
   <!-- CONTENIDO -->
   <div class="content-wrapper">
     <section class="content-header">

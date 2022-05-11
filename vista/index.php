@@ -23,7 +23,7 @@
             <link class="nav3"><a href="Login.php">Iniciar session</a>
         </nav>
     </header>
-     <img class="imgp" src="img/imagen.png" alt="">
+     <img class="imgp" src="../img/" alt="">
         <section class="textos-header">
                 <div class="contenedor1">
                     <div class="texto">

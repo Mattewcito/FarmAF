@@ -45,6 +45,7 @@ include_once 'Comple/nav.php';
     </div>
   </div>
 </div>
+
 <div class="modal fade" id="crearlaboratorio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

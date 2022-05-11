@@ -94,10 +94,10 @@ $(document).ready(function(){
             const json = JSON.parse(response);
             if(json.alert=='edit'){
                 $('#logoactual').attr('src',json.ruta)
+                $('#form-logo').trigger('reset');
                 $('#edit').hide('slow');
                 $('#edit').show(1000);
                 $('#edit').hide(3000);
-                $('#form-logo').trigger('reset');
                 buscar_lab();
             }
             else{

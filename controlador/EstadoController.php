@@ -13,4 +13,16 @@ if($_POST['funcion']=='llenar_estado'){
     $jsonstring = json_encode($json);
     echo $jsonstring;
 }
-?>
+if($_POST['funcion']=='cambiarEstado'){
+    $nombre = $_POST['estado'];
+    $estado->obtenerId($nombre);
+    $json = array();
+    foreach ($estado->objetos as $objeto) {
+        $json[]=array(
+            'id'=>$objeto->id
+        );
+    }
+    $jsonstring = json_encode($json);
+    echo $jsonstring;
+}
+
