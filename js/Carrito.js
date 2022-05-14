@@ -284,7 +284,7 @@ $(document).ready(function () {
     function llenar_clientes(){
         funcion='llenar_clientes';
         $.post('../controlador/ClienteController.php',{funcion},(response)=>{
-            console.log(response);
+            //console.log(response);
             let clientes = JSON.parse(response);
             let template = '';
             clientes.forEach(cliente=>{

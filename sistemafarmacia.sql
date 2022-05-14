@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-05-2022 a las 06:42:51
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 14-05-2022 a las 04:22:50
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,7 +72,7 @@ CREATE TABLE `compra` (
 
 INSERT INTO `compra` (`id`, `codigo`, `fecha_compra`, `fecha_entrega`, `total`, `id_estado_pago`, `id_proveedor`) VALUES
 (1, '98745', '2022-05-04', '2022-05-12', 20500, 1, 7),
-(2, '123589', '2022-05-04', '2022-05-06', 56000, 2, 8);
+(2, '123589', '2022-05-04', '2022-05-06', 56000, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -179,6 +179,7 @@ CREATE TABLE `lote` (
   `cantidad_lote` int(11) NOT NULL,
   `vencimiento` date NOT NULL,
   `precio_compra` float NOT NULL,
+  `estado` varchar(10) NOT NULL DEFAULT 'A',
   `id_compra` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -187,9 +188,9 @@ CREATE TABLE `lote` (
 -- Volcado de datos para la tabla `lote`
 --
 
-INSERT INTO `lote` (`id`, `codigo`, `cantidad`, `cantidad_lote`, `vencimiento`, `precio_compra`, `id_compra`, `id_producto`) VALUES
-(1, '123658', 1, 1, '2022-05-27', 20500, 2, 8),
-(2, '987423', 1, 1, '2022-06-04', 56000, 2, 7);
+INSERT INTO `lote` (`id`, `codigo`, `cantidad`, `cantidad_lote`, `vencimiento`, `precio_compra`, `estado`, `id_compra`, `id_producto`) VALUES
+(1, '123658', 1, 1, '2022-05-27', 20500, 'A', 2, 8),
+(2, '987423', 1, 1, '2022-06-04', 56000, 'A', 2, 7);
 
 -- --------------------------------------------------------
 
@@ -618,7 +619,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_producto`

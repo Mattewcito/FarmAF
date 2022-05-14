@@ -8,7 +8,7 @@ $(document).ready(function () {
       let template = "";
       lotes.forEach(lote => {
         template += `
-                <div loteid="${lote.id}" loteStock="${lote.stock}" class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">`;
+                <div loteid="${lote.id}" loteStock="${lote.stock}" loteCodigo="${lote.codigo}" class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">`;
         if (lote.estado == 'light') {
           template += ` <div class="card bg-light d-flex flex-fill">`;
         }
@@ -19,7 +19,7 @@ $(document).ready(function () {
           template += ` <div class="card bg-warning d-flex flex-fill">`;
         }
         template += `<div class="card-header border-botton-0">
-                    <h6>Codigo ${lote.id}</h6>
+                    <h6>Codigo ${lote.codigo}</h6>
                     <i class="fas fa-lg fa-cubes mr-1"></i>${lote.stock}
                   </div>
                   <div class="card-body pt-0">
@@ -70,13 +70,14 @@ $(document).ready(function () {
     }
   });
   $(document).on('click', '.editar', (e) => {
-    const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
-    const id = $(elemento).attr('loteId');
-    const stock = $(elemento).attr('loteStock');
+    let elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
+    let id = $(elemento).attr('loteId');
+    let stock = $(elemento).attr('loteStock');
+    let codigo = $(elemento).attr('loteCodigo');
 
     $('#id_lote_prod').val(id);
     $('#stock').val(stock);
-    $('#codigo_lote').html(id);
+    $('#codigo_lote').html(codigo);
   });
   $('#form-editar-lote').submit(e=>{
     let id = $('#id_lote_prod').val();
@@ -116,6 +117,7 @@ $(document).ready(function () {
     }).then((result) => {
       if (result.value) {
         $.post('../controlador/LoteController.php', { id, funcion }, (response) => {
+          console.log(response);
           if (response == 'borrado') {
             swalWithBootstrapButtons.fire(
               'Eliminado!',

@@ -34,7 +34,7 @@ else{
                     </div>
                     <div class="div">
                         <h5>DNI</h5>
-                        <input type="text" name="user" class="input">
+                        <input type="text" name="user" class="input" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -43,7 +43,7 @@ else{
                     </div>
                     <div class="div">
                         <h5>Contrasena</h5>
-                        <input type="password" name="pass" class="input">
+                        <input type="password" name="pass" class="input" required>
                     </div>
                 </div>
                 <a href="recuperar.php">Recuperar contraseña</a>
