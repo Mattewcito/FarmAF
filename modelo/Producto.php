@@ -102,7 +102,7 @@ include 'Conexion.php';
             
         }
         function obtener_stock($id){
-            $sql="SELECT SUM(stock) as total FROM lote where lote_id_prod=:id";
+            $sql="SELECT SUM(cantidad_lote) as total FROM lote where id_producto=:id and estado='A'";
             $query=$this->acceso->prepare($sql);
             $query->execute(array(':id'=>$id));
             $this->objetos=$query->fetchall();

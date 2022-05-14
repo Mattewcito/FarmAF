@@ -32,12 +32,13 @@ include_once 'Comple/nav.php';
             </div>
           </div>
           <div class="animate__animated  animate__bounceInDown card-body p-0 table-responsive">
-            <table class="table table-hover text-nowrap">
-              <thead class="table-success"> 
+            <table id="lotes" class="table table-hover text-nowrap">
+              <thead class="table-danger"> 
                 <tr>
                   <th>Cod</th>
                   <th>Producto</th>
                   <th>Stock</th>
+                  <th>Estado</th>
                   <th>Laboratorio</th>
                   <th>Presentacion</th>
                   <th>Proveedor</th>
@@ -45,7 +46,7 @@ include_once 'Comple/nav.php';
                   <th>Dia</th>
                 </tr>
               </thead>
-              <tbody id="lotes" class="table-active">
+              <tbody  class="table-active">
 
               </tbody>
             </table>

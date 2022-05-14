@@ -8,10 +8,81 @@ if($_POST['funcion']=='crear'){
     $vencimiento = $_POST['vencimiento'];
     $lote->crear($id_producto,$proveedor,$stock,$vencimiento);
 }
-if($_POST['funcion']=='editar'){
-    $id_lote = $_POST['id'];
-    $stock = $_POST['stock'];
-    $lote->editar($id_lote,$stock);
+
+
+
+
+
+///////////////////Actualizacion///////////////////
+
+if($_POST['funcion']=='ver'){
+    $id=$_POST['id'];
+    $lote->ver($id);
+    $cont=0;
+    $json=array();
+    foreach ($lote->objetos as $objeto) {
+        $cont++;
+        $json[]= array(
+            'numeracion'=>$cont,
+            'codigo'=>$objeto->codigo,
+            'cantidad'=>$objeto->cantidad,
+            'vencimiento'=>$objeto->vencimiento,
+            'precio_compra'=>$objeto->precio_compra,
+            'producto'=>$objeto->producto.'|'.$objeto->concentracion.'|'.$objeto->adicional,
+            'laboratorio'=>$objeto->laboratorio,
+            'presentacion'=>$objeto->presentacion,
+            'tipo'=>$objeto->tipo
+        );
+    }
+    $jsonstring = json_encode($json);
+    echo $jsonstring;
+}
+if($_POST['funcion']=='buscar_lotes_riesgo'){
+    $lote->buscar();
+    $json=array();
+    date_default_timezone_set('America/Bogota');
+    $fecha = date('Y-m-d H:i:s');
+    $fecha_actual = new DateTime($fecha);
+    foreach ($lote->objetos as $objeto) {
+        $vencimiento = new DateTime($objeto->vencimiento);
+        $diferencia = $vencimiento->diff($fecha_actual);
+        $mes = $diferencia->m;
+        $dia = $diferencia->d;
+        $verificado = $diferencia->invert;
+        if($verificado==0){
+            $estado = 'danger';
+            $mes=$mes*(-1);
+            $dia=$dia*(-1);
+        }
+        else{
+            if($mes>3){
+                $estado='light';
+            }
+            if($mes<=3){
+                $estado='warning';
+            }
+        }
+        if($estado=='danger' || $estado=='warning'){
+            $json[]=array(
+                'id'=>$objeto->id_lote,
+                'nombre'=>$objeto->prod_nom,
+                'concentracion'=>$objeto->concentracion,
+                'adicional'=>$objeto->adicional,
+                'vencimiento'=>$objeto->vencimiento,
+                'proveedor'=>$objeto->proveedor,
+                'stock'=>$objeto->cantidad_lote,
+                'laboratorio'=>$objeto->lab_nom,
+                'tipo'=>$objeto->tip_nom,
+                'presentacion'=>$objeto->pre_nom,
+                'avatar'=>'../img/prod/'.$objeto->logo,
+                'mes'=>$mes,
+                'dia'=>$dia,
+                'estado'=>$estado
+            );
+        }
+    }
+    $jsonstring = json_encode($json);
+    echo $jsonstring;
 }
 if($_POST['funcion']=='buscar'){
     $lote->buscar();
@@ -40,12 +111,13 @@ if($_POST['funcion']=='buscar'){
         }
         $json[]=array(
             'id'=>$objeto->id_lote,
+            'codigo'=>$objeto->codigo,
             'nombre'=>$objeto->prod_nom,
             'concentracion'=>$objeto->concentracion,
             'adicional'=>$objeto->adicional,
             'vencimiento'=>$objeto->vencimiento,
             'proveedor'=>$objeto->proveedor,
-            'stock'=>$objeto->stock,
+            'stock'=>$objeto->cantidad_lote,
             'laboratorio'=>$objeto->lab_nom,
             'tipo'=>$objeto->tip_nom,
             'presentacion'=>$objeto->pre_nom,
@@ -58,33 +130,13 @@ if($_POST['funcion']=='buscar'){
     $jsonstring = json_encode($json);
     echo $jsonstring;
 }
+if($_POST['funcion']=='editar'){
+    $id_lote = $_POST['id'];
+    $stock = $_POST['stock'];
+    $lote->editar($id_lote,$stock);
+}
 if($_POST['funcion']=='borrar'){
     $id=$_POST['id'];
     $lote->borrar($id);
-}
-
-///////////////////Actualizacion///////////////////
-
-if($_POST['funcion']=='ver'){
-    $id=$_POST['id'];
-    $lote->ver($id);
-    $cont=0;
-    $json=array();
-    foreach ($lote->objetos as $objeto) {
-        $cont++;
-        $json[]= array(
-            'numeracion'=>$cont,
-            'codigo'=>$objeto->codigo,
-            'cantidad'=>$objeto->cantidad,
-            'vencimiento'=>$objeto->vencimiento,
-            'precio_compra'=>$objeto->precio_compra,
-            'producto'=>$objeto->producto.'|'.$objeto->concentracion.'|'.$objeto->adicional,
-            'laboratorio'=>$objeto->laboratorio,
-            'presentacion'=>$objeto->presentacion,
-            'tipo'=>$objeto->tipo
-        );
-    }
-    $jsonstring = json_encode($json);
-    echo $jsonstring;
 }
 ?>

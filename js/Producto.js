@@ -114,6 +114,7 @@ $(document).ready(function(){
     function buscar_producto(consulta){
         funcion="buscar";
         $.post('../controlador/ProductoController.php',{consulta,funcion},(response)=>{
+            console.log(response);
             const productos = JSON.parse(response);
             let template="";
             productos.forEach(producto => {
@@ -149,9 +150,7 @@ $(document).ready(function(){
                       <button class="editar btn btn-sm btn-success" type="button" data-toggle="modal" data-target="#crearproducto">
                         <i class="fas fa-pencil-alt"></i>
                       </button>
-                      <button class="lote btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#crearlote">
-                        <i class="fas fa-plus-square"></i>
-                      </button>
+
                       <button class="borrar btn btn-sm btn-danger">
                         <i class="fas fa-trash-alt"></i>
                       </button>
@@ -185,13 +184,7 @@ $(document).ready(function(){
         $('#logoactual').attr('src',avatar);
         $('#nombre_logo').html(nombre);
     });
-    $(document).on('click', '.lote',(e)=>{
-        const elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
-        const id = $(elemento).attr('prodId');
-        const nombre=$(elemento).attr('prodNombre');
-        $('#id_lote_prod').val(id);
-        $('#nombre_producto_lote').html(nombre);
-    });
+    
     $('#form-logo').submit(e=>{
         let formData = new FormData($('#form-logo')[0]);
         $.ajax({
@@ -296,21 +289,7 @@ $(document).ready(function(){
             }  
         })
     })
-    $('#form-crear-lote').submit(e=>{
-        let id_producto=$('#id_lote_prod').val();
-        let proveedor=$('#proveedor').val();
-        let stock=$('#stock').val();
-        let vencimiento=$('#vencimiento').val();
-        funcion='crear'
-        $.post('../controlador/LoteController.php',{funcion,vencimiento,stock,proveedor,id_producto},(response)=>{
-            $('#add-lote').hide('slow');
-            $('#add-lote').show('1000');
-            $('#add-lote').hide('3000');
-            $('#form-crear-lote').trigger('reset');
-            buscar_producto();
-        });
-        e.preventDefault();
-    });
+   
     $(document).on('click','#button-reporte',(e)=>{
         Mostrar_Loader("generarReportePDF");
         funcion = 'reporte_producto';
