@@ -42,7 +42,7 @@ if($_POST['funcion']=='borrar_venta'){
                         $detalle_venta->borrar($det->id_detalle);
                     }
                     $venta->borrar($id_venta);
-                }
+                } 
                 else {
                     echo 'nodelete';
                 }

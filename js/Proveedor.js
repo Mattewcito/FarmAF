@@ -176,7 +176,6 @@ $(document).ready(function(){
                 }).then((result) => {
                 if (result.value) {
                     $.post('../controlador/ProveedorController.php',{id,funcion},(response)=>{
-                        
                         if(response=='borrado'){
                             swalWithBootstrapButtons.fire(
                                 'Eliminado!',
@@ -189,7 +188,7 @@ $(document).ready(function(){
                             swalWithBootstrapButtons.fire(
                                 'No se pudo eliminar!',
                                 'El proveedor '+nombre+' no fue eliminado porque esta siendo usado en un lote',
-                                'success'
+                                'error'
                             )
                         }
                     })

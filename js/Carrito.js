@@ -271,7 +271,6 @@ $(document).ready(function () {
         let error = await response.text();
         return error;
     }
-    
     function Registrar_compra(cliente){
         funcion='registrar_compra';
         let total=$('#total').get(0).textContent;
@@ -284,7 +283,6 @@ $(document).ready(function () {
     function llenar_clientes(){
         funcion='llenar_clientes';
         $.post('../controlador/ClienteController.php',{funcion},(response)=>{
-            //console.log(response);
             let clientes = JSON.parse(response);
             let template = '';
             clientes.forEach(cliente=>{
@@ -292,7 +290,7 @@ $(document).ready(function () {
                 <option value="${cliente.id}" >${cliente.nombre}</option>
                 `
             });
-            $('#producto').html(template);
+            $('#cliente').html(template);
         })
     }
 })

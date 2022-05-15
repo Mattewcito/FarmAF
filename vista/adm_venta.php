@@ -110,13 +110,13 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
                   <a href="adm_mas_consultas.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
+
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-success">
                   <div class="inner">
                     <h3 id="venta_diaria">0</h3>
-
                     <p>Venta total del dia</p>
                   </div>
                   <div class="icon">
@@ -125,13 +125,13 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
                   <a href="adm_mas_consultas.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
+
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-warning">
                   <div class="inner">
                     <h3 id="venta_mensual">0</h3>
-
                     <p>Venta Mensual</p>
                   </div>
                   <div class="icon">
@@ -140,13 +140,13 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
                   <a href="adm_mas_consultas.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
+
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                   <div class="inner">
-                    <h3 id="venta_anual">0</h3>
-
+                    <h3 id="venta_anual"></h3>
                     <p>Venta Anual</p>
                   </div>
                   <div class="icon">
@@ -155,11 +155,25 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
                   <a href="adm_mas_consultas.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
+              
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                  <div class="inner">
+                    <h3 id="ganancia_mensual">0</h3>
+                    <p>Ganancia Mensual</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                  </div>
+                  <a href="adm_mas_consultas.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
               <!-- ./col -->
             </div>
           </div>
           <div class="card-footer">
-
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ if($_POST['funcion']=='listar'){
                 $cliente_nombre=$cli->nombre.' '.$cli->apellidos;
                 $cliente_dni=$cli->dni;
             }
-            
+
         }
         $json['data'][]=array(
             'id_venta'=>$objeto->id_venta,
@@ -46,6 +46,11 @@ if($_POST['funcion']=='mostrar_consultas'){
     foreach ($venta->objetos as $objeto) {
         $venta_mensual=$objeto->venta_mensual;
     }
+    $venta->monto_costo();
+    $monto_costo='';
+    foreach ($venta->objetos as $objeto) {
+        $monto_costo=$objeto->monto_costo;
+    }
     $venta->venta_anual();
     $json=array();
     foreach ($venta->objetos as $objeto) {
@@ -53,7 +58,8 @@ if($_POST['funcion']=='mostrar_consultas'){
             'venta_dia_vendedor'=>$venta_dia_vendedor,
             'venta_diaria'=>$venta_diaria,
             'venta_mensual'=>$venta_mensual,
-            'venta_anual'=>$objeto->venta_anual
+            'venta_anual'=>$objeto->venta_anual,
+            'ganancia_mensual'=>$venta_mensual - $monto_costo
         );
     }
     $jsonstring = json_encode($json[0]);

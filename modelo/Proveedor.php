@@ -55,16 +55,7 @@ class Proveedor{
         $query=$this->acceso->prepare($sql);
         $query->execute(array(':id'=>$id,':nombre'=>$nombre));
     }
-    function borrar($id)
-    {
-        $sql="SELECT * FROM lote WHERE lote_id_prov=:id";
-        $query= $this->acceso->prepare($sql);
-        $query->execute(array(':id'=>$id));
-        $lote=$query->fetchall();
-        if (!empty($lote)) {
-            echo 'noborrado';
-        }
-        else {
+    function borrar($id){
             $sql="UPDATE proveedor SET estado='I' WHERE id_proveedor=:id";
             $query= $this->acceso->prepare($sql);
             $query->execute(array(':id'=>$id));
@@ -74,7 +65,6 @@ class Proveedor{
             else{
                 echo 'noborrado';
             }
-        }
     }
     function editar($id,$nombre,$telefono,$correo,$direccion){
         $sql="SELECT id_proveedor FROM proveedor WHERE id_proveedor!=:id and nombre=:nombre";        
@@ -93,7 +83,7 @@ class Proveedor{
        
     }
     function rellenar_proveedores(){
-        $sql="SELECT * FROM proveedor order by nombre asc";
+        $sql="SELECT * FROM proveedor WHERE estado='A' order by nombre asc";
         $query = $this->acceso->prepare($sql);
         $query->execute();
         $this->objetos=$query->fetchall();

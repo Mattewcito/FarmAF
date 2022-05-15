@@ -1,5 +1,7 @@
 $(document).ready(function(){
     mostrar_consultas();
+    listar_ventas();
+    var datatable;
     function mostrar_consultas(){
         let funcion='mostrar_consultas';
         $.post('../controlador/VentaController.php', {funcion},(response)=>{
@@ -8,10 +10,13 @@ $(document).ready(function(){
             $('#venta_diaria').html((vistas.venta_diaria*1).toFixed(2));
             $('#venta_mensual').html((vistas.venta_mensual*1).toFixed(2));
             $('#venta_anual').html((vistas.venta_anual*1).toFixed(2));
+            $('#ganancia_mensual').html((vistas.ganancia_mensual*1).toFixed(2));
         })
     }
-    funcion="listar";
-    let datatable = $('#tabla_venta').DataTable( {
+    function listar_ventas(){
+        funcion="listar";
+    
+    datatable = $('#tabla_venta').DataTable( {
         "ajax": {
             "url": "../controlador/VentaController.php",
             "method": "POST",
@@ -28,8 +33,10 @@ $(document).ready(function(){
                                 <button class="ver btn btn-success" type="button" data-toggle="modal" data-target="#vista_venta"><i class="fas fa-search"></i></button>
                                 <button class="borrar btn btn-danger"><i class="fas fa-window-close"></i></button>`} 
         ],
+        "destroy": true,
         "language": espanol
     } );
+    }
     $('#tabla_venta tbody').on('click','.imprimir',function(){
         let datos = datatable.row($(this).parents()).data();
         let id = datos.id_venta;
@@ -55,18 +62,21 @@ $(document).ready(function(){
             text: "No podras revertir esto!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Si, boora esto!',
+            confirmButtonText: 'Si, borrar esto!',
             cancelButtonText: 'No, cancelar!',
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../controlador/DetalleVentaController.php',{funcion,id},(response)=>{
+                    console.log(response);
                     if (response=='delete') {
                         swalWithBootstrapButtons.fire(
                             'Eliminado!',
                             'La venta: '+id+' ha sido Eliminada',
                             'success'
-                          )
+                            
+                        )
+                        listar_ventas();
                     }
                     else if(response='nodelete'){
                         swalWithBootstrapButtons.fire(

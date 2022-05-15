@@ -134,5 +134,15 @@ class Venta{
         $this->objetos=$query->fetchall();
         return $this->objetos;
     }
+    function monto_costo(){
+        $sql="SELECT SUM(det_cantidad*precio_compra) AS monto_costo 
+        FROM detalle_venta
+        JOIN venta ON id_det_venta=id_venta AND  year(fecha)= year(curdate()) AND month(fecha) = month(curdate())
+        JOIN lote on id__det_lote=lote.id";
+        $query = $this->acceso->prepare($sql);
+        $query->execute();
+        $this->objetos=$query->fetchall();
+        return $this->objetos;
+    }
 }
 ?>
