@@ -4,6 +4,7 @@ $(document).ready(function () {
   function buscar_lote(consulta) {
     funcion = "buscar";
     $.post('../controlador/LoteController.php', { consulta, funcion }, (response) => {
+      console.log(response);
       const lotes = JSON.parse(response);
       let template = "";
       lotes.forEach(lote => {
@@ -34,6 +35,7 @@ $(document).ready(function () {
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-pills"></i></span>  Presentacion: ${lote.presentacion}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-times"></i></span>  Vencimiento: ${lote.vencimiento}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-truck"></i></span>  Proveedor: ${lote.proveedor}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-alt"></i></span>  Anio: ${lote.anio}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-alt"></i></span>  Mes: ${lote.mes}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-day"></i></span>  Dia: ${lote.dia}</li>
                         </ul>
