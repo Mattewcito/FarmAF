@@ -81,7 +81,7 @@ include 'Conexion.php';
             $query->execute(array(':id'=>$id,':nombre'=>$nombre));
         }
         function borrar($id){
-            $sql="SELECT * FROM lote WHERE lote_id_prod=:id";
+            $sql="SELECT * FROM lote WHERE id_producto=:id";
             $query=$this->acceso->prepare($sql);
             $query->execute(array(':id'=>$id));
             $lote=$query->fetchall();
