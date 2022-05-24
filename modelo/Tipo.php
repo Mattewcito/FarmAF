@@ -79,7 +79,7 @@ class Tipo{
         echo 'edit';
     }
     function rellenar_tipos(){
-        $sql="SELECT * FROM tipo_producto order by nombre asc";
+        $sql="SELECT * FROM tipo_producto where estado='A' order by nombre asc";
         $query = $this->acceso->prepare($sql);
         $query->execute();
         $this->objetos=$query->fetchall();

@@ -38,6 +38,8 @@ $(document).ready(function () {
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-alt"></i></span>  Anio: ${lote.anio}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-alt"></i></span>  Mes: ${lote.mes}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-day"></i></span>  Dia: ${lote.dia}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-calendar-day"></i></span>  Hora: ${lote.hora}</li>
+
                         </ul>
                       </div>
                       <div class="col-5 text-center">

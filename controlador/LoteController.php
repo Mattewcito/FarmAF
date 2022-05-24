@@ -49,12 +49,15 @@ if($_POST['funcion']=='buscar_lotes_riesgo'){
         $anio = $diferencia->y;
         $mes = $diferencia->m;
         $dia = $diferencia->d;
+        $hora = $diferencia->h; 
         $verificado = $diferencia->invert;
         $estado='light';
         if($verificado==0){
             $estado = 'danger';
+            $anio=$anio*(-1);
             $mes=$mes*(-1);
             $dia=$dia*(-1);
+            $hora=$hora*(-1);
         }
         else{
             if($mes>3){
@@ -79,6 +82,7 @@ if($_POST['funcion']=='buscar_lotes_riesgo'){
                 'avatar'=>'../img/prod/'.$objeto->logo,
                 'mes'=>$mes,
                 'dia'=>$dia,
+                'hora'=>$hora,
                 'estado'=>$estado
             );
         }
@@ -98,12 +102,15 @@ if($_POST['funcion']=='buscar'){
         $anio = $diferencia->y;
         $mes = $diferencia->m;
         $dia = $diferencia->d;
+        $hora = $diferencia->h; 
         $verificado = $diferencia->invert;
         $estado='light';
         if($verificado==0){
             $estado = 'danger';
+            $anio=$anio*(-1);
             $mes=$mes*(-1);
             $dia=$dia*(-1);
+            $hora=$hora*(-1);
         }
         else{
             if($mes>3){
@@ -129,6 +136,7 @@ if($_POST['funcion']=='buscar'){
             'anio'=>$anio,
             'mes'=>$mes,
             'dia'=>$dia,
+            'hora'=>$hora,
             'estado'=>$estado
         );
     }

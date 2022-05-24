@@ -87,7 +87,7 @@ class Laboratorio{
         echo 'edit';
     }
     function rellenar_laboratorios(){
-        $sql="SELECT * FROM laboratorio order by nombre asc";
+        $sql="SELECT * FROM laboratorio where estado='A' order by nombre asc";
         $query = $this->acceso->prepare($sql);
         $query->execute();
         $this->objetos=$query->fetchall();
