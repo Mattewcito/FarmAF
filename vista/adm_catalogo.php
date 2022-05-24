@@ -44,6 +44,7 @@ include_once 'Comple/nav.php';
                   <th>Proveedor</th>
                   <th>Mes</th>
                   <th>Dia</th>
+                  <th>Hora</th>
                 </tr>
               </thead>
               <tbody  class="table-active">
