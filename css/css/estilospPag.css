@@ -1,0 +1,155 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "open sans";
+    background-color: #1C293A;
+}
+header{
+    color: #fff;
+}
+header.textos-header{
+    text-align: left;
+    margin: 0px 0px 20px 10px;
+}
+.contenedor1{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+    color: #fff;
+}
+button{
+    background-color: #00968A;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    display: block;
+    border-radius: 12px;
+    margin: 10px 10px 10px 10px;
+    float: left;
+}
+.imgp{
+    width: 370px;
+    height: 370px;
+    position: absolute;
+    right: 110px;
+    top: 50px;
+}
+main{
+    background-color: #fff;
+    width: 100%;
+    padding: 2%;
+    margin-top: -1%;
+}
+nav {
+    text-align:center;
+    padding: 30px 40px 0 0;
+    display: flex;
+    margin: 0px 0px 10px 10px;
+}
+.nav2{
+    padding: 0 0 0px 210px;
+    display: flex;
+}
+.nav3{
+    padding: 0 280px 0px 0px;
+    display: flex;
+}
+nav>a {
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+
+/* Galeria */
+
+.galeria-port {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagen-port {
+    width: 10%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+.imagen-port>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+.hover-galeria {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: #1c293a;
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria img {
+    width: 100%;
+}
+
+.hover-galeria p {
+    color: white;
+    font-size: small;
+}
+
+.imagen-port:hover .hover-galeria {
+    transform: scale(1);
+}
+
+/* footer */
+
+footer {
+    background: white;
+    padding-bottom: 30px;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-top: 1px solid #10161dc0;
+}
+
+.contenedor-foo h4 {
+    color: #000000;
+    border-bottom: 3px solid #121416;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.contenedor-foo p {
+    color: #000000;
+}
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #070707;
+}

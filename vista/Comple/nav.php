@@ -36,7 +36,7 @@
         <a href="../vista/adm_catalogo.php" class="nav-link">Catalogo</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Ayuda</a>
+        <a href="../vista/pag/Contacto.php" class="nav-link">Ayuda</a>
       </li>
       <li class="nav-item dropdown" id="cat-carrito" style="display:none">
           <img src="../img/carrito.png" class="imagen-carrito nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
