@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FarmAF</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
 </head>
@@ -15,15 +15,15 @@
 
 <body>
     <header>
-        <nav>
+    <nav>
             FarmAF
-            <link class="nav2"><a href="">Vista general</a>
-            <link class="nav2"><a href="">Funciones</a>
-            <link class="nav2"><a href="">Harware</a>
-            <link class="nav3"><a href="Login.php">Iniciar session</a>
+            <link class="nav2"><a href="vista/pag/vista_general.php">Vista general</a>
+            <link class="nav2"><a href="vista/pag/funciones.php">Funciones</a>
+            <link class="nav2"><a href="vista/pag/hardware.php">Hardware</a>
+            <link class="nav3"><a href="vista/Login.php">Iniciar session</a>
         </nav>
     </header>
-     <img class="imgp" src="../img/sof.png" alt="">
+     <img class="imgp" src="img/sof.png" alt="">
         <section class="textos-header">
                 <div class="contenedor1">
                     <div class="texto">
@@ -34,8 +34,8 @@
                                 beatae numquam deserunt. Ea quisquam necessitatibus hic voluptate 
                                 tempora, commodi quos non suscipit! Magni?</p>
                         </div>
-            <a href="" class="botones"><button type="">PRUEBALO YA</button></a>
-            <a href="" class="botones"><button type="">CONTACTANOS</button></a>
+            <a href="Contacto.php" class="botones"><button type="">PRUEBALO YA</button></a>
+            <a href="Contacto.php" class="botones"><button type="">CONTACTANOS</button></a>
         </section>
             <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" 
             viewBox="0 0 1440 180" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -48,20 +48,16 @@
 </body>
 <Main>
 <section class="menu">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia mollitia tenetur quod quam totam omnis? Veritatis iure, modi ut totam rerum delectus culpa est neque qui odit sequi vitae dolores?</p>
-</section>
+        <img src="img/pag/empleados.png" alt="">
+        <img src="img/pag/pagos.png" alt="">
+        <img src="img/pag/compras.png" alt="">
+        <img src="img/pag/contabilidad.png" alt="">
+        <img src="img/pag/facturación.png" alt="">
+        <img src="img/pag/inventario.jpg" alt="">
+        <img src="img/pag/estadisticas.png" alt="">
+        <img src="img/pag/ventas.png" alt="">
+        <img src="img/pag/analisis.png" alt="">
+    </section>
 </Main>
 
 </html>

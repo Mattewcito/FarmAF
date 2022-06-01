@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2022 a las 04:22:50
+-- Tiempo de generación: 01-06-2022 a las 21:46:55
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -32,11 +32,9 @@ CREATE TABLE `cliente` (
   `nombre` varchar(45) NOT NULL,
   `apellidos` varchar(45) NOT NULL,
   `dni` int(45) DEFAULT NULL,
-  `edad` date NOT NULL,
   `telefono` int(45) DEFAULT NULL,
   `correo` varchar(45) DEFAULT NULL,
   `sexo` varchar(45) NOT NULL,
-  `adicional` varchar(500) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `estado` varchar(10) NOT NULL DEFAULT 'A'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -45,10 +43,14 @@ CREATE TABLE `cliente` (
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nombre`, `apellidos`, `dni`, `edad`, `telefono`, `correo`, `sexo`, `adicional`, `avatar`, `estado`) VALUES
-(1, 'Juan Diego', 'Herrera Lopez', 15563221, '1993-11-03', 301754086, 'JuanLopzzz@gmail.com', 'Masculino', NULL, NULL, 'A'),
-(2, 'Pablo', 'Vasquez', 48978, '1992-04-04', 2723128, 'pablovasquez@gmail.com', 'Masculino', 'Cliente frecuente', 'prov_default.png', 'A'),
-(3, 'Dylan', 'Gomez', 10204569, '1993-05-28', 2996587, 'dylango19@gmail.com', 'Masculino', 'Nuevo cliente', 'prov_default.png', 'A');
+INSERT INTO `cliente` (`id`, `nombre`, `apellidos`, `dni`, `telefono`, `correo`, `sexo`, `avatar`, `estado`) VALUES
+(4, 'Pedro ', 'Martinez', 2147483647, 2147483646, 'as32321art@gmail.com', 'Masculino', 'prov_default.png', 'I'),
+(5, 'Mariana', 'Cecilia', 5465451, 2147483647, 'matri123@gmail.com', 'Femenino', 'prov_default.png', 'A'),
+(6, 'Felipe', 'Suarza', 24546334, 313552122, 'braezapata11@misena.edu.com', 'Masculino', 'prov_default.png', 'A'),
+(7, 'David', 'Fergunso', 10035464, 2147483647, 'julivel@noraver.com', 'Masculino', 'prov_default.png', 'A'),
+(8, 'Wendy', 'Sulca', 2147483647, 353423132, 'emaloso25@gmail.com', 'Femenino', 'prov_default.png', 'A'),
+(9, 'Pedro', 'Escamoso', 4329378, 2147483647, '', 'Masculino', 'prov_default.png', 'A'),
+(10, 'Mario', 'Alfonso', 2147483647, 2147483647, '', 'Hombre', 'prov_default.png', 'A');
 
 -- --------------------------------------------------------
 
@@ -71,8 +73,7 @@ CREATE TABLE `compra` (
 --
 
 INSERT INTO `compra` (`id`, `codigo`, `fecha_compra`, `fecha_entrega`, `total`, `id_estado_pago`, `id_proveedor`) VALUES
-(1, '98745', '2022-05-04', '2022-05-12', 20500, 1, 7),
-(2, '123589', '2022-05-04', '2022-05-06', 56000, 1, 8);
+(10, '03XMNFG', '2022-05-29', '2022-05-31', 400000, 1, 18);
 
 -- --------------------------------------------------------
 
@@ -95,27 +96,9 @@ CREATE TABLE `detalle_venta` (
 --
 
 INSERT INTO `detalle_venta` (`id_detalle`, `det_cantidad`, `det_vencimiento`, `id__det_lote`, `id__det_prod`, `lote_id_prov`, `id_det_venta`) VALUES
-(2, 5, '2022-06-24', 29, 7, 8, 11),
-(3, 5, '2022-06-24', 29, 7, 8, 12),
-(4, 5, '2022-07-28', 28, 7, 8, 13),
-(11, 4, '2022-06-24', 26, 2, 8, 19),
-(12, 6, '2022-07-28', 28, 7, 8, 19),
-(13, 1, '2022-07-28', 28, 7, 8, 20),
-(14, 1, '2022-06-24', 26, 2, 8, 21),
-(15, 1, '2022-07-28', 28, 7, 8, 22),
-(17, 2, '2022-06-24', 26, 2, 8, 24),
-(18, 7, '2022-07-28', 28, 7, 8, 24),
-(20, 1, '2022-06-24', 26, 2, 8, 30),
-(21, 1, '2022-07-28', 28, 7, 8, 34),
-(22, 1, '2022-06-24', 26, 2, 8, 37),
-(23, 1, '2022-06-24', 26, 2, 8, 38),
-(24, 2, '2022-07-09', 25, 2, 8, 38),
-(25, 1, '2022-07-09', 25, 2, 8, 39),
-(26, 2, '2022-07-09', 25, 2, 8, 40),
-(27, 1, '2021-10-15', 30, 8, 8, 41),
-(28, 6, '2022-07-28', 28, 7, 8, 42),
-(29, 14, '2021-10-15', 30, 8, 8, 43),
-(30, 12, '2022-07-28', 28, 7, 8, 43);
+(60, 5, '2023-01-31', 11, 28, 18, 72),
+(61, 2, '2023-01-31', 11, 28, 18, 73),
+(63, 1, '2022-10-06', 12, 17, 18, 75);
 
 -- --------------------------------------------------------
 
@@ -154,17 +137,18 @@ CREATE TABLE `laboratorio` (
 --
 
 INSERT INTO `laboratorio` (`id_laboratorio`, `nombre`, `avatar`, `estado`) VALUES
-(1, 'Pfizer', '6222c67b1237a-2.jpeg', 'A'),
-(2, 'Heel', '622aa9ab82a4e-heel-logo-dos-tintas.jpg', 'A'),
-(3, 'BAYER', '6222c6c509a63-bayer.jpeg', 'A'),
-(4, 'JGB', '6230f2ae9e1e3-622f8d186b44d-JGB-logo.png', 'A'),
-(8, 'Yoma lab', '6230a9ba9d9d3-8.gif', 'A'),
-(10, 'Natural feeling', '6230f6b865c33-feeling-150x117.jpg', 'A'),
-(11, 'Nosotras', '6230f62f97269-512-512-9ca0a675363d8521cc871b0faa79f794.png', 'A'),
-(12, 'Nosotras loving', '6230f6e45282f-descarga.png', 'A'),
-(13, 'Mk', '6230f6f96bac5-622f8cec8ae5c-1771cc7f-2319-4fea-9381-0c63a0c9ba6a.jpg', 'A'),
-(21, 'GENFAR', '6230fb03a2ef7-descarga.jpg', 'A'),
-(22, 'x', 'lab_default.jpg', 'A');
+(23, 'Laboratorios Ecar S A ', '6293df4b01501-ecar.webp', 'A'),
+(25, 'Pfizer', '6293e05bb077d-Pfizer-logo.png', 'A'),
+(26, 'MK', '6293dfeaabd40-LOGO-MK2-300x300.png', 'A'),
+(27, 'JGB', '6293e09613d84-JGB-logo.png', 'A'),
+(28, 'Construlaf S A S', '62954f93b8595-Captura.JPG', 'A'),
+(29, 'Tecnoquímica', '6293e10e8f2c2-tecnoquimicas.jpg', 'A'),
+(30, 'Genomma Lab', '6293e1509b49e-unnamed.jpg', 'A'),
+(31, 'Farmabio S A S', '6293e17093c73-Farmabio.png', 'A'),
+(32, 'Vichy ', '6293e1a2cff5e-kisspng-vichy-idalia-smoothness-and-glow-energizing-crea-electron-5b48e18e156de4.1980454415315029900878.jpg', 'A'),
+(33, 'Genfar', '6293e1c3295ca-GENFAR.png', 'A'),
+(34, 'MARFAM', 'lab_default.jpg', 'I'),
+(35, 'PORTUGAL', '6293e213cf1e7-412__loggo08.png', 'A');
 
 -- --------------------------------------------------------
 
@@ -189,8 +173,9 @@ CREATE TABLE `lote` (
 --
 
 INSERT INTO `lote` (`id`, `codigo`, `cantidad`, `cantidad_lote`, `vencimiento`, `precio_compra`, `estado`, `id_compra`, `id_producto`) VALUES
-(1, '123658', 1, 1, '2022-05-27', 20500, 'A', 2, 8),
-(2, '987423', 1, 1, '2022-06-04', 56000, 'A', 2, 7);
+(10, '01010', 80, 80, '2022-12-31', 1500, 'A', 10, 15),
+(11, '01CXSSA', 50, 43, '2023-01-31', 6000, 'A', 10, 28),
+(12, 'XDFWFEF', 35, 34, '2022-10-06', 65000, 'A', 10, 17);
 
 -- --------------------------------------------------------
 
@@ -209,12 +194,35 @@ CREATE TABLE `presentacion` (
 --
 
 INSERT INTO `presentacion` (`id_presentacion`, `nombre`, `estado`) VALUES
-(1, 'Tabletas', 'A'),
-(3, 'Frasco', 'A'),
-(4, 'Ampolla', 'A'),
-(5, 'Blister x 10', 'A'),
-(6, 'Frasco ampolla', 'A'),
-(7, 'xxx', 'A');
+(8, 'TABLETA', 'A'),
+(9, 'JABÓN LÍQUIDO', 'A'),
+(10, 'CHAMPÚ', 'A'),
+(11, 'LOCIÓN', 'A'),
+(12, 'ESPUMA', 'A'),
+(13, 'SOLUCIÓN TÓPICA', 'A'),
+(14, 'UNGÜENTO', 'A'),
+(15, 'CREMA TOPICA', 'A'),
+(16, 'SOLUCIÓN', 'A'),
+(17, 'TABLETA DE LIBERACIÓN PROLONGADA', 'A'),
+(18, 'CÁPSULA BLANDA', 'A'),
+(19, 'CÁPSULA', 'A'),
+(20, 'TABLETA MASTICABLE', 'A'),
+(21, 'POLVO EFERVESCENTE', 'A'),
+(22, 'POLVO PARA RECONSTITUIR A SOLUCIÓN ORAL', 'A'),
+(23, 'TABLETA EFERVESCENTE', 'A'),
+(24, 'GRANULADO', 'A'),
+(25, 'TABLETA LACADA', 'A'),
+(26, 'ESPUMA TÓPICA EN AEROSOL', 'A'),
+(27, 'SOLUCIÓN BUCOFARÍNGEA', 'A'),
+(28, 'POLVO TÓPICO', 'A'),
+(29, 'TALCO SECO EN AEROSOL', 'A'),
+(30, 'SUSUPENSIÓN EN AEROSOL', 'A'),
+(31, 'GEL TÓPICO.', 'A'),
+(32, 'LIOFILIZADO PARA SOLUCIÓN BEBIBLE', 'A'),
+(33, 'CÁPSULA DURA', 'A'),
+(34, 'TABLETA RECUBIERTA', 'A'),
+(35, 'GOTAS – SOLUCIÓN ORAL', 'A'),
+(36, 'LIQUIDO', 'A');
 
 -- --------------------------------------------------------
 
@@ -240,12 +248,19 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `concentracion`, `adicional`, `precio`, `avatar`, `estado`, `prod_lab`, `prod_tip_prod`, `prod_present`) VALUES
-(2, 'cetirizina', '10ml', 'pastillas', 1300, '6230fa0b68a8b-cetirizina-10mg-10und.jpg', 'A', 21, 1, 1),
-(4, 'Omeprazol', '20mg', 'pastilla', 5500, '6230fa77d6955-omeprazol-20mg-10und.jpg', 'A', 21, 1, 1),
-(5, 'Sucralfato', '20g/100ml', 'Administración oral', 71000, '6230fa9cf2f78-144481-1-SUCRALFATO-1GR-5ML-SUSP-ORAL-FCO-X-200ML-GENFAR.jpg', 'A', 21, 1, 3),
-(6, 'Metoclopramida', '5mg/1mL', 'Es un antiemético', 6800, '625f7bfa2b2c8-6230fa4e2998a-95230_1_METOCLOPRAMIDA_10MG_TAB_CAJ_X_30_AMER_GEN.jpg', 'A', 3, 1, 1),
-(7, 'Glimepirida', '4mg', 'Antidiabético oral', 56000, '6230fa2d7add7-96909-1-GLIMEPIRIDA-4MG-TAB-CAJ-X-15-MK.jpg', 'A', 13, 1, 1),
-(8, 'Atropina (clorhidrato)', '1 mg/mL', 'pastillas', 20500, '6230f9da1bcf1-atropina-600x600.png', 'A', 4, 1, 5);
+(14, 'YODURO DE TIBEZONIO', '5 MG', '', 20000, '629527c4a8fa6-D_NQ_NP_647663-MLM46400916080_062021-O.jpg', 'A', 31, 15, 8),
+(15, 'Acetaminofen', '500 MG', 'null', 1700, '6293e9e8e72a2-128968-1-ACETAMINOFEN-FORTE-500+65MG-TAB-CAJ-X-16-MK.jpg', 'A', 33, 12, 8),
+(16, 'Ibuprofeno ', '200 MG', '', 43000, '6295270e2c41e-large-83000431_IBUPROFENO_800MG_TABX10_GF_Blister.jpg', 'A', 27, 12, 34),
+(17, 'Ambroxol', '200 ML', 'Con receta medica', 16000, '6293e9fb7e80d-97481_1_RP_AMBROXOL_15MG_5ML_SOL_ORAL_FCO_X_120ML_MK.jpg', 'A', 26, 12, 16),
+(18, 'Guaifenesina', '240 ML', 'Con receta medica', 19000, '629526e93398e-318708.png', 'A', 27, 12, 36),
+(19, 'Naproxeno', '500 MG', '', 5800, '6295278a0ffd8-unnamed (3).jpg', 'A', 33, 12, 18),
+(20, 'Gaviscon', '300 ML', 'Doble acción y suscepción oral', 56000, '629526bbd262a-61j67d8qUuS._AC_SX425_.jpg', 'A', 30, 13, 36),
+(21, 'Maalox', '120 ML', '', 54000, '629527714e4dd-unnamed (2).jpg', 'A', 23, 13, 36),
+(22, 'Loratadina', '10 MG', '', 1200, '62952749cf782-unnamed (1).jpg', 'A', 30, 15, 20),
+(23, 'Vitamina C', '50 MG', '', 2600, '629527a71340a-110896-1-VITA-C-500MG-TAB-MAST-CAJ-X-100-MK-NARANJA.jpg', 'A', 27, 18, 20),
+(24, 'Condones', '', 'Durex', 6000, '629424ca6c326-Captura.JPG', 'A', 30, 18, 14),
+(28, 'Alcohol', '200 ML', 'null', 6500, '6293e9f3645e2-large-81000880_ALCOHOL_ANTISEPTICO_JGB_700ML.jpg', 'A', 27, 18, 36),
+(33, 'Alcoholx', '200 ML', 'null', 6500, 'prod_default.png', 'I', 27, 18, 36);
 
 -- --------------------------------------------------------
 
@@ -268,11 +283,14 @@ CREATE TABLE `proveedor` (
 --
 
 INSERT INTO `proveedor` (`id_proveedor`, `nombre`, `telefono`, `correo`, `direccion`, `avatar`, `estado`) VALUES
-(3, 'Mk', 4444441, '', 'CARRERA  46 N° 51-58/ BOGOTA: CARRERA 71 NUMERO 48', '6246434c829df-logo-mk.png', 'A'),
-(4, 'noraver', 4444441, 'julivel@noraver.com', 'Cra 3a  Bis # 21 a A-14 7 D 22 CC Gran Plaza ', '6246434058ba7-noraver.png', 'A'),
-(6, 'Genfar', 4444441, 'so25@gmail.com', 'calle 50A numero 41 47', '62464335bd5d8-GENFAR.png', 'A'),
-(7, 'JGB', 2394136, 'asasacs@gmai.com', 'CARRERA  46 N° 51-58/ BOGOTA: CARRERA 71 NUMERO 48', '62464329efd8b-JGB-logo.png', 'A'),
-(8, 'Bayer', 2394136, 'so25@gmail.com', 'TRANSVERSAL  93 Nº 51 - 98 BLOQUE E1 PISO', '6246431ee324a-bayer.png', 'A');
+(16, 'Químicos Campota Y Cía. Ltda.', 2147483647, 'Qimini@info.com', 'CL 99DD INT 11', '629529a8c5329-449-1920w.png', 'A'),
+(17, 'Drogas Calidad', 2147483647, 'drogate@gmail.com', 'Cl. 54 #47-29', '6293eb8c17163-1015235.jpeg', 'A'),
+(18, 'Verona Drogueria', 2147483647, 'verona@info.com', 'Atiende en Medellín desde su sede principal en Bel', '6293eb937bcfd-1007925.jpeg', 'A'),
+(19, 'Reprefarcos S.A.S.', 2147483647, '', 'Cra 3a  Bis # 21 a A-14 7', '629529d47ff43-descarga.jpg', 'A'),
+(20, 'Deposito De Drogas Monaco S A, ANTIOQUIA', 2147483647, '', 'Cl. 46 #45-47', '6295284c3ae5e-descarga.png', 'A'),
+(21, 'Distribuidora De Medicamentos Dismedvital S A S', 2147483647, '', 'CARRERA 52 35 58, MEDELLIN, ANTIOQUIA', '629528a7de57c-Proveedores_Home_Distrimedical_8.png', 'A'),
+(22, 'Distribuidora De Medicamentos Gold Medical S A S', 2147483647, '', 'CARRERA 84 43 54 IN 201', '629529029cf1c-cropped-LOGO-CENTRO-MEDICO.png', 'A'),
+(23, 'Deposito De Medicamentos Hospitalarios S A S', 2147483647, '', ' TRANSVERSAL 6 45 135, MEDELLIN, ANTIOQUIA', '62952968d2ae7-logo-sumintegral-01.jpg', 'A');
 
 -- --------------------------------------------------------
 
@@ -291,13 +309,17 @@ CREATE TABLE `tipo_producto` (
 --
 
 INSERT INTO `tipo_producto` (`id_tip_prod`, `nombre`, `estado`) VALUES
-(1, 'Inyectable', 'A'),
-(2, 'Comprimido', 'A'),
-(4, 'Cápsula', 'A'),
-(7, 'Liquido oral', 'A'),
-(9, 'Polvo oral', 'A'),
-(10, 'Cápsula blanda', 'A'),
-(11, 'xx', 'A');
+(12, 'Analgésicos', 'A'),
+(13, 'Antiácidos ', 'A'),
+(14, 'antiulcerosos', 'A'),
+(15, 'Antialérgicos', 'A'),
+(16, 'Antidiarreicos ', 'A'),
+(17, 'laxantes', 'A'),
+(18, 'Antiinfecciosos', 'A'),
+(19, 'Antiinflamatorios', 'A'),
+(20, 'Antipiréticos', 'A'),
+(21, 'Antitusivos ', 'A'),
+(22, 'mucolíticos', 'A');
 
 -- --------------------------------------------------------
 
@@ -316,7 +338,7 @@ CREATE TABLE `tipo_us` (
 
 INSERT INTO `tipo_us` (`id_tipo_us`, `nombre_tipo`) VALUES
 (1, 'Administrador'),
-(2, 'Tecnico'),
+(2, 'Trabajador'),
 (3, 'Root');
 
 -- --------------------------------------------------------
@@ -346,10 +368,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_us`, `apellidos_us`, `edad`, `dni_us`, `contrasena_us`, `telefono_us`, `residencia_us`, `correo_us`, `sexo_us`, `adicional_us`, `avatar`, `us_tipo`) VALUES
-(1, 'Brayan', 'Zapata', '1996-10-14', 'root', '$2y$10$R9pcV1uvoaU7lUbP3A.jT.JHYyEXXxTI33s11LU.htzlQPwz/zd1W', '3017245403', 'calle 46 #20-20', 'brianmer242003@gmail.com', 'Masculino', 'Ing sistemas', '625f6519d1763-624f70c21a70a-icon-5359553_960_720.webp', 3),
-(2, 'Manuel ', 'Gonzales', '1997-05-15', 'manuel', '$2y$10$htEFMffJxGWogZVHYQIc/.yK9Jl2jyM/mj91O180IRAbpxTeejvH6', '2312589', 'calle 50A #16-54', 'manugon@gmail.com', 'Masculino', 'Amante del futbol ', '624f711720f2e-images.png', 1),
-(3, 'Daniel', 'perez ', '1994-07-19', 'daniel', '$2y$10$eyuoKHB2GZuj1n6DjH7nAesgyTg9Xvt5NP9WOPpvVbCMmnoTBVgTy', NULL, NULL, NULL, NULL, NULL, '624f743c7eb85-icono-del-usuario-en-estilo-plano-de-moda-aislado-fondo-gris-símbolo-123663211.jpg', 2),
-(5, 'Michelle', 'Echeverri Gomez', '1992-09-17', 'michelle', '$2y$10$88mVA.iVVyZmTyu6z6aAkOBUx3hxLmNRi0pB/RLyJDvUQv/vOAQ6K', NULL, NULL, NULL, NULL, NULL, '624f71d91163d-images.png', 1);
+(1, 'Brayan', 'Zapata', '1992-10-14', '1001145148', '$2y$10$3.4to0nE6LeE/XAEy9Sam../16CZPrA.47JRDqCMHdmlp6SXk.RGa', '3017245403', 'CR 99DD CL 107 ', 'brianmer242003@gmail.com', 'Masculino', 'Gerente de la Asunción', '6293d5491bca9-1001145148 FOTO BRAYAN ZAPATA.jpg', 3),
+(13, 'Emanuel ', 'López', '2003-01-25', 'Emanuel ', '$2y$10$O2GBeADdOJF1v66JFX.zvOBSn7fTKxij1ZYpQqV.LmRA7wDi80Jea', '3018912131', 'calle 46 #20-20', 'emaloso25@gmail.com', 'Masculino', '', '6293f081ac3a3-emanuel.jpg', 1),
+(15, 'Juliana', 'Velásquez', '1994-07-19', 'Juliana', '$2y$10$cokTD96n3LPE6EKr4M44JOpZI7JUQ92oZWlFeOyDXDA/9ch4kQVXC', '313235231313', 'calle 50A #16-54', 'julivel@noraver.com', 'Femenino', '', '6293f1bcd6544-juliana.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -372,28 +393,9 @@ CREATE TABLE `venta` (
 --
 
 INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`, `id_cliente`) VALUES
-(8, '2022-04-01 16:19:27', 'Ernesto perez', 0, 36400, 1, NULL),
-(9, '2022-03-01 16:25:21', 'FRAILEJON', 1234, 2600, 1, NULL),
-(11, '2022-04-01 17:11:45', 'Andrea', 0, 280000, 3, NULL),
-(12, '2022-03-01 17:12:33', 'ema', 0, 280000, 1, NULL),
-(13, '2022-04-01 17:13:23', 'steven', 0, 280000, 5, NULL),
-(19, '2022-04-02 19:27:39', 'Mario Ruiz', 13232, 341200, 5, NULL),
-(20, '2022-04-02 19:41:51', 'Dario', 23232, 56000, 1, NULL),
-(21, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2, NULL),
-(22, '2022-04-02 19:42:40', 'Lucas', 21133, 56000, 5, NULL),
-(24, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 1, NULL),
-(26, '2022-03-06 17:34:36', 'Juana Martinez', 429625, 69000, 1, NULL),
-(30, '2022-04-07 00:36:30', 'xxxx', 0, 1300, 1, NULL),
-(34, '2022-03-07 00:49:03', 'xxx3', 0, 56000, 1, NULL),
-(35, '2022-04-02 19:42:15', 'Andrea', 123, 1300, 2, NULL),
-(36, '2022-02-02 19:44:09', 'Daniel Cardona', 1232323, 394600, 2, NULL),
-(37, '2022-04-15 21:56:37', 'Brayan Daniel', 32434343, 1300, 1, NULL),
-(38, '2022-04-19 08:15:24', 'fdkfdfdfdf', 32434343, 3900, 1, NULL),
-(39, '2022-04-19 21:11:23', 'asasdas', 0, 1400, 1, NULL),
-(40, '2022-04-19 21:52:57', 'x', 0, 2600, 1, NULL),
-(41, '2022-04-26 21:46:27', '', 0, 20500, 1, 2),
-(42, '2022-04-28 11:51:17', '', 0, 336000, 1, 1),
-(43, '2022-04-28 11:51:44', '', 0, 959000, 1, 3);
+(72, '2022-05-29 17:13:22', '', 0, 32500, 1, 5),
+(73, '2022-05-29 17:22:33', '', 0, 13000, 15, 4),
+(75, '2022-06-01 07:52:25', '', 0, 16000, 1, 8);
 
 -- --------------------------------------------------------
 
@@ -415,28 +417,9 @@ CREATE TABLE `venta_producto` (
 --
 
 INSERT INTO `venta_producto` (`id_ventaproducto`, `precio`, `cantidad`, `subtotal`, `producto_id_producto`, `venta_id_venta`) VALUES
-(2, 0, 28, 36400, 2, 8),
-(3, 0, 2, 2600, 2, 9),
-(5, 0, 5, 280000, 7, 11),
-(6, 0, 5, 280000, 7, 12),
-(7, 0, 5, 280000, 7, 13),
-(13, 0, 4, 5200, 2, 19),
-(14, 0, 6, 336000, 7, 19),
-(15, 0, 1, 56000, 7, 20),
-(16, 0, 1, 1300, 2, 21),
-(17, 0, 1, 56000, 7, 22),
-(19, 0, 2, 2600, 2, 24),
-(20, 0, 7, 392000, 7, 24),
-(22, 0, 1, 1300, 2, 30),
-(23, 0, 1, 56000, 7, 34),
-(24, 0, 1, 1300, 2, 37),
-(25, 0, 3, 3900, 2, 38),
-(26, 1400, 1, 1400, 2, 39),
-(27, 1300, 2, 2600, 2, 40),
-(28, 20500, 1, 20500, 8, 41),
-(29, 56000, 6, 336000, 7, 42),
-(30, 20500, 14, 287000, 8, 43),
-(31, 56000, 12, 672000, 7, 43);
+(59, 6500, 5, 32500, 28, 72),
+(60, 6500, 2, 13000, 28, 73),
+(62, 16000, 1, 16000, 17, 75);
 
 --
 -- Índices para tablas volcadas
@@ -547,19 +530,19 @@ ALTER TABLE `venta_producto`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT de la tabla `estado_pago`
@@ -571,37 +554,37 @@ ALTER TABLE `estado_pago`
 -- AUTO_INCREMENT de la tabla `laboratorio`
 --
 ALTER TABLE `laboratorio`
-  MODIFY `id_laboratorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_laboratorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `lote`
 --
 ALTER TABLE `lote`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `presentacion`
 --
 ALTER TABLE `presentacion`
-  MODIFY `id_presentacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_presentacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_producto`
 --
 ALTER TABLE `tipo_producto`
-  MODIFY `id_tip_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_tip_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_us`
@@ -613,19 +596,19 @@ ALTER TABLE `tipo_us`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_producto`
 --
 ALTER TABLE `venta_producto`
-  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Restricciones para tablas volcadas
