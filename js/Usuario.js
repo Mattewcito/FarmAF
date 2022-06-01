@@ -24,7 +24,7 @@
             if(usuario.tipo=='Root'){
                 tipo+=`<h1 class="badge badge-danger">${usuario.tipo}</h1>`;
             }
-            if(usuario.tipo=='Tecnico'){
+            if(usuario.tipo=='Trabjador'){
                 tipo+=`<h1 class="badge badge-info">${usuario.tipo}</h1>`;
             }
             if(usuario.tipo=='Administrador'){

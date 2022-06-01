@@ -38,6 +38,7 @@
       $('#gestion_producto').hide();
       $('#gestion_atributo').hide();
       $('#gestion_proveedor').hide();
+      $('#gestion_compra').hide();
     }
   })
 </script>

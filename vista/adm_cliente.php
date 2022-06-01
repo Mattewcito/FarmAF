@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['us_tipo']==1||$_SESSION['us_tipo']==3){
+if($_SESSION['us_tipo']==1||$_SESSION['us_tipo']==3||$_SESSION['us_tipo']==2){
   include_once 'Comple/header.php';
 ?>
 <title>ADM | FarmAF</title>
@@ -32,10 +32,6 @@ include_once 'Comple/nav.php';
               <div class="form-group">
                   <label for="correo_edit">Correo</label>
                   <input id="correo_edit" type="email" class="form-control" placeholder="Ingrese el correo">
-              </div>
-              <div class="form-group">
-                  <label for="adicional_edit">Adicional</label>
-                  <input id="adicional_edit" type="text" class="form-control" placeholder="Ingrese adicional" required>
               </div>
               <input type="hidden" id="id_cliente">
           </div>
@@ -80,10 +76,6 @@ include_once 'Comple/nav.php';
                   <input id="dni" type="number" class="form-control" placeholder="Ingrese el dni" required>
               </div>
               <div class="form-group">
-                  <label for="edad">Nacimiento</label>
-                  <input id="edad" type="date" class="form-control" placeholder="Ingrese la fecha de nacimiento" required>
-              </div>
-              <div class="form-group">
                   <label for="telefono">Telefono</label>
                   <input id="telefono" type="number" class="form-control" placeholder="Ingrese el telefono" required>
               </div>
@@ -94,10 +86,6 @@ include_once 'Comple/nav.php';
               <div class="form-group">
                   <label for="sexo">Sexo</label>
                   <input id="sexo" type="text" class="form-control" placeholder="Ingrese su sexo" required>
-              </div>
-              <div class="form-group">
-                  <label for="adicional">Adicional</label>
-                  <input id="adicional" type="text" class="form-control" placeholder="Ingrese adicional" required>
               </div>
               <input type="hidden" id="id_edit_prov">
           </div>
@@ -118,13 +106,6 @@ include_once 'Comple/nav.php';
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1>Gestion cliente <button type="button" data-toggle="modal" data-target="#crearcliente" class="btn bg-gradient-primary ml-2">Crear cliente</button></h1>
-        </div>
-
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-            <li class="breadcrumb-item active">Gestion cliente</li>
-          </ol>
         </div>
       </div>
     </div>

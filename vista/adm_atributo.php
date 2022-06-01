@@ -162,12 +162,6 @@ include_once 'Comple/nav.php';
           <div class="col-sm-6">
             <h1>Gestion atributos</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">Gestion atributo</li>
-            </ol>
-          </div>
         </div>
       </div>
     </section>

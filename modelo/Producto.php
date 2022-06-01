@@ -42,7 +42,7 @@ include 'Conexion.php';
                 echo 'noedit';
             }
             else{
-                $sql="UPDATE producto SET nombre=:nombre,concentracion=:concentracion,adicional=:adicional,prod_lab=:laboratorio,prod_tip_prod=:tipo and prod_present=:presentacion, precio=:precio where id_producto=:id";
+                $sql="UPDATE producto SET nombre=:nombre,concentracion=:concentracion,adicional=:adicional,prod_lab=:laboratorio,prod_tip_prod=:tipo,prod_present=:presentacion, precio=:precio where id_producto=:id";
                 $query = $this->acceso->prepare($sql);
                 $query->execute(array(':id'=>$id,':nombre'=>$nombre,':concentracion'=>$concentracion,':adicional'=>$adicional,':precio'=>$precio,':laboratorio'=>$laboratorio,':tipo'=>$tipo,':presentacion'=>$presentacion));
                 echo 'edit';

@@ -20,7 +20,6 @@ $(document).ready(function(){
     function listar_compras(){
         funcion='listar_compras';
         $.post('../controlador/ComprasController.php', {funcion},(response)=>{
-            console.log(response);
             let datos = JSON.parse(response);
             datatable = $('#compras').DataTable( {
                 data: datos,
@@ -88,7 +87,6 @@ $(document).ready(function(){
         $('#proveedor').html(datos.proveedor);
         $('#total').html(datos.total);
         $.post('../controlador/LoteController.php',{funcion,id},(response)=>{
-            console.log(response);
             let registros = JSON.parse(response);
             let template="";
             $('#detalles').html(template);

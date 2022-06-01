@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['us_tipo'] == 3) {
+if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
   include_once 'Comple/header.php';
 ?>
   <title>ADM | FarmAF</title>
@@ -14,13 +14,6 @@ if ($_SESSION['us_tipo'] == 3) {
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Crear compra</h1>
-          </div>
-
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">Crear compra</li>
-            </ol>
           </div>
         </div>
       </div>
@@ -101,8 +94,7 @@ if ($_SESSION['us_tipo'] == 3) {
                   <div class="card col-sm-12">
                         <table class=" table table-hover text-nowrap table-responsive">
                             <thead class='table-success'>
-                                <tr>
-                                   
+                                <tr>  
                                     <th>Producto</th>
                                     <th>Codigo</th>
                                     <th>Cantidad</th>

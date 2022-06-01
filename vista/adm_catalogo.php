@@ -15,12 +15,6 @@ include_once 'Comple/nav.php';
           <div class="col-sm-6">
             <h1 class="animate__animated animate__backInDown">Catalogo</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">Catalogo</li>
-            </ol>
-          </div>
         </div>
       </div>
     </section>

@@ -16,12 +16,6 @@ include_once 'Comple/nav.php';
           <div class="col-sm-6">
             <h1>Compra</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">Compra</li>
-            </ol>
-          </div>
         </div>
       </div>
     </section>
@@ -35,7 +29,7 @@ include_once 'Comple/nav.php';
                     <div class="card-body p-0">
                         <header>
                             <div class="logo_cp">
-                                <img src="../img/avatar2.jpg" width="100" height="100">
+                                <img src="../img/pngwing.com.png" width="100" height="210">
                             </div>
                             <h1 class="titulo_cp">SOLICITUD DE COMPRA</h1>
                             <div class="datos_cp">

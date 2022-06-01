@@ -103,13 +103,6 @@ include_once 'Comple/nav.php';
         <div class="col-sm-6">
           <h1>Gestion proveedores <button type="button" data-toggle="modal" data-target="#crearproveedor" class="btn bg-gradient-primary ml-2">Crear proveedor</button></h1>
         </div>
-
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-            <li class="breadcrumb-item active">Gestion proveedor</li>
-          </ol>
-        </div>
       </div>
     </div>
   </section>

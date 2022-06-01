@@ -333,7 +333,7 @@ if ($_POST['funcion'] == 'recuperar') {
                                                     <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 40px;font-family:Lato,sans-serif;"
                                                         align="left">
                                                         <div align="left">
-                                                            <a href="http://localhost/farmacia/vista/login.php"
+                                                            <a href="http://localhost/FarmAF/FarmAF/vista/login.php"
                                                                 target="_blank"
                                                                 style="box-sizing: border-box;display: inline-block;font-family:Lato,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #18163a; border-radius: 1px;-webkit-border-radius: 1px; -moz-border-radius: 1px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                                                                 <span

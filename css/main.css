@@ -31,8 +31,6 @@
         font-size: 15px;
     }
 
-
-
     .carro tbody tr td:nth-child(1):before{
         content: "Codigo";
         font-weight: bold;

@@ -10,25 +10,23 @@ $(document).ready(function(){
             let template='';
             clientes.forEach(cliente => {
                 template+=`
-                <div cliId="${cliente.id}"cliTelefono="${cliente.telefono}"cliCorreo="${cliente.correo}"cliAdicional="${cliente.adicional}"cliNombre="${cliente.nombre}"class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+                <div cliId="${cliente.id}"cliTelefono="${cliente.telefono}"cliCorreo="${cliente.correo}"cliNombre="${cliente.nombre}"class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
             <div class="card bg-light d-flex flex-fill">
                 <div class="card-header text-muted border-bottom-0">
                 <h1 class="badge badge-success">Cliente</h1>
             </div>
                 <div class="card-body pt-0">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-5">
                             <h2 class="lead"><b>${cliente.nombre}</b></h2>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Dni: ${cliente.dni}</li>
-                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Edad: ${cliente.edad}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Telefono: ${cliente.telefono}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Correo: ${cliente.correo}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Sexo: ${cliente.sexo}</li>
-                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Adicional: ${cliente.adicional}</li>
                                     </ul>
                         </div>
-                        <div class="col-5 text-center">
+                        <div class="col-7 text-center">
                             <img src="${cliente.avatar}" alt="user-avatar" class="img-circle img-fluid">
                         </div>
                     </div>
@@ -63,13 +61,11 @@ $(document).ready(function(){
         let nombre= $('#nombre').val();
         let apellido= $('#apellido').val();
         let dni= $('#dni').val();
-        let edad= $('#edad').val();
         let telefono= $('#telefono').val();
         let correo= $('#correo').val();
         let sexo= $('#sexo').val();
-        let adicional= $('#adicional').val();
         funcion = "crear";
-        $.post('../controlador/ClienteController.php',{nombre, apellido,dni,edad,telefono,correo,sexo,adicional,funcion},(response)=>{
+        $.post('../controlador/ClienteController.php',{nombre, apellido,dni,telefono,correo,sexo,funcion},(response)=>{
             if(response=='add'){
                 $('#add-cli').hide('slow');
                 $('#add-cli').show(1000);
@@ -90,20 +86,17 @@ $(document).ready(function(){
         let elemento = $(this)[0].activeElement.parentElement.parentElement.parentElement.parentElement;
         let telefono = $(elemento).attr('cliTelefono');
         let correo = $(elemento).attr('cliCorreo');
-        let adicional = $(elemento).attr('cliAdicional');
         let id = $(elemento).attr('cliId');
         $('#telefono_edit').val(telefono);
         $('#correo_edit').val(correo);
-        $('#adicional_edit').val(adicional);
         $('#id_cliente').val(id);
     })
     $('#form-editar').submit(e=>{
         let id= $('#id_cliente').val();
         let telefono= $('#telefono_edit').val();
         let correo= $('#correo_edit').val();
-        let adicional= $('#adicional_edit').val();
         funcion = "editar";
-        $.post('../controlador/ClienteController.php',{id,telefono,correo,adicional,funcion},(response)=>{
+        $.post('../controlador/ClienteController.php',{id,telefono,correo,funcion},(response)=>{
             console.log(response);
             if(response=='edit'){
                 $('#edit-cli').hide('slow');

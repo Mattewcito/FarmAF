@@ -20,7 +20,7 @@
       </div>
       <div class="modal-body">
         <div class="text-center">
-          <img id="avatar3" src="../img/avatar2.jpg" class="profile-user-img img-fluid img-circle">
+          <img id="avatar3" src="../img/6293d5491bca9-1001145148 FOTO BRAYAN ZAPATA.jpg" class="profile-user-img img-fluid img-circle">
           <div class="text-center">
             <b>
               <?php
@@ -68,7 +68,7 @@
       </div>
       <div class="modal-body">
         <div class="text-center">
-          <img id="avatar2" src="../img/avatar2.jpg" class="profile-user-img img-fluid img-circle">
+          <img id="avatar2" src="../img/default.png" class="profile-user-img img-fluid img-circle">
           <div class="text-center">
             <b>
               <?php
@@ -105,13 +105,6 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Editar datos personales</h1>
-          </div>
-
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">Datos personales</li>
-            </ol>
           </div>
         </div>
       </div>
