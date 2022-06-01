@@ -23,7 +23,7 @@ class Cliente{
             return $this->objetos;
         }
     }
-    function crear($nombre,$apellido,$dni,$edad,$telefono,$correo,$sexo,$adicional,$avatar){
+    function crear($nombre,$apellido,$dni,$telefono,$correo,$sexo,$avatar){
         $sql="SELECT id,estado FROM cliente WHERE nombre=:nombre and apellidos=:apellido and dni=:dni";
         $query = $this->acceso->prepare($sql);
         $query->execute(array(':nombre'=>$nombre,':apellido'=>$apellido,':dni'=>$dni));
@@ -44,13 +44,13 @@ class Cliente{
             }
         }
         else{
-            $sql="INSERT INTO cliente(nombre,apellidos,dni,edad,telefono,correo,sexo,adicional,avatar) values (:nombre,:apellido,:dni,:edad,:telefono,:correo,:sexo,:adicional,:avatar)";
+            $sql="INSERT INTO cliente(nombre,apellidos,dni,telefono,correo,sexo,avatar) values (:nombre,:apellido,:dni,:telefono,:correo,:sexo,:avatar)";
             $query = $this->acceso->prepare($sql);
-            $query->execute(array(':nombre'=>$nombre,':apellido'=>$apellido,':dni'=>$dni,':edad'=>$edad,':telefono'=>$telefono,':correo'=>$correo,':sexo'=>$sexo,':adicional'=>$adicional,':avatar'=>$avatar));
+            $query->execute(array(':nombre'=>$nombre,':apellido'=>$apellido,':dni'=>$dni,':telefono'=>$telefono,':correo'=>$correo,':sexo'=>$sexo,':avatar'=>$avatar));
             echo 'add';
         }
     }
-    function editar($id,$telefono,$correo,$adicional){
+    function editar($id,$telefono,$correo){
         $sql="SELECT id FROM cliente WHERE id=:id";        
         $query = $this->acceso->prepare($sql);
         $query->execute(array(':id'=>$id));
@@ -61,10 +61,10 @@ class Cliente{
         else{
             $sql="UPDATE cliente SET telefono=:telefono, correo=:correo, adicional=:adicional WHERE id=:id";
             $query= $this->acceso->prepare($sql);
-            $query->execute(array(':id'=>$id,':telefono'=>$telefono, ':correo'=>$correo, ':adicional'=>$adicional));
+            $query->execute(array(':id'=>$id,':telefono'=>$telefono, ':correo'=>$correo));
             echo 'edit';
         }
-       
+
     }
     function borrar($id){
         $sql="UPDATE cliente SET estado='I' WHERE id=:id";

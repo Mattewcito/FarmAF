@@ -27,7 +27,7 @@ else{
         <div class="contenido-login">
             <form action="../controlador/LoginController.php" method="post">
                 <img src="../img/pngwing.com.png" alt="">
-                <h2>La Asuncion</h2>
+                <h2>FarmAF</h2>
                 <div class="input-div dni">
                     <div class="i">
                         <i class="fas fa-user"></i>

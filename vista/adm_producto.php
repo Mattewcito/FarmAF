@@ -139,13 +139,6 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
               <button type="button" data-toggle="modal" data-target="#modalFormatoReporte" class="btn bg-gradient-success ml-2">Generar reporte</button>
           </h1>
           </div>
-
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">Gestion producto</li>
-            </ol>
-          </div>
         </div>
       </div>
     </section>

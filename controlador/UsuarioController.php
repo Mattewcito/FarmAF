@@ -122,7 +122,7 @@ if($_POST['funcion']=='crear_usuario'){
     $dni = $_POST['dni'];
     $pass = $_POST['pass'];
     $tipo = 2;
-    $avatar ='default.jpg';
+    $avatar ='default.png';
     $usuario->crear($nombre,$apellido,$edad,$dni,$pass,$tipo,$avatar);
 }
 if($_POST['funcion']=='ascender'){
