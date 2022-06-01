@@ -29,10 +29,10 @@
             <div class="texto">
                 <div class="servicios-ind">
                     <p><br><br><br><br><br><br><br><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Cumque eligendi aspernatur odio aperiam quia, inventore laborum
-                        beatae numquam deserunt. Ea quisquam necessitatibus hic voluptate
-                        tempora, commodi quos non suscipit! Magni?</p>
+                    Gestionamiento para el buen funcionamiento , y una adecuada dispensación
+                    de medicamentos, FarmAF es un sistema de control de inventario y facturación 
+                    automatizado con el propósito de mantener la debida organización y distribución 
+                    de medicamentos y productos de las farmacias.</p>
                 </div>
                 <a href="Contacto.php" class="botones"><button type="">PRUEBALO YA</button></a>
                 <a href="Contacto.php" class="botones"><button type="">CONTACTANOS</button></a>
@@ -59,6 +59,7 @@
                     <img src="../../img/pag/blanco.jpg" alt="">
                     <div class="hover-galeria">
                         <img src="../../img/pngwing.com.png" alt="">
+                        <a href="funciones.php"><p>Ver más...</p></a>
                     </div>
                 </div>
                 <div class="imagen-port">
@@ -100,6 +101,7 @@
                     <img src="../../img/pag/blanco.jpg" alt="">
                     <div class="hover-galeria">
                         <img src="../../img/pngwing.com.png" alt="">
+                        <a href="funciones.php"><p>Ver más...</p></a>
                     </div>
                 </div>
             </div>
@@ -110,6 +112,7 @@
                     <img src="../../img/pag/blanco.jpg" alt="">
                     <div class="hover-galeria">
                         <img src="../../img/pngwing.com.png" alt="">
+                        <a href="funciones.php"><p>Ver más...</p></a>
                     </div>
                 </div>
                 <div class="imagen-port">
@@ -144,6 +147,7 @@
                     <img src="../../img/pag/blanco.jpg" alt="">
                     <div class="hover-galeria">
                         <img src="../../img/pngwing.com.png" alt="">
+                        <a href="funciones.php"><p>Ver más...</p></a>
                     </div>
                 </div>
             </div>
