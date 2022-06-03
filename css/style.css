@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
     font-family: "open sans";
     background-color: #1C293A;
@@ -349,3 +350,6 @@ span {
     margin: 20px 0 0 0;
     color: #070707;
 }
+
+
+

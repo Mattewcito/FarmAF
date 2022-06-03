@@ -126,8 +126,8 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
               </div>
             </div>
           </div>
-          <div class="card-body">
-           <table id="compras" class="table table table-hover">
+          <div class="card-body p-0 table-responsive">
+           <table id="compras" class="table table table-hover text-nowrap" style="width:100%">
              <thead>
                <tr>
                  <th>#</th>
