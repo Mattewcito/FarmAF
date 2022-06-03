@@ -52,7 +52,7 @@ include_once 'Comple/nav.php';
     </section>
     <section class="content">
       <div class="container-fluid">
-        <div class="card card-success">
+        <div class="card bg-primary">
           <div class="card-header">
             <h3 class="card-title">Buscar producto</h3>
             <div class="input-group">

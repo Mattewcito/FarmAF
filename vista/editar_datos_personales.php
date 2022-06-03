@@ -116,7 +116,7 @@
             <div class="card card-success card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img id="avatar1" src="../img/avatar2.jpg" class="profile-user-img img-fluid img-circle">
+                  <img id="avatar1" src="../img/default.png" class="profile-user-img img-fluid img-circle">
                 </div>
                 <div class="text-center mt-1">
                 <button data-toggle="modal" data-target="#cambiophoto" type="button" class="btn btn-primary btn-sm">Cambiar foto</button>

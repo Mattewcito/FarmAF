@@ -178,7 +178,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
             <h3 class="card-title">Buscar ventas</h3>
             
           </div>
-          <div class="card-body">
+          <div class="card-body p-0 table-responsive">
             <table id="tabla_venta" class="display table table-hover text-nowrap" style="width:100%">
                     <thead>
                         <tr>

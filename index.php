@@ -20,7 +20,7 @@
             <link class="nav2"><a href="vista/pag/vista_general.php">Vista general</a>
             <link class="nav2"><a href="vista/pag/funciones.php">Funciones</a>
             <link class="nav2"><a href="vista/pag/hardware.php">Hardware</a>
-            <link class="nav3"><a href="Login.php">Iniciar session</a>
+            <link class="nav3"><a href="vista/login.php">Iniciar session</a>
         </nav>
     </header>
     <img class="imgp" src="img/sof.png" alt="">
