@@ -53,7 +53,7 @@ if($_POST['funcion']=='buscar_lotes_riesgo'){
         $verificado = $diferencia->invert;
         $estado='light';
         if($verificado==0){
-            $estado = 'danger';
+            $estado = 'Peligro';
             $anio=$anio*(-1);
             $mes=$mes*(-1);
             $dia=$dia*(-1);
@@ -64,10 +64,10 @@ if($_POST['funcion']=='buscar_lotes_riesgo'){
                 $estado='light';
             }
             if($mes<=3&&$anio==0){
-                $estado='warning';
+                $estado='Advertencia';
             }
         }
-        if($estado=='danger' || $estado=='warning'){
+        if($estado=='Peligro' || $estado=='Advertencia'){
             $json[]=array(
                 'id'=>$objeto->id_lote,
                 'nombre'=>$objeto->prod_nom,
@@ -106,7 +106,7 @@ if($_POST['funcion']=='buscar'){
         $verificado = $diferencia->invert;
         $estado='light';
         if($verificado==0){
-            $estado = 'danger';
+            $estado = 'Peligro';
             $anio=$anio*(-1);
             $mes=$mes*(-1);
             $dia=$dia*(-1);

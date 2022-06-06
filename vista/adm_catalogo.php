@@ -27,7 +27,7 @@ include_once 'Comple/nav.php';
           </div>
           <div class="animate__animated  animate__bounceInDown card-body p-0 table-responsive">
             <table id="lotes" class="table table-hover text-nowrap">
-              <thead class="table"style="background: #1C293A; color: #FFFFFF" > 
+              <thead class="table" > 
                 <tr>
                   <th>Cod</th>
                   <th>Producto</th>

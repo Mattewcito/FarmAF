@@ -27,7 +27,7 @@ $(document).ready(function(){
                                     </ul>
                         </div>
                         <div class="col-7 text-center">
-                            <img src="${cliente.avatar}" alt="user-avatar" class="img-circle img-fluid">
+                            <img src="${cliente.avatar}" alt="user-avatar" class="img-circle img-fluid"style="border: 3px solid #1c293A">
                         </div>
                     </div>
                 </div>
