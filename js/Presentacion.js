@@ -45,7 +45,7 @@ $(document).ready(function(){
                 template+=`
                 <tr preId="${presentacion.id}" preNombre="${presentacion.nombre}">
                     <td>
-                        <button class="editar-pre btn btn-success" title="Editar presentacion" type="button" data-toggle="modal" data-target="#crearpresentacion">
+                        <button class="editar-pre btn btn-secondary" title="Editar presentacion" type="button" data-toggle="modal" data-target="#crearpresentacion">
                         <i class="fas fa-pencil-alt"></i></button>
                         <button class="borrar-pre btn btn-danger" title="Eliminar presentacion"><i class="fas fa-trash-alt"></i></button>
                     </td>

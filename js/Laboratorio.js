@@ -45,14 +45,14 @@ $(document).ready(function(){
                 template+=`
                 <tr labId="${laboratorio.id}" labNombre="${laboratorio.nombre}" labAvatar="${laboratorio.avatar}">
                     <td>
-                        <button class="avatar btn btn-info" title="Cambiar logo de laboratorio" type="button" data-toggle="modal" data-target="#cambiologo">
+                        <button class="avatar btn btn-secondary" title="Cambiar logo de laboratorio" type="button" data-toggle="modal" data-target="#cambiologo">
                         <i class="far fa-image"></i></button>
-                        <button class="editar btn btn-success" title="Editar laboratorio" type="button" data-toggle="modal" data-target="#crearlaboratorio">
+                        <button class="editar btn btn-secondary" title="Editar laboratorio" type="button" data-toggle="modal" data-target="#crearlaboratorio">
                         <i class="fas fa-pencil-alt"></i></button>
                         <button class="borrar btn btn-danger" title="Eliminar laboratorio"><i class="fas fa-trash-alt"></i></button>
                     </td>
                     <td>
-                        <img src="${laboratorio.avatar}" class="img-fluid rounded" width="70" height="70">
+                        <img src="${laboratorio.avatar}" class="profile-user-img img-fluid img-circle" width="70" height="70">
                     </td>
                     <td>${laboratorio.nombre}</td>          
                 </tr>

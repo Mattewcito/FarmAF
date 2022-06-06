@@ -56,9 +56,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A; color: #FFFFFF">
               <h3 class="card-title">Crear usuario</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close"style=" color: #FFFFFF">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -92,7 +92,7 @@ include_once 'Comple/nav.php';
               </div>
           </div>
           <div class="card-footer">
-              <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
+              <button type="submit" class="btn bg-gradient-primary float-right m-1"style="background: #1C293A!important; color: #FFFFFF; border: 0px">Guardar</button>
               <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
           </form>
         </div>
@@ -107,7 +107,7 @@ include_once 'Comple/nav.php';
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Gestion usuarios <button id="button-crear" type="button" data-toggle="modal" data-target="#crearusuario" class="btn bg-gradient-primary ml-2">Crear usuario</button></h1>
+          <h1>Gestion usuarios <button style="background: #1C293A!important; color: #FFFFFF" id="button-crear" type="button" data-toggle="modal" data-target="#crearusuario" class="btn bg-gradient-primary ml-2">Crear usuario</button></h1>
           <input type="hidden" id="tipo_usuario" value="<?php echo $_SESSION['us_tipo'] ?>">
         </div>
       </div>
@@ -116,7 +116,7 @@ include_once 'Comple/nav.php';
   <section class="content">
   <div class="container-fluid">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A; color: #FFFFFF">
               <h3 class="card-title">Buscar usuarios</h3>
               <div class="input-group">
                   <input type="text" id="buscar" class="form-control float-left" placeholder="Ingrese nombre de usuario">

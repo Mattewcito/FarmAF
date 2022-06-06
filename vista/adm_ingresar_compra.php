@@ -21,7 +21,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Crear compra</h3>
             </div>
           </div>
@@ -86,7 +86,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
                             <input id="precio_compra"type="number" step="any" class="form-control" value='1' placeholder="Ingrese precio de compra" required>
                         </div>
                         <div class="form-group text-right">
-                            <button class="agregar-producto btn bg-gradient-success ml-2">Agregar</button>
+                            <button class="agregar-producto btn btn-secondary ml-2">Agregar</button>
                         </div>
                     </div>
                     
@@ -106,7 +106,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
                             <tbody id="registros_compra" class='table-active'>
                             </tbody>
                         </table>
-                        <button class="crear-compra btn bg-gradient-info text-center">Crear compra</button>
+                        <button class="crear-compra btn btn-secondary text-center">Crear compra</button>
                     </div>
                   
                 </div>

@@ -21,7 +21,7 @@ if ($_SESSION['us_tipo'] == 3) {
         <section class="content">
             <div class="container-fluid">
                 <div class="card card-success">
-                    <div class="card-header">
+                    <div class="card-header"style="background: #1C293A!important">
                         <h3 class="card-title">Consultas generales</h3>
                     </div>
                     <div class="card-body">

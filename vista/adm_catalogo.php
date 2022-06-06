@@ -27,7 +27,7 @@ include_once 'Comple/nav.php';
           </div>
           <div class="animate__animated  animate__bounceInDown card-body p-0 table-responsive">
             <table id="lotes" class="table table-hover text-nowrap">
-              <thead class="table-danger"> 
+              <thead class="table"style="background: #1C293A; color: #FFFFFF" > 
                 <tr>
                   <th>Cod</th>
                   <th>Producto</th>
@@ -52,8 +52,8 @@ include_once 'Comple/nav.php';
     </section>
     <section class="content">
       <div class="container-fluid">
-        <div class="card bg-primary">
-          <div class="card-header">
+        <div class="card card-success">
+          <div class="card-header"style="background: #1C293A">
             <h3 class="card-title">Buscar producto</h3>
             <div class="input-group">
               <input type="text" id="buscar-producto" class="form-control float-left" placeholder="Ingrese nombre de producto">

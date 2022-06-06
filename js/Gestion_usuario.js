@@ -31,12 +31,12 @@ $(document).ready(function(){
                         <h2 class="lead"><b>${usuario.nombre} ${usuario.apellidos}</b></h2>
                         <p class="text-muted text-sm"><b>Sobre mi: </b>${usuario.adicional}</p>
                         <ul class="ml-4 mb-0 fa-ul text-muted">
-                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-id-card"></i></span> DNI: ${usuario.dni}</li>
-                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-birthday-cake"></i></span> Edad: ${usuario.edad}</li>
-                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Residencia: ${usuario.residencia}</li>
-                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Telefono #: ${usuario.telefono}</li>
-                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-at"></i></span> Correo: ${usuario.correo}</li>
-                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-smile-wink"></i></span> Sexo: ${usuario.sexo}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-id-card"style="color: #1C293A"></i></span> DNI: ${usuario.dni}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-birthday-cake"style="color: #1C293A"></i></span> Edad: ${usuario.edad}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"style="color: #1C293A"></i></span> Residencia: ${usuario.residencia}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"style="color: #1C293A"></i></span> Telefono #: ${usuario.telefono}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-at"style="color: #1C293A"></i></span> Correo: ${usuario.correo}</li>
+                          <li class="small"><span class="fa-li"><i class="fas fa-lg fa-smile-wink"style="color: #1C293A"></i></span> Sexo: ${usuario.sexo}</li>
                         </ul>
                       </div>
                       <div class="col-5 text-center">
@@ -56,7 +56,7 @@ $(document).ready(function(){
                         }
                         if(usuario.tipo_usuario==2){
                             template+=`
-                            <button class="ascender btn btn-primary ml-1" type="button" data-toggle="modal" data-target="#confirmar">
+                            <button class="ascender btn btn-secondary ml-1" type="button" data-toggle="modal" data-target="#confirmar">
                             <i class="fas fa-sort-amount-up mr-1"></i>Ascender
                             </button>
                             `;

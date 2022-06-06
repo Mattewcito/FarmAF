@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../css/datatables.css">
     <link  rel="stylesheet" href="../css/compra.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../../scss/custom.css">
+    <link rel="stylesheet" href="../scss/custom.css">
  
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
@@ -29,24 +29,24 @@
       
     <!-- NAVBAR SUPERIOR -->
 
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light"style="background: #1C293A;border-left: 1px solid #fff">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"style="color:#FFFFFF!important"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../vista/adm_catalogo.php" class="nav-link">Catalogo</a>
+        <a href="../vista/adm_catalogo.php" class="nav-link"style="color:#FFFFFF!important">Catalogo</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../vista/pag/Contacto.php" class="nav-link">Ayuda</a>
+        <a href="../vista/pag/Contacto.php" class="nav-link"style="color:#FFFFFF!important">Ayuda</a>
       </li>
       <li class="nav-item dropdown" id="cat-carrito" style="display:none">
           <img src="../img/carrito.png" class="imagen-carrito nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span id="contador" class="contador badge badge-danger"></span>
+            <span id="contador" class="contador badge badge-danger"style="background: #dc3545"></span>
           </img>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <table class="carro table table-hover text-nowrap p-0">
-              <thead class="table-success">
+              <thead class="table"style="background: #1C293A; color: #FFFFFF">
                 <tr>
                   <th>Codigo</th>
                   <th>Nombre</th>
@@ -60,7 +60,7 @@
 
                 </tbody>
             </table>
-            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar compra</a>
+            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block" style="background: #0CCAD8; border: 0px; color: #FFFFFF">Procesar compra</a>
             <a href="#" id="vaciar-carrito"class="btn btn-primary btn-block">Vaciar carrito</a>
 
           </div>
@@ -71,11 +71,11 @@
       <!-- NOTIFICACIONES-->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">1</span>
+          <i class="far fa-bell"style="color:#FFFFFF!important"></i>
+          <span class="badge badge-danger navbar-badge"style="background-color: #FFDF47 !important; color:#000000">1</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">1 Alertas</span>
+          <span class="dropdown-item dropdown-header"style="background: #1C293A;color:#ffffff">1 Alertas</span>
           <div class="dropdown-divider"></div>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
@@ -83,10 +83,10 @@
             <span class="float-right text-muted text-sm">2 dias</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">Ver todas notificaciones</a>
+          <a href="#" class="dropdown-item dropdown-footer"style="background: #1C293A;color:#ffffff">Ver todas notificaciones</a>
         </div>
       </li>
-        <a href="../controlador/logout.php">cerrar sessión</a>
+        <a href="../controlador/logout.php"style="color:#FFFFFF!important">cerrar sessión</a>
     </ul>
   </nav>
 
@@ -94,14 +94,14 @@
 
   <!-- NAVBAR IZQUIERDO -->
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #1C293A;">
     <!-- Brand Logo -->
     <a href="../vista/adm_catalogo.php" class="brand-link">
       <img src="../img/pngwing.com.png" alt="FarmAF Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Farmacia</span>
     </a>
 
-    <div class="sidebar">
+    <div class="sidebar" style="background: #1C293A;">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img id="avatar4" src="../img/cargando.png" class="img-circle elevation-2" alt="User Image">

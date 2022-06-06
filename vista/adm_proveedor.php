@@ -10,9 +10,9 @@ include_once 'Comple/nav.php';
 <div class="modal fade" id="cambiologo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header"style="background: #1C293A;color:#ffffff">
         <h5 class="modal-title" id="exampleModalLabel">Cambiar Logo</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"style="color:#ffffff">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -31,7 +31,7 @@ include_once 'Comple/nav.php';
           </div>
           <form id="form-logo" entype="multipart/form-data">
             <div class="input-group mb-3 ml-5 mt-2">
-              <input type="file" name="photo" class="input-group">
+              <input type="file" name="photo" class="input-group"style="background: #1C293A;color:#ffffff;width:auto">
               <input type="hidden" name="funcion" id="funcion">
               <input type="hidden" name="id_logo_prov" id="id_logo_prov">
               <input type="hidden" name="avatar" id="avatar">
@@ -50,9 +50,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
               <h3 class="card-title">Crear proveedor</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -109,7 +109,7 @@ include_once 'Comple/nav.php';
   <section class="content">
   <div class="container-fluid">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
               <h3 class="card-title">Buscar proveedor</h3>
               <div class="input-group">
                   <input type="text" id="buscar_proveedor" class="form-control float-left" placeholder="Ingrese nombre de proveedor">

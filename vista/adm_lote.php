@@ -11,9 +11,9 @@ if ($_SESSION['us_tipo'] == 3) {
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Editar lote</h3>
-            <button data-dismiss="modal" aria-label="close-class" class="close">
+            <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -55,7 +55,7 @@ if ($_SESSION['us_tipo'] == 3) {
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Buscar lotes</h3>
             <div class="input-group">
               <input type="text" id="buscar-lote" class="form-control float-left" placeholder="Ingrese nombre de producto">
