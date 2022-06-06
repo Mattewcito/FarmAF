@@ -197,7 +197,7 @@ if($_POST['funcion']=='reporte_producto'){
     
     table thead tr {
       height: 80px;
-      background: rgb(105, 102, 102);
+      background: #1C293A;
     }
     body {
       position: relative;

@@ -58,7 +58,7 @@ if($_POST['funcion']=='imprimir'){
         $avatar='../img/prov/'.$objeto->avatar;
     }
     $lote->ver($id_compra);
-    $html = '
+    $plantilla = '
     <!DOCTYPE>
     <html>
     <head>
@@ -79,7 +79,7 @@ if($_POST['funcion']=='imprimir'){
     
     table thead tr {
       height: 80px;
-      background: rgb(105, 102, 102);
+      background: #1C293A;
     }
     body {
       position: relative;
@@ -194,7 +194,7 @@ if($_POST['funcion']=='imprimir'){
       vertical-align: top;
     }
     table td {
-      font-size: 12px;
+      font-size: 9px;
       padding: 10px;
       text-align: right;
     }
@@ -227,112 +227,99 @@ if($_POST['funcion']=='imprimir'){
     </style>
     </head>
     <body>
-        <header class="clearfix">
-            <div id="logo">
-                <img src="'.$avatar.'" width="60" height="60">
-            </div>
-            <h1>COMPRA N. '.$codigo.'</h1>
-            <div id="company" class="clearfix">
-                <div>
-                    id="negocio">'.$proveedor.'
-                </div>
-                <div>
-                    '.$direccion.'
-                </div>
-                <div>
-                    '.$telefeno.'
-                </div>
-                <div>
-                    <a href="laasuncion@gmail.com">'.$correo.'</a>
-                </div>
-            </div>';
-    $html.='
-            <div id="project">
-                <div>
-                    <span>Codigo de compra: </span>'.$codigo.'
-                </div>
-                <div>
-                    <span>Fecha de compra: </span>'.$fecha_compra.'
-                </div>
-                <div>
-                    <span>Fecha de entrega: </span>'.$fecha_entrega.'
-                </div>
-                <div>
-                    <span>Estado: </span>'.$estado.'
-                </div>
-            </div>';
-        $html.='
-        </header>
-        <main>
-        <table>
-            <thead>
-                <tr>
-                    <th class="service">#</th>
-                    <th class="service">Codigo</th>
-                    <th class="service">Cantidad</th>
-                    <th class="service">Vencimiento</th>
-                    <th class="service">Precio de compra</th>
-                    <th class="service">Producto</th>
-                    <th class="service">Laboratorio</th>
-                    <th class="service">Presentacion</th>
-                    <th class="service">Tipo</th>     
-                </tr>   
-            </thead>
-            <tbody>';
-    foreach ($lote->objetos as $objeto) {
+    <header class="clearfix">
+      <div id="logo">
+        <img src="'.$avatar.'" width="60" height="60">
+      </div>
+      <h1>COMPRA N. '.$codigo.'</h1>
+      <div id="company" class="clearfix">
+        <div id="negocio">'.$proveedor.'</div>
+        <div>'.$direccion.'</div>
+        <div>'.$telefeno.'</div>
+        <div><a href="laasuncion@gmail.com">'.$correo.'</a></div>
+      </div>';
+      $plantilla.='
+
+      <div id="project">
+        <div><span>Codigo de compra: </span>'.$codigo.'</div>
+        <div><span>Fecha de compra: </span>'.$fecha_compra.'</div>
+        <div><span>Fecha de entrega: </span>'.$fecha_entrega.'</div>
+        <div><span>Estado: </span>'.$estado.'</div>
+      </div>';
+
+    $plantilla.='
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            
+            <th class="service">#</th>
+            <th class="service">Codigo</th>
+            <th class="service">Cantidad</th>
+            <th class="service">Vencimiento</th>
+            <th class="service">Precio de compra</th>
+            <th class="service">Producto</th>
+            <th class="service">Laboratorio</th>
+            <th class="service">Presentacion</th>
+            <th class="service">Tipo</th>     
+          </tr>   
+        </thead>
+        <tbody>';
+        foreach ($lote->objetos as $objeto) {
         
-        $html.='
-        <tr>         
-            <td class="servic">'.$objeto->producto.'</td>
-            <td class="servic">'.$objeto->codigo.'</td>
-            <td class="servic">'.$objeto->cantidad.'</td>
-            <td class="servic">'.$objeto->vencimiento.'</td>
-            <td class="servic">'.$objeto->precio_compra.'</td>
-            <td class="servic">'.$objeto->producto.'|'.$objeto->concentracion.'|'.$objeto->adicional.'</td>
-            <td class="servic">'.$objeto->laboratorio.'</td>
-            <td class="servic">'.$objeto->presentacion.'</td>
-            <td class="servic">'.$objeto->tipo.'</td>
+          $plantilla.='<tr>         
+          
+          <td class="servic">'.$objeto->producto.'</td>
+          <td class="servic">'.$objeto->codigo.'</td>
+          <td class="servic">'.$objeto->cantidad.'</td>
+          <td class="servic">'.$objeto->vencimiento.'</td>
+          <td class="servic">'.$objeto->precio_compra.'</td>
+          <td class="servic">'.$objeto->producto.'|'.$objeto->concentracion.'|'.$objeto->adicional.'</td>
+          <td class="servic">'.$objeto->laboratorio.'</td>
+          <td class="servic">'.$objeto->presentacion.'</td>
+          <td class="servic">'.$objeto->tipo.'</td>
+        </tr>';
+      }
+
+        $iva=$total*0.19;
+        $sub=$total-$iva;
+
+        $plantilla.='
+        <tr>
+          <td colspan="8" class="grand total">SUBTOTAL</td>
+          <td class="grand total">S/.'.$sub.'</td>
         </tr>
-        ';
-    }
-
-      $igv=$total*0.19;
-      $sub=$total-$igv;
-
-    $html.='
-    <tr>
-        <td colspan="8" class="grand total">SUBTOTAL</td>
-        <td class="grand total">S/.'.$sub.'</td>
-    </tr>
-    <tr>
-        <td colspan="8" class="grand total">IVA(19%)</td>
-        <td class="grand total">S/.'.$igv.'</td>
-    </tr>
-    <tr>
-        <td colspan="8" class="grand total">IVA(19%)</td>
-        <td class="grand total">S/.'.$total.'</td>
-    </tr>
-    ';
-    $html.='
-
+        <tr>
+          <td colspan="8" class="grand total">IVA(19%)</td>
+          <td class="grand total">S/.'.$iva.'</td>
+        </tr>
+        <tr>
+          <td colspan="8" class="grand total">TOTAL</td>
+          <td class="grand total">S/.'.$total.'</td>
+        </tr>';
+    
+    
+      $plantilla.='
         </tbody>
-    </table>
-    <div id="notices">
-        <div>NOTICIA:</div>
-        <div class="notice">*.</div>
-    </div>
+      </table>
+      <div id="notices">
+        <div>NOTAS:</div>
+        <div class="notice"></div>
+    
+      </div>
     </main>
     <footer>
         Created by FarmAF.
     </footer>
-    </body>
-    </html>';
-    $html = $html;
-    $dompdf = new Dompdf();
-    $dompdf->loadHtml($html);
-    $dompdf->setPaper('A4', 'portrait');
-    $dompdf->render();
-    $contenido = $dompdf->output();
-    $nombreDelDocumento = "../pdf/pdf-".$_POST['funcion'].".pdf";
-    $bytes = file_put_contents($nombreDelDocumento, $contenido); 
+  </body>
+  </html>';
+  $plantilla = $plantilla;
+  $dompdf = new Dompdf();
+  $dompdf->loadHtml($plantilla);
+  $dompdf->setPaper('A4', 'portrait');
+  $dompdf->render();
+  $contenido = $dompdf->output();
+  $nombreDelDocumento = "../pdf/pdf-compra".$id_compra.".pdf";
+  $bytes = file_put_contents($nombreDelDocumento, $contenido);
 }
