@@ -20,7 +20,7 @@
       </div>
       <div class="modal-body">
         <div class="text-center">
-          <img id="avatar3" src="../img/6293d5491bca9-1001145148 FOTO BRAYAN ZAPATA.jpg" class="profile-user-img img-fluid img-circle">
+          <img id="avatar3" src="../img/6293d5491bca9-1001145148 FOTO BRAYAN ZAPATA.jpg" class="profile-user-img img-fluid img-circle"style="border: 3px  solid #1C293A">
           <div class="text-center">
             <b>
               <?php
@@ -51,7 +51,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn bg-gradient-primary">Guardar cambios</button>
+        <button type="submit" class="btn bg-gradient-primary"style="background: #1C293A!important; color:#FFFFFF">Guardar cambios</button>
         </form>
       </div>
     </div>
@@ -61,14 +61,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cambio de avatar</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="color: #1C293A">Cambio de avatar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="text-center">
-          <img id="avatar2" src="../img/default.png" class="profile-user-img img-fluid img-circle">
+          <img id="avatar2" src="../img/default.png" class="profile-user-img img-fluid img-circle" style="border: 3px  solid #1C293A">
           <div class="text-center">
             <b>
               <?php
@@ -84,14 +84,14 @@
           </div>
           <form id="form-photo" entype="multipart/form-data">
             <div class="input-group mb-3 ml-5 mt-2">
-              <input type="file" name="photo" class="input-group">
+              <input type="file" name="photo" class="input-group" style="background-color: #1C293A; color:#FFFFFF; width:auto">
               <input type="hidden" name="funcion" value="cambiar_foto">
             </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn bg-gradient-primary">Guardar cambios</button>
+        <button type="submit" class="btn bg-gradient-primary"style="background: #1C293A!important; color:#FFFFFF">Guardar cambios</button>
         </form>
       </div>
     </div>
@@ -100,8 +100,8 @@
 
   <!-- CONTENIDO -->
   <div class="content-wrapper">
-    <section class="content-header">
-      <div class="container-fluid">
+    <section class="content-header" >
+      <div class="container-fluid" >
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>Editar datos personales</h1>
@@ -113,28 +113,29 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <div class="card card-success card-outline">
+            <div class="card card-success card-outline"style="border-top:3px solid #1C293A">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img id="avatar1" src="../img/default.png" class="profile-user-img img-fluid img-circle">
+                  <img id="avatar1" src="../img/default.png" class="profile-user-img img-fluid img-circle"style="border: 3px  solid #1C293A">
                 </div>
                 <div class="text-center mt-1">
-                <button data-toggle="modal" data-target="#cambiophoto" type="button" class="btn btn-primary btn-sm">Cambiar foto</button>
+                <button data-toggle="modal" data-target="#cambiophoto" type="button" class="btn btn-primary btn-sm" style="background: #1C293A;
+                color: #FFFFFF; border:0px">Cambiar foto</button>
                 </div>
                 <input id="id_usuario"type="hidden" value="<?php echo $_SESSION['usuario'] ?>">
-                <h3 id="nombre_us" class="profile-username text-center text-success">Nombre</h3>
-                <p id= "apellidos_us" class="text-muted text-center">Apellidos</p>
+                <h3 id="nombre_us" class="profile-username text-center text-success"style="color: #1C293A!important;">Nombre</h3>
+                <p id= "apellidos_us" class="text-muted text-center"style="color: #1C293A!important;">Apellidos</p>
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b style="color:#0b7300">Edad</b>
-                    <a id="edad" class="float-right">12</a>
+                    <b style="color:#1C293A">Edad</b>
+                    <a id="edad" class="float-right"style="color: #1C293A !important;">12</a>
                   </li>
                   <li class="list-group-item">
-                    <b style="color:#0b7300">DNI</b>
-                    <a id="dni_us" class="float-right">12</a>
+                    <b style="color:#1C293A">DNI</b>
+                    <a id="dni_us" class="float-right"style="color: #1C293A !important;">12</a>
                   </li>
                   <li class="list-group-item">
-                    <b style="color:#0b7300">Tipo de usuario</b>
+                    <b style="color:#1C293A">Tipo de usuario</b>
                     <span id="us_tipo" class=" float-right">Administrador</span>
                   </li>
                   <button data-toggle="modal" data-target="#cambiocontra" type="button" class="btn btn-block btn-outline-warning btn-sm">Cambiar contraseña</button>
@@ -143,31 +144,31 @@
             </div>
 
             <div class="card card-success">
-              <div class="card-header">
+              <div class="card-header"style="background: #1C293A">
                 <h3 class="card-title">Sobre mi</h3>
               </div>
               <div class="card-body">
-                <strong style="color:#0b7300">
+                <strong style="color:#1C293A">
                   <i class="fas fa-phone mr-1"></i>Telefono
                 </strong>
                 <p id="telefono_us" class="text-muted">123456789</p>
-                <strong style="color:#0b7300">
+                <strong style="color:#1C293A">
                   <i class="fas fa-map-marker-alt mr-1"></i>Dirección
                 </strong>
                 <p id="residencia_us" class="text-muted">Cr x # 00 - 00</p>
-                <strong style="color:#0b7300">
+                <strong style="color:#1C293A">
                   <i class="fas fa-at mr-1"></i>Correo
                 </strong>
                 <p id="correo_us" class="text-muted"> </p>
-                <strong style="color:#0b7300">
+                <strong style="color:#1C293A">
                   <i class="fas fa-pencil-alt mr-1"></i>sexo
                 </strong>
                 <p id="sexo_us" class="text-muted">Masculino</p>
-                <strong style="color:#0b7300">
+                <strong style="color:#1C293A">
                 <i class="fas fa-pencil-alt mr-1"></i>Informacion adicional
                 </strong>
                 <p id="adicional_us" class="text-muted">425698771</p>
-                <button class="edit btn btn-block bg-gradient-danger">Editar</button>
+                <button class="edit btn btn-block "style="background: #1C293A; color:#FFFFFF">Editar</button>
               </div>
               <div class="card-footer">
                 <p class="text-muted">Click en el boton si desea editar</p>
@@ -177,7 +178,7 @@
 
           <div class="col-md-9">
             <div class="card card-success">
-              <div class="card-header">
+              <div class="card-header"style="background: #1C293A">
                 <h3 class="card-title">Editar datos personales</h3>
               </div>
               <div class="card-body">

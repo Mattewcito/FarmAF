@@ -57,9 +57,9 @@ $(document).ready(function(){
                             <div class="col-7">
                                 <h2 class="lead"><b>${proveedor.nombre}</b></h2>
                                         <ul class="ml-4 mb-0 fa-ul text-muted">
-                                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Direccion: ${proveedor.direccion}</li>
-                                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Telefono: ${proveedor.telefono}</li>
-                                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-at"></i></span> Correo: ${proveedor.correo}</li>
+                                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"style="color: #1C293A"></i></span> Direccion: ${proveedor.direccion}</li>
+                                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"style="color: #1C293A"></i></span> Telefono: ${proveedor.telefono}</li>
+                                            <li class="small"><span class="fa-li"><i class="fas fa-lg fa-at"style="color: #1C293A"></i></span> Correo: ${proveedor.correo}</li>
                                         </ul>
                             </div>
                             <div class="col-5 text-center">
@@ -69,10 +69,10 @@ $(document).ready(function(){
                     </div>
                     <div class="card-footer">
                         <div class="text-right">
-                            <button class="avatar btn btn-sm bg-info" title="Editar logo" type="button" data-toggle="modal" data-target="#cambiologo">
+                            <button class="avatar btn btn-sm btn-secondary" title="Editar logo" type="button" data-toggle="modal" data-target="#cambiologo">
                                 <i class="fas fa-image"></i>
                             </button>
-                            <button class="editar btn btn-sm bg-success" title="Editar proveedor" type="button" data-toggle="modal" data-target="#crearproveedor">
+                            <button class="editar btn btn-sm btn-secondary" title="Editar proveedor" type="button" data-toggle="modal" data-target="#crearproveedor">
                                 <i class="fas fa-pencil"></i>
                             </button>
                             <button class="borrar btn btn-sm bg-danger" title="Eliminar proveedor">

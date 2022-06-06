@@ -13,7 +13,6 @@
 <script src="../JS/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../js/bootstrap.bundle.min.js"></script>
-<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../js/adminlte.min.js"></script>
 <!-- SweetAlert2 -->

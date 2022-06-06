@@ -11,9 +11,9 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
               <h3 class="card-title">Cambiar estado</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close"style="background: #1C293A;color:#ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -44,9 +44,9 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Detalle compra</h3>
-            <button data-dismiss="modal" aria-label="close-class" class="close">
+            <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -72,7 +72,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
               <span id="proveedor"></span>
             </div>
             <table class="table table-hover text-nowrap table-responsive">
-              <thead class="table-success">
+              <thead class="table"style="background: #1C293A;color:#ffffff">
                 <tr>
                   <th>#</th>
                   <th>Codigo</th>
@@ -117,7 +117,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Buscar compras</h3>
             <div class="input-group">
               <input type="text" id="buscar-lote" class="form-control float-left" placeholder="Ingrese nombre de una compra">

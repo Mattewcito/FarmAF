@@ -11,9 +11,9 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="card card-success">
-          <div class="card-header">
-            <h3 class="card-title">Registos de ventas</h3>
-            <button data-dismiss="modal" aria-label="close-class" class="close">
+          <div class="card-header"style="background: #1C293A; color: #FFFFFF">
+            <h3 class="card-title">Registros de ventas</h3>
+            <button data-dismiss="modal" aria-label="close-class" class="close"style="color: #FFFFFF">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -84,17 +84,16 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A">
             <h3 class="card-title">Consultas</h3>
           </div>
           <div class="animate__animated animate__zoomIn card-body">
             <div class="row">
               <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-info">
+                <div class="small-box bg-info"style="background: #1C293A!important">
                   <div class="inner">
                     <h3 id="venta_dia_vendedor">0</h3>
-                    
                     <p>Venta del dia por Vendedor</p>
                   </div>
                   <div class="icon">
@@ -107,7 +106,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-success">
+                <div class="small-box bg-success"style="background: #1C293A!important">
                   <div class="inner">
                     <h3 id="venta_diaria">0</h3>
                     <p>Venta total del dia</p>
@@ -122,7 +121,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-warning">
+                <div class="small-box bg-warning"style="background: #1C293A!important;color:#ffffff!important">
                   <div class="inner">
                     <h3 id="venta_mensual">0</h3>
                     <p>Venta Mensual</p>
@@ -130,14 +129,14 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
                   <div class="icon">
                     <i class="far fa-calendar-alt"></i>
                   </div>
-                  <a href="adm_mas_consultas.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="adm_mas_consultas.php" class="small-box-footer"style="color: #ffffff!important">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
 
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+                <div class="small-box bg-danger"style="background: #1C293A!important">
                   <div class="inner">
                     <h3 id="venta_anual"></h3>
                     <p>Venta Anual</p>
@@ -152,7 +151,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
               <!-- ./col -->
               <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-primary">
+                <div class="small-box bg-primary"style="background: #1C293A!important">
                   <div class="inner">
                     <h3 id="ganancia_mensual">0</h3>
                     <p>Ganancia Mensual</p>
@@ -174,7 +173,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A">
             <h3 class="card-title">Buscar ventas</h3>
             
           </div>

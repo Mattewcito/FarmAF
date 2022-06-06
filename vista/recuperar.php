@@ -29,7 +29,7 @@
                         <input type="text" class="form-control" id="dni" placeholder="DNI">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="far fa-address-card"></span>
+                                <span class="far fa-address-card"style="color:#1c293A"></span>
                             </div>
                         </div>
                     </div>
@@ -37,13 +37,13 @@
                         <input type="email" class="form-control" id="email" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-envelope"style="color:#1c293A"></span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                            <button type="submit" class="btn btn-secondary btn-block">Enviar</button>
                         </div>
                         <!-- /.col -->
                     </div>

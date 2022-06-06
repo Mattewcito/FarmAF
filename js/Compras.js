@@ -32,8 +32,8 @@ $(document).ready(function(){
                     { "data": "estado" },
                     { "data": "proveedor" },
                     { "defaultContent": `<button class="imprimir btn btn-secondary"><i class="fas fa-print"></i></button>
-                                        <button class="ver btn btn-info" type="button" data-toggle="modal" data-target="#vista_compra"><i class="fas fa-search"></i></button>
-                                        <button class="editar btn btn-success" type="button" data-toggle="modal" data-target="#cambiarEstado"><i class="fas fa-pencil-alt"></i></button>`} 
+                                        <button class="ver btn btn-secondary" type="button" data-toggle="modal" data-target="#vista_compra"><i class="fas fa-search"></i></button>
+                                        <button class="editar btn btn-secondary" type="button" data-toggle="modal" data-target="#cambiarEstado"><i class="fas fa-pencil-alt"></i></button>`} 
                 ],
                 "destroy":true,
                 "language": espanol

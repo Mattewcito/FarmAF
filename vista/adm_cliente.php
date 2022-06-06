@@ -11,9 +11,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header" style="background: #1C293A; color: #FFFFFF">
               <h3 class="card-title">Editar cliente</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close" style="color: #ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -36,7 +36,7 @@ include_once 'Comple/nav.php';
               <input type="hidden" id="id_cliente">
           </div>
           <div class="card-footer">
-              <button type="submit" class="btn bg-gradient-primary float-right m-1">Guardar</button>
+              <button type="submit" class="btn bg-gradient-primary float-right m-1"style="background: #1C293A!important; color: #FFFFFF">Guardar</button>
               <button type="button" data-dismiss="modal" class="btn btn-outline-secondary float-right m-1">Cerrar</button>
           </form>
         </div>
@@ -49,9 +49,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1c293A">
               <h3 class="card-title">Crear cliente</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close" style="color: #ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -113,7 +113,7 @@ include_once 'Comple/nav.php';
   <section class="content">
   <div class="container-fluid">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header" style="background: #1c293A">
               <h3 class="card-title">Buscar cliente</h3>
               <div class="input-group">
                   <input type="text" id="buscar_cliente" class="form-control float-left" placeholder="Ingrese nombre de cliente">

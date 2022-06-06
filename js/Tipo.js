@@ -45,7 +45,7 @@ $(document).ready(function(){
                 template+=`
                 <tr tipId="${tipo.id}" tipNombre="${tipo.nombre}">
                     <td>
-                        <button class="editar-tip btn btn-success" title="Editar tipo" type="button" data-toggle="modal" data-target="#creartipo">
+                        <button class="editar-tip btn btn-secondary" title="Editar tipo" type="button" data-toggle="modal" data-target="#creartipo">
                         <i class="fas fa-pencil-alt"></i></button>
                         <button class="borrar-tip btn btn-danger" title="Eliminar tipo"><i class="fas fa-trash-alt"></i></button>
                     </td>

@@ -20,10 +20,10 @@ $(document).ready(function(){
                         <div class="col-5">
                             <h2 class="lead"><b>${cliente.nombre}</b></h2>
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
-                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Dni: ${cliente.dni}</li>
-                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Telefono: ${cliente.telefono}</li>
-                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Correo: ${cliente.correo}</li>
-                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Sexo: ${cliente.sexo}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-id-card"style="color: #1C293A"></i></span> Dni: ${cliente.dni}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"style="color: #1C293A"></i></span> Telefono: ${cliente.telefono}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-at"style="color: #1C293A"></i></span> Correo: ${cliente.correo}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-smile-wink"style="color: #1C293A"></i></span> Sexo: ${cliente.sexo}</li>
                                     </ul>
                         </div>
                         <div class="col-7 text-center">
@@ -33,7 +33,7 @@ $(document).ready(function(){
                 </div>
                 <div class="card-footer">
                     <div class="text-right">
-                        <button class="editar btn btn-sm bg-success" title="Editar cliente" type="button" data-toggle="modal" data-target="#editarcliente">
+                        <button class="editar btn btn-sm bg-success" style="background: #1c293A!important" title="Editar cliente" type="button" data-toggle="modal" data-target="#editarcliente">
                             <i class="fas fa-pencil"></i>
                         </button>
                         <button class="borrar btn btn-sm bg-danger" title="Eliminar cliente">

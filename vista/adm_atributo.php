@@ -10,9 +10,9 @@ include_once 'Comple/nav.php';
 <div class="modal fade" id="cambiologo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header"style="background: #1C293A;color:#ffffff">
         <h5 class="modal-title" id="exampleModalLabel">Cambiar Logo</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"style="color:#ffffff">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -31,7 +31,7 @@ include_once 'Comple/nav.php';
           </div>
           <form id="form-logo" entype="multipart/form-data">
             <div class="input-group mb-3 ml-5 mt-2">
-              <input type="file" name="photo" class="input-group">
+              <input type="file" name="photo" class="input-group"style="background: #1C293A;color:#ffffff;width:auto">
               <input type="hidden" name="funcion" id="funcion">
               <input type="hidden" name="id_logo_lab" id="id_logo_lab">
             </div>
@@ -50,9 +50,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
               <h3 class="card-title">Crear laboratorio</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -86,9 +86,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
               <h3 class="card-title">Crear tipo</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -122,9 +122,9 @@ include_once 'Comple/nav.php';
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
               <h3 class="card-title">Crear presentacion</h3>
-              <button data-dismiss="modal" aria-label="close-class" class="close">
+              <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
@@ -181,8 +181,8 @@ include_once 'Comple/nav.php';
                             <div class="tab-content">
                                 <div class="tab-pane active" id='laboratorio'>
                                     <div class="card card-success">
-                                        <div class="card-header">
-                                            <div class="card-title">Buscar laboratorio <button type="button" data-toggle="modal" data-target="#crearlaboratorio" class="btn bg-gradient-primary btn-sm m-2">Crear laboratorio</button></div>
+                                        <div class="card-header"style="background: #1C293A;color:#ffffff">
+                                            <div class="card-title">Buscar laboratorio <button type="button" data-toggle="modal" data-target="#crearlaboratorio" class="btn bg-gradient-primary btn-sm m-2"style="color:#ffffff;border:1px solid #ffffff!important">Crear laboratorio</button></div>
                                             <div class="input-group">
                                                 <input id="buscar-laboratorio" type="text" class="form-control float-left" placeholder="Ingrese nombre">
                                                 <div class="input-group-append">
@@ -208,8 +208,8 @@ include_once 'Comple/nav.php';
                                 </div>
                                 <div class="tab-pane" id='tipo'>
                                     <div class="card card-success">
-                                        <div class="card-header">
-                                            <div class="card-title">Buscar tipo <button type="button" data-toggle="modal" data-target="#creartipo" class="btn bg-gradient-primary btn-sm m-2">Crear tipo</button></div>
+                                        <div class="card-header"style="background: #1C293A;color:#ffffff">
+                                            <div class="card-title">Buscar tipo <button type="button" data-toggle="modal" data-target="#creartipo" class="btn bg-gradient-primary btn-sm m-2"style="color:#ffffff;border:1px solid #ffffff!important">Crear tipo</button></div>
                                             <div class="input-group">
                                                 <input id="buscar-tipo" type="text" class="form-control float-left" placeholder="Ingrese nombre">
                                                 <div class="input-group-append">
@@ -233,8 +233,8 @@ include_once 'Comple/nav.php';
                                 </div>
                                 <div class="tab-pane" id='presentacion'>
                                     <div class="card card-success">
-                                        <div class="card-header">
-                                            <div class="card-title">Buscar presentacion <button type="button" data-toggle="modal" data-target="#crearpresentacion" class="btn bg-gradient-primary btn-sm m-2">Crear presentacion</button></div>
+                                        <div class="card-header"style="background: #1C293A;color:#ffffff">
+                                            <div class="card-title">Buscar presentacion <button type="button" data-toggle="modal" data-target="#crearpresentacion" class="btn bg-gradient-primary btn-sm m-2"style="color:#ffffff;border:1px solid #ffffff!important">Crear presentacion</button></div>
                                             <div class="input-group">
                                                 <input id="buscar-presentacion" type="text" class="form-control float-left" placeholder="Ingrese nombre">
                                                 <div class="input-group-append">

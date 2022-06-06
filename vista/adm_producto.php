@@ -11,15 +11,15 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Elegir formato de reporte</h3>
-            <button data-dismiss="modal" aria-label="close-class" class="close">
+            <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="card-body">
             <div class="form-group text-center">
-              <button id="button-reporte" class="btn btn-outline-danger">Formato PDF<i class="far fa-file-pdf ml-2"></i></button>
+              <button id="button-reporte" class="btn btn-outline-success">Formato PDF<i class="far fa-file-pdf ml-2"></i></button>
               <button id="button-reporteExcel" class="btn btn-outline-success">Formato Excel<i class="far fa-file-excel ml-2"></i></button>
             </div>
           </div>
@@ -31,9 +31,9 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
   <div class="modal fade" id="cambiologo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header"style="background: #1C293A;color:#ffffff">
           <h5 class="modal-title" id="exampleModalLabel">Cambiar Logo</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"style="color:#ffffff">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -52,7 +52,7 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
             </div>
             <form id="form-logo" entype="multipart/form-data">
               <div class="input-group mb-3 ml-5 mt-2">
-                <input type="file" name="photo" class="input-group">
+                <input type="file" name="photo" class="input-group"style="background: #1C293A;color:#ffffff;width:auto">
                 <input type="hidden" name="funcion" id="funcion">
                 <input type="hidden" name="id_logo_prod" id="id_logo_prod">
                 <input type="hidden" name="avatar" id="avatar">
@@ -71,9 +71,9 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Crear producto</h3>
-            <button data-dismiss="modal" aria-label="close-class" class="close">
+            <button data-dismiss="modal" aria-label="close-class" class="close"style="color:#ffffff">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -136,7 +136,7 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
           <div class="col-sm-6">
             <h1>Gestion producto 
               <button id="button-crear" type="button" data-toggle="modal" data-target="#crearproducto" class="btn bg-gradient-primary ml-2">Crear producto</button>
-              <button type="button" data-toggle="modal" data-target="#modalFormatoReporte" class="btn bg-gradient-success ml-2">Generar reporte</button>
+              <button type="button" data-toggle="modal" data-target="#modalFormatoReporte" class="btn bg-gradient-primary ml-2">Generar reporte</button>
           </h1>
           </div>
         </div>
@@ -145,7 +145,7 @@ if ($_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header">
+          <div class="card-header"style="background: #1C293A;color:#ffffff">
             <h3 class="card-title">Buscar producto</h3>
             <div class="input-group">
               <input type="text" id="buscar-producto" class="form-control float-left" placeholder="Ingrese nombre de producto">

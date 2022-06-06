@@ -24,31 +24,31 @@ include_once 'Comple/nav.php';
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-success">
-                    <div class="card-header">
+                    <div class="card-header"style="background: #1C293A;color:#ffffff">
                     </div>
                     <div class="card-body p-0">
                         <header>
                             <div class="logo_cp">
                                 <img src="../img/pngwing.com.png" width="100" height="210">
                             </div>
-                            <h1 class="titulo_cp">SOLICITUD DE COMPRA</h1>
+                            <h1 class="titulo_cp"style="border:1px solid #1C293A">SOLICITUD DE COMPRA</h1>
                             <div class="datos_cp">
                                 <div class="form-group row">
-                                    <span>Cliente: </span>
+                                    <span style="color: #1C293A">Cliente: </span>
                                     <div class="input-group-append col-md-6">
-                                        <select id="cliente" class="form-control select2" style="width:100%"></select>
+                                        <select id="cliente" class="form-control select2" style="color: #1c293A!important; width:100%"></select>
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                    <span>Vendedor: </span>
-                                    <h3 class="col-md-6"><?php echo $_SESSION["nombre_us"];?></h3>
+                                    <span style="color:#1C293A">Vendedor: </span>
+                                    <h3 class="col-md-6"style="color: #1C293A"><?php echo $_SESSION["nombre_us"];?></h3>
                                 </div>
                             </div>
                         </header>
-                        <button id="actualizar"class="btn btn-success">Actualizar</button>
+                        <button id="actualizar"class="btn btn-secondary">Actualizar</button>
                         <div id="cp"class="card-body p-0">
                             <table class="compra table table-hover text-nowrap">
-                                <thead class='table-success'>
+                                <thead class="table-success">
                                     <tr>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Stock</th>
@@ -76,21 +76,21 @@ include_once 'Comple/nav.php';
                                             </h3>
                                         </div>
                                         <div class="card-body">
-                                            <div class="info-box mb-3 bg-warning p-0">
+                                            <div class="info-box mb-3 bg-success p-0" >
                                                 <span class="info-box-icon"><i class="fas fa-tag"></i></span>
                                                 <div class="info-box-content">
                                                     <span class="info-box-text text-left ">SUB TOTAL</span>
                                                     <span class="info-box-number" id="subtotal">10</span>
                                                 </div>
                                             </div>
-                                            <div class="info-box mb-3 bg-warning">
+                                            <div class="info-box mb-3 bg-success">
                                                 <span class="info-box-icon"><i class="fas fa-tag"></i></span>
                                                 <div class="info-box-content">
                                                     <span class="info-box-text text-left ">IVA</span>
                                                     <span class="info-box-number"id="con_iva">2</span>
                                                 </div>
                                             </div>
-                                            <div class="info-box mb-3 bg-info">
+                                            <div class="info-box mb-3 bg-success">
                                                 <span class="info-box-icon"><i class="fas fa-tag"></i></span>
                                                 <div class="info-box-content">
                                                     <span class="info-box-text text-left ">SIN DESCUENTO</span>
@@ -109,15 +109,15 @@ include_once 'Comple/nav.php';
                                             </h3>
                                         </div>
                                         <div class="card-body">
-                                            <div class="info-box mb-3 bg-danger">
+                                            <div class="info-box mb-3 bg-success">
                                                 <span class="info-box-icon"><i class="fas fa-comment-dollar"></i></span>
                                                 <div class="info-box-content">
                                                     <span class="info-box-text text-left ">DESCUENTO</span>
                                                     <input id="descuento"type="number" min="1" placeholder="Ingrese descuento" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="info-box mb-3 bg-info">
-                                                <span class="info-box-icon"><i class="ion ion-ios-cart-outline"></i></span>
+                                            <div class="info-box mb-3 bg-success">
+                                                <span class="info-box-icon"><i class="fas fa-money-bill-wave"></i></span>
                                                 <div class="info-box-content">
                                                     <span class="info-box-text text-left ">TOTAL</span>
                                                     <span class="info-box-number" id="total">12</span>
@@ -143,7 +143,7 @@ include_once 'Comple/nav.php';
                                                
                                             </div>
                                         </div>
-                                        <div class="info-box mb-3 bg-info">
+                                        <div class="info-box mb-3 bg-success">
                                             <span class="info-box-icon"><i class="fas fa-money-bill-wave"></i></span>
                                             <div class="info-box-content">
                                                 <span class="info-box-text text-left ">VUELTO</span>
@@ -157,10 +157,10 @@ include_once 'Comple/nav.php';
                         </div>
                         <div class="row justify-content-between">
                             <div class="col-md-4 mb-2">
-                                <a href="../vista/adm_catalogo.php" class="btn btn-primary btn-block">Seguir comprando</a>
+                                <a href="../vista/adm_catalogo.php" class="btn btn-secondary btn-block">Seguir comprando</a>
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <a href="#" class="btn btn-success btn-block" id="procesar-compra">Realizar compra</a>
+                                <a href="#" class="btn btn-secondary btn-block" id="procesar-compra">Realizar compra</a>
                             </div>
                         </div>
                     </div>

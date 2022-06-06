@@ -49,7 +49,7 @@ $(document).ready(function () {
                   </div>
                   <div class="card-footer">
                     <div class="text-right">
-                      <button class="editar btn btn-sm btn-success" type="button" data-toggle="modal" data-target="#editarlote">
+                      <button class="editar btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#editarlote">
                         <i class="fas fa-pencil-alt"></i>
                       </button>
                       <button class="borrar btn btn-sm btn-danger">
