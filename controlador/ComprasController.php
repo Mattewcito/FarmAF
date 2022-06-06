@@ -104,6 +104,7 @@ if($_POST['funcion']=='imprimir'){
       margin-top: 5px;
       margin-left:30px ;
       margin-right: 40px;
+      border: 1px solid #1c293A
     }
     
     #logo img {

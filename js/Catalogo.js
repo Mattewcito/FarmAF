@@ -8,7 +8,6 @@ $(document).ready(function () {
             consulta,
             funcion
         }, (response) => {
-         // console.log(response);
             const productos = JSON.parse(response);
             let template = "";
             productos.forEach(producto => {
@@ -83,11 +82,11 @@ $(document).ready(function () {
               columnDefs:[{
                   "render":function(data,type,row){
                     let campo = '';
-                    if(row.estado == 'danger'){
-                      campo= `<h1 class="badge badge-danger">${row.estado}</h1>`;
+                    if(row.estado == 'Peligro'){
+                      campo= `<h1 class="badge badge-info" style="background: #DC3545">${row.estado}</h1>`;
                     }
-                    if(row.estado == 'warning'){
-                      campo= `<h1 class="badge badge-warning">${row.estado}</h1>`;
+                    if(row.estado == 'Advertencia'){
+                      campo= `<h1 class="badge badge-warning" style="background: #FFC107; color: #1c293A">${row.estado}</h1>`;
                     }
                     return campo;
                   },

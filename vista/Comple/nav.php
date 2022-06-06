@@ -29,7 +29,7 @@
       
     <!-- NAVBAR SUPERIOR -->
 
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light"style="background: #1C293A;border-left: 1px solid #fff">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light"style="background: #1C293A;border-left: 1px solid #5D6266">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"style="color:#FFFFFF!important"></i></a>

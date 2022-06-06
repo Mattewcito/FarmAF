@@ -52,7 +52,7 @@ $(document).ready(function(){
                         <button class="borrar btn btn-danger" title="Eliminar laboratorio"><i class="fas fa-trash-alt"></i></button>
                     </td>
                     <td>
-                        <img src="${laboratorio.avatar}" class="profile-user-img img-fluid img-circle" width="70" height="70">
+                        <img src="${laboratorio.avatar}" class="img-circle img-fluid" width="90" height="70">
                     </td>
                     <td>${laboratorio.nombre}</td>          
                 </tr>
