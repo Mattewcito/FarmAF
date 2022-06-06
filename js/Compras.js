@@ -113,10 +113,10 @@ $(document).ready(function(){
         let codigo = datos.codigo;
         codigo = codigo.split(' | ');
         let id = codigo[0];
-        funcion="imprimir";
+        funcion='imprimir';
         $.post('../controlador/ComprasController.php',{id, funcion},(response)=>{
             console.log(response);
-            window.open('../pdf/pdf-compra-'+id+'.pdf', '_blank');
+            window.open('../pdf/pdf-compra'+id+'.pdf','_blank');
         })
     })
 })

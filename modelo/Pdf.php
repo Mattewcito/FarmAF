@@ -31,7 +31,7 @@ function getHtml($id_venta){
     
     table thead tr {
       height: 80px;
-      background: rgb(105, 102, 102);
+      background:  #1C293A;
     }
     body {
       position: relative;
