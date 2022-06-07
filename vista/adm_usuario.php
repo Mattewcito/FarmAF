@@ -7,7 +7,7 @@ if($_SESSION['us_tipo']==1||$_SESSION['us_tipo']==3){
 <?php
 include_once 'Comple/nav.php';
 ?>
-<div class="modal fade" id="confirmar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="confirmar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -52,7 +52,7 @@ include_once 'Comple/nav.php';
     </div>
   </div>
 </div>
-<div class="modal fade" id="crearusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="crearusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
@@ -106,7 +106,7 @@ include_once 'Comple/nav.php';
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="animate__animated animate__backInDown col-sm-6">
           <h1>Gestion usuarios <button style="background: #1C293A!important; color: #FFFFFF" id="button-crear" type="button" data-toggle="modal" data-target="#crearusuario" class="btn bg-gradient-primary ml-2">Crear usuario</button></h1>
           <input type="hidden" id="tipo_usuario" value="<?php echo $_SESSION['us_tipo'] ?>">
         </div>
@@ -125,7 +125,7 @@ include_once 'Comple/nav.php';
                   </div>
               </div>
           </div>
-          <div class="card-body">
+          <div class="animate__animated animate__zoomIn card-body">
               <div id="usuarios" class="row d-flex align-items-stretch"></div>
           </div>
           <div class="card-footer"></div>

@@ -7,7 +7,7 @@ if ($_SESSION['us_tipo'] == 3) {
   <?php
   include_once 'Comple/nav.php';
   ?>
-    <div class="modal fade" id="editarlote" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="animate__animated animate__bounceInDown modal fade" id="editarlote" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="card card-success">
@@ -46,7 +46,7 @@ if ($_SESSION['us_tipo'] == 3) {
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="animate__animated animate__backInDown col-sm-6">
             <h1>Gestion lote</h1>
           </div>
         </div>
@@ -64,7 +64,7 @@ if ($_SESSION['us_tipo'] == 3) {
               </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="animate__animated animate__zoomIn card-body">
             <div id="lotes" class="row d-flex align-items-stretch"></div>
           </div>
           <div class="card-footer"></div>

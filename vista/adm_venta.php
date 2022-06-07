@@ -7,12 +7,12 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
   <?php
   include_once 'Comple/nav.php';
   ?>
-  <div class="modal fade" id="vista_venta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="animate__animated animate__bounceInDown modal fade" id="vista_venta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="card card-success">
           <div class="card-header"style="background: #1C293A; color: #FFFFFF">
-            <h3 class="card-title">Registros de ventas</h3>
+            <h3 class="card-title">Rebuscargistros de ventas</h3>
             <button data-dismiss="modal" aria-label="close-class" class="close"style="color: #FFFFFF">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -75,7 +75,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="animate__animated animate__backInDown  col-sm-6">
             <h1>Gestion ventas</h1>
           </div>
         </div>

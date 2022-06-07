@@ -7,7 +7,7 @@ if($_SESSION['us_tipo']==1||$_SESSION['us_tipo']==3){
 <?php
 include_once 'Comple/nav.php';
 ?> 
-<div class="modal fade" id="cambiologo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="cambiologo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header"style="background: #1C293A;color:#ffffff">
@@ -46,7 +46,7 @@ include_once 'Comple/nav.php';
   </div>
 </div>
 
-<div class="modal fade" id="crearlaboratorio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="crearlaboratorio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
@@ -82,7 +82,7 @@ include_once 'Comple/nav.php';
   </div>
   </div>
 </div>
-<div class="modal fade" id="creartipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="creartipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
@@ -118,7 +118,7 @@ include_once 'Comple/nav.php';
   </div>
   </div>
 </div>
-<div class="modal fade" id="crearpresentacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="crearpresentacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
@@ -159,7 +159,7 @@ include_once 'Comple/nav.php';
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="animate__animated animate__backInDown col-sm-6">
             <h1>Gestion atributos</h1>
           </div>
         </div>

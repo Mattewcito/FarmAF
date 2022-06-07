@@ -62,7 +62,7 @@ include_once 'Comple/nav.php';
               </div>
             </div>
           </div>
-          <div class="card-body">
+          <div class="animate__animated animate__zoomIn card-body">
             <div id="productos" class="row d-flex align-items-stretch"></div>
           </div>
           <div class="card-footer"></div>
