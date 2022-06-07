@@ -43,7 +43,6 @@ $(document).ready(function(){
         let id = datos.id_venta;
         $.post('../controlador/PDFController.php',{id},(response)=>{
             if(response==""){
-                console.log(response);
                 Cerrar_Loader("exito_reporte");
                 window.open('../pdf/pdf-'+id+'.pdf', '_blank');
             }
@@ -123,7 +122,6 @@ $(document).ready(function(){
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../controlador/DetalleVentaController.php',{funcion,id},(response)=>{
-                    console.log(response);
                     if (response=='delete') {
                         swalWithBootstrapButtons.fire(
                             'Eliminado!',

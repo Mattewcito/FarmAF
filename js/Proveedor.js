@@ -15,7 +15,6 @@ $(document).ready(function(){
                 funcion="crear";
             }
             $.post('../controlador/ProveedorController.php',{id,nombre,telefono,correo,direccion,funcion},(response)=>{
-                console.log(response);
                 if(response=='add'){
                 $('#add-prov').hide('slow');
                 $('#add-prov').show(1000);

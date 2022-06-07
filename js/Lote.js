@@ -4,7 +4,6 @@ $(document).ready(function () {
   function buscar_lote(consulta) {
     funcion = "buscar";
     $.post('../controlador/LoteController.php', { consulta, funcion }, (response) => {
-      console.log(response);
       const lotes = JSON.parse(response);
       let template = "";
       lotes.forEach(lote => {
@@ -121,7 +120,6 @@ $(document).ready(function () {
     }).then((result) => {
       if (result.value) {
         $.post('../controlador/LoteController.php', { id, funcion }, (response) => {
-          console.log(response);
           if (response == 'borrado') {
             swalWithBootstrapButtons.fire(
               'Eliminado!',
