@@ -16,7 +16,6 @@ $(document).ready(function(){
             $('#estado_compra').html(template);
         })
     }
-    
     function listar_compras(){
         funcion='listar_compras';
         $.post('../controlador/ComprasController.php', {funcion},(response)=>{
@@ -109,16 +108,68 @@ $(document).ready(function(){
         })
     })
     $('#compras tbody').on('click','.imprimir',function(){
+        Mostrar_Loader("generarReportePDF");
         let datos = datatable.row($(this).parents()).data();
         let codigo = datos.codigo;
         codigo = codigo.split(' | ');
         let id = codigo[0];
         funcion='imprimir';
         $.post('../controlador/ComprasController.php',{id, funcion},(response)=>{
-            console.log(response);
-            window.open('../pdf/pdf-compra'+id+'.pdf','_blank');
+            if(response==""){
+                Cerrar_Loader("exito_reporte");
+                window.open('../pdf/pdf-compra'+id+'.pdf','_blank');
+            }
+            else{
+                Cerrar_Loader("error_reporte");
+            }       
         })
     })
+    function Mostrar_Loader(Mensaje){
+        var texto = null;
+        var mostrar = false;
+        switch (Mensaje) {
+            case 'generarReportePDF':
+                texto = 'Se esta generando el reporte en formato PDF, por favor espere...';
+                mostrar = true;
+                break;
+        }
+        if(mostrar){
+            Swal.fire({
+                title: 'Generando reporte',
+                text: texto,
+                showConfirmButton: false
+            })
+        }
+    }
+    function Cerrar_Loader(Mensaje){
+        var tipo = null;
+        var texto = null;
+        var mostrar = false;
+        switch (Mensaje) {
+            case 'exito_reporte':
+                tipo='success';
+                texto = 'El reporte fue generado correctamente.';
+                mostrar = true;
+                break;
+                case 'error_reporte':
+                    tipo='error';
+                    texto = 'El reporte no pudo generarse, comuniquese con el personal de sistemas.';
+                    mostrar = true;
+                    break;
+        
+            default:
+                swal.close();
+                break;
+        }
+        if(mostrar){
+            Swal.fire({
+                position: 'center',
+                icon: tipo,
+                text: texto,
+                showConfirmButton: false
+            })
+        }
+    }
 })
 
 let espanol = {
