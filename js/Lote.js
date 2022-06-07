@@ -13,7 +13,7 @@ $(document).ready(function () {
         if (lote.estado == 'light') {
           template += ` <div class="card bg-light d-flex flex-fill">`;
         }
-        if (lote.estado == 'danger') {
+        if (lote.estado == 'Peligro') {
           template += ` <div class="card bg-danger d-flex flex-fill">`;
         }
         if (lote.estado == 'warning') {
@@ -49,10 +49,10 @@ $(document).ready(function () {
                   </div>
                   <div class="card-footer">
                     <div class="text-right">
-                      <button class="editar btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#editarlote">
+                      <button class="editar btn btn-sm btn-secondary" style=" box-shadow: 1px 1px 1px 1px #888888;" type="button" data-toggle="modal" data-target="#editarlote">
                         <i class="fas fa-pencil-alt"></i>
                       </button>
-                      <button class="borrar btn btn-sm btn-danger">
+                      <button class="borrar btn btn-sm btn-danger" style=" box-shadow: 1px 1px 1px 1px #888888;">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </div>

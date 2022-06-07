@@ -117,13 +117,9 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
     <section class="content">
       <div class="container-fluid">
         <div class="card card-success">
-          <div class="card-header"style="background: #1C293A;color:#ffffff">
+        <div class="card-header"style="background: #1C293A">
             <h3 class="card-title">Buscar compras</h3>
-            <div class="input-group">
-              <input type="text" id="buscar-lote" class="form-control float-left" placeholder="Ingrese nombre de una compra">
-              <div class="input-group-append">
-                <button class="btn btn-default"><i class="fas fa-search"></i></button>
-              </div>
+          </div>
             </div>
           </div>
           <div class="card-body p-0 table-responsive">
