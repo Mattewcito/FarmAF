@@ -48,7 +48,7 @@ $(document).ready(function () {
                   </div>
                   <div class="card-footer">
                     <div class="text-right">
-                      <button class="editar btn btn-sm btn-secondary" type="button" data-toggle="modal" data-target="#editarlote" style=" box-shadow: 1px 1px 1px 1px #888888;">
+                      <button class="editar btn btn-sm btn-secondary" style=" box-shadow: 1px 1px 1px 1px #888888;" type="button" data-toggle="modal" data-target="#editarlote">
                         <i class="fas fa-pencil-alt"></i>
                       </button>
                       <button class="borrar btn btn-sm btn-danger" style=" box-shadow: 1px 1px 1px 1px #888888;">

@@ -16,7 +16,6 @@ $(document).ready(function(){
             $('#estado_compra').html(template);
         })
     }
-    
     function listar_compras(){
         funcion='listar_compras';
         $.post('../controlador/ComprasController.php', {funcion},(response)=>{
@@ -122,7 +121,7 @@ $(document).ready(function(){
             }
             else{
                 Cerrar_Loader("error_reporte");
-            }           
+            }       
         })
     })
     function Mostrar_Loader(Mensaje){
@@ -142,7 +141,10 @@ $(document).ready(function(){
             })
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c6f36a4c42269303ece119a71d28c85d91b46c9
     function Cerrar_Loader(Mensaje){
         var tipo = null;
         var texto = null;
