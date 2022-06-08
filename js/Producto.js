@@ -114,7 +114,6 @@ $(document).ready(function(){
     function buscar_producto(consulta){
         funcion="buscar";
         $.post('../controlador/ProductoController.php',{consulta,funcion},(response)=>{
-            console.log(response);
             const productos = JSON.parse(response);
             let template="";
             productos.forEach(producto => {
@@ -260,7 +259,6 @@ $(document).ready(function(){
             }).then((result) => {
             if (result.value) {
                 $.post('../controlador/ProductoController.php',{id,funcion},(response)=>{
-                    console.log(response);
                     if(response=='borrado'){
                         swalWithBootstrapButtons.fire(
                             'Eliminado!',
@@ -294,7 +292,6 @@ $(document).ready(function(){
         Mostrar_Loader("generarReportePDF");
         funcion = 'reporte_producto';
         $.post('../controlador/ProductoController.php',{funcion},(response)=>{
-            console.log(response);
             if(response==""){
                 Cerrar_Loader("exito_reporte");
                 window.open('../pdf/pdf-'+funcion+'.pdf','_blank');
@@ -308,7 +305,6 @@ $(document).ready(function(){
         // Mostrar_Loader("generarReportePDF");
         funcion = 'reporte_productoExcel';
         $.post('../controlador/ProductoController.php',{funcion},(response)=>{
-            console.log(response);
             if(response==""){
                  //Cerrar_Loader("exito_reporte");
                 window.open('../Excel/reporte_productos.xlsx','_blank');

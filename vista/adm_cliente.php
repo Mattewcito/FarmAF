@@ -45,7 +45,7 @@ include_once 'Comple/nav.php';
   </div>
 </div>
 
-<div class="modal fade" id="crearcliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="crearcliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
@@ -104,7 +104,7 @@ include_once 'Comple/nav.php';
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="animate__animated animate__backInDown col-sm-6">
           <h1>Gestion cliente <button type="button" data-toggle="modal" data-target="#crearcliente" class="btn bg-gradient-primary ml-2">Crear cliente</button></h1>
         </div>
       </div>
@@ -122,7 +122,7 @@ include_once 'Comple/nav.php';
                   </div>
               </div>
           </div>
-          <div class="card-body">
+          <div class="animate__animated animate__zoomIn card-body">
               <div id="clientes" class="row d-flex align-items-stretch"></div>
           </div>
           <div class="card-footer"></div>

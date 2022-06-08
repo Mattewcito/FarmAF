@@ -5,7 +5,6 @@ $(document).ready(function(){
     function buscar_cliente(consulta){
         funcion='buscar';
         $.post('../controlador/ClienteController.php',{consulta,funcion},(response)=>{
-            console.log(response);
             const clientes = JSON.parse(response);
             let template='';
             clientes.forEach(cliente => {
@@ -97,7 +96,6 @@ $(document).ready(function(){
         let correo= $('#correo_edit').val();
         funcion = "editar";
         $.post('../controlador/ClienteController.php',{id,telefono,correo,funcion},(response)=>{
-            console.log(response);
             if(response=='edit'){
                 $('#edit-cli').hide('slow');
                 $('#edit-cli').show(1000);

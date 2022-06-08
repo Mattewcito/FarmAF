@@ -7,7 +7,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
   <?php
   include_once 'Comple/nav.php';
   ?>
-  <div class="modal fade" id="cambiarEstado" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="animate__animated animate__bounceInDown modal fade" id="cambiarEstado" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="card card-success">
@@ -40,7 +40,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
   </div>
   </div>
 </div>
-<div class="modal fade" id="vista_compra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="animate__animated animate__bounceInDown modal fade" id="vista_compra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="card card-success">
@@ -108,7 +108,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="animate__animated animate__backInDown col-sm-6">
             <h1>Gestion compras<a href="adm_ingresar_compra.php" class="btn bg-gradient-primary ml-2">Crear compra</a></h1>
           </div>
         </div>
@@ -122,7 +122,7 @@ if ($_SESSION['us_tipo'] == 3||$_SESSION['us_tipo'] == 1) {
           </div>
             </div>
           </div>
-          <div class="card-body p-0 table-responsive">
+          <div class="animate__animated  animate__bounceInDown card-body p-0 table-responsive">
            <table id="compras" class="table table table-hover text-nowrap" style="width:100%">
              <thead>
                <tr>
