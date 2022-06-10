@@ -144,5 +144,6 @@ class Venta{
         $this->objetos=$query->fetchall();
         return $this->objetos;
     }
+    
 }
 ?>

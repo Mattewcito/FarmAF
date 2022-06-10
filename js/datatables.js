@@ -10912,7 +10912,7 @@
 		
 			/**
 			 * When rendering large numbers in the information element for the table
-			 * (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers
+			 * (i.e. "Mostrando registros") DataTables will render large numbers
 			 * to have a comma separator for the 'thousands' units (e.g. 1 million is
 			 * rendered as "1,000,000") to help readability for the end user. This
 			 * function will override the default method DataTables uses.
@@ -11661,7 +11661,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+				"sInfo": "Mostrando registros del _START_ al _END_ para un total de _TOTAL_ registros",
 		
 		
 				/**
@@ -11682,7 +11682,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+				"sInfoEmpty": "Mostrando registros del 0 al 0 para un total de 0 registros",
 		
 		
 				/**
