@@ -166,16 +166,6 @@ $(document).ready(function () {
         let resultado = await response.text();
         $('#lista-compra').append(resultado);
     }
-    $(document).on('click','#actualizar',(e)=>{
-        let productos,precios;
-        precios=document.querySelectorAll('.precio');
-        productos=RecuperarLS();
-        productos.forEach(function(producto,indice) {
-        producto.precio = precios[indice].textContent; 
-        });
-        localStorage.setItem('productos', JSON.stringify(productos));
-        calcularTotal();
-    })
     $('#cp').keyup((e) => {
         let id, cantidad, producto, productos, montos,precio;
         producto = $(this)[0].activeElement.parentElement.parentElement;
@@ -204,16 +194,16 @@ $(document).ready(function () {
         });
         pago=$('#pago').val();
         descuento=$('#descuento').val();
-        total_sin_descuento=total.toFixed(2);
-        con_iva=parseFloat(total*iva).toFixed(2);
-        subtotal=parseFloat(total-con_iva).toFixed(2);
+        total_sin_descuento=total.toFixed(3);
+        con_iva=parseFloat(total*iva).toFixed(3);
+        subtotal=parseFloat(total-con_iva).toFixed(3);
         total=total-descuento;
         vuelto=pago-total;
         $('#subtotal').html(subtotal);
         $('#con_iva').html(con_iva);
         $('#total_sin_descuento').html(total_sin_descuento);
-        $('#total').html(total.toFixed(2));
-        $('#vuelto').html(vuelto.toFixed(2));
+        $('#total').html(total.toFixed(3));
+        $('#vuelto').html(vuelto.toFixed(3));
     }
     function Procesar_compra(){
         let cliente = $('#cliente').val();

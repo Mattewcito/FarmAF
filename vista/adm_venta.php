@@ -12,7 +12,7 @@ if ($_SESSION['us_tipo'] == 1||$_SESSION['us_tipo']==2||$_SESSION['us_tipo']==3)
       <div class="modal-content">
         <div class="card card-success">
           <div class="card-header"style="background: #1C293A; color: #FFFFFF">
-            <h3 class="card-title">Rebuscargistros de ventas</h3>
+            <h3 class="card-title">buscar registros de ventas</h3>
             <button data-dismiss="modal" aria-label="close-class" class="close"style="color: #FFFFFF">
               <span aria-hidden="true">&times;</span>
             </button>
