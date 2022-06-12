@@ -178,7 +178,7 @@ $(document).ready(function () {
             if (prod.id === id) {
                 prod.cantidad = cantidad;
                 prod.precio = precio;
-                montos[indice].innerHTML = `<h5>${cantidad*precio}</h5>`;
+                montos[indice].innerHTML = `<h5>${new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(cantidad*precio)}</h5>`;
             }
         });
         localStorage.setItem('productos', JSON.stringify(productos));
@@ -194,16 +194,16 @@ $(document).ready(function () {
         });
         pago=$('#pago').val();
         descuento=$('#descuento').val();
-        total_sin_descuento=total.toFixed(3);
-        con_iva=parseFloat(total*iva).toFixed(3);
-        subtotal=parseFloat(total-con_iva).toFixed(3);
+        total_sin_descuento=total;
+        con_iva=parseFloat(total*iva);
+        subtotal=parseFloat(total-con_iva);
         total=total-descuento;
         vuelto=pago-total;
-        $('#subtotal').html(subtotal);
-        $('#con_iva').html(con_iva);
-        $('#total_sin_descuento').html(total_sin_descuento);
-        $('#total').html(total.toFixed(3));
-        $('#vuelto').html(vuelto.toFixed(3));
+        $('#subtotal').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(subtotal));
+        $('#con_iva').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(con_iva));
+        $('#total_sin_descuento').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(total_sin_descuento));
+        $('#total').html(new Intl.NumberFormat('co-CO', {style: 'currency', currency: 'COP' }).format(total)    );
+        $('#vuelto').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vuelto));
     }
     function Procesar_compra(){
         let cliente = $('#cliente').val();

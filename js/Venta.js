@@ -6,11 +6,11 @@ $(document).ready(function(){
         let funcion='mostrar_consultas';
         $.post('../controlador/VentaController.php', {funcion},(response)=>{
             const vistas = JSON.parse(response);
-            $('#venta_dia_vendedor').html((vistas.venta_dia_vendedor*1).toFixed(0));
-            $('#venta_diaria').html((vistas.venta_diaria*1).toFixed(0));
-            $('#venta_mensual').html((vistas.venta_mensual*1).toFixed(0));
-            $('#venta_anual').html((vistas.venta_anual*1).toFixed(0));
-            $('#ganancia_mensual').html((vistas.ganancia_mensual*1).toFixed(0));
+            $('#venta_dia_vendedor').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vistas.venta_dia_vendedor*1));
+            $('#venta_diaria').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vistas.venta_diaria*1));
+            $('#venta_mensual').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vistas.venta_mensual*1));
+            $('#venta_anual').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vistas.venta_anual*1));
+            $('#ganancia_mensual').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vistas.ganancia_mensual*1));
         })
     }
     function listar_ventas(){
@@ -27,7 +27,7 @@ $(document).ready(function(){
             { "data": "fecha" },
             { "data": "cliente" },
             { "data": "dni" },
-            { "data": "total"} ,
+            { "data": "total"},
             { "data": "vendedor" },
             { "defaultContent": `<button class="imprimir btn btn-secondary"><i class="fas fa-print"></i></button>
                                 <button class="ver btn btn-secondary" type="button" data-toggle="modal" data-target="#vista_venta"><i class="fas fa-search"></i></button>

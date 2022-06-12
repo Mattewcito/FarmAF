@@ -22,7 +22,7 @@ $(document).ready(function () {
                       <div class="col-7">
                       <h2 class="lead"><b>Codigo: ${producto.id}</b></h2>
                         <h2 class="lead"><b>${producto.nombre}</b></h2>
-                        <h4 class="lead"><b><i class="fas fa-lg fa-dollar-sign" mr-1></i>${producto.precio}</b></h4>
+                        <h4 class="lead"><b><i class="fas fa-lg fa-dollar-sign" mr-1></i>${new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(producto.precio)}</b></h4>
                         <ul class="ml-4 mb-0 fa-ul text-muted">
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-mortar-pestle"style="color: #1C293A"></i></span> Concentracion: ${producto.concentracion}</li>
                           <li class="small"><span class="fa-li"><i class="fas fa-lg fa-prescription-bottle-alt"style="color: #1C293A"></i></span>  Adicional: ${producto.adicional}</li>
