@@ -82,7 +82,7 @@
           <div class="alert alert-danger text-center" id="noedit" style='display:none;'>
             <span> <i class="fas fa-times m-1"></i>Formato no permitido, intente con (jpeg,png,gif,jpg)</span>
           </div>
-          <form id="form-photo" entype="multipart/form-data">
+          <form id="form-photo" enctype="multipart/form-data">
             <div class="input-group mb-3 ml-5 mt-2">
               <input type="file" name="photo" class="input-group" style="background-color: #1C293A; color:#FFFFFF; width:auto">
               <input type="hidden" name="funcion" value="cambiar_foto">
