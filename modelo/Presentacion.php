@@ -43,7 +43,7 @@ class Presentacion{
             return $this->objetos;
         }
         else{
-            $sql="SELECT * FROM presentacion where estado='A' and nombre NOT LIKE '' ORDER BY id_presentacion LIMIT 25";
+            $sql="SELECT * FROM presentacion where estado='A' and nombre NOT LIKE '' ORDER BY id_presentacion LIMIT 50";
             $query = $this->acceso->prepare($sql);
             $query->execute();
             $this->objetos=$query->fetchall();

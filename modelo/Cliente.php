@@ -59,7 +59,7 @@ class Cliente{
             echo 'noedit';
         } 
         else{
-            $sql="UPDATE cliente SET telefono=:telefono, correo=:correo, adicional=:adicional WHERE id=:id";
+            $sql="UPDATE cliente SET telefono=:telefono, correo=:correo WHERE id=:id";
             $query= $this->acceso->prepare($sql);
             $query->execute(array(':id'=>$id,':telefono'=>$telefono, ':correo'=>$correo));
             echo 'edit';

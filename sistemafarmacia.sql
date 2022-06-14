@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2022 a las 22:52:49
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 8.0.11
+-- Tiempo de generación: 14-06-2022 a las 20:07:21
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id`, `nombre`, `apellidos`, `dni`, `telefono`, `correo`, `sexo`, `avatar`, `estado`) VALUES
-(4, 'Pedro ', 'Martinez', 2147483647, 2147483646, 'as32321art@gmail.com', 'Masculino', 'prov_default.png', 'I'),
+(4, 'Pedro ', 'Martinez', 2147483647, 2147483646, 'as32321art@gmail.com', 'Masculino', 'prov_default.png', 'A'),
 (5, 'Mariana', 'Cecilia', 5465451, 2147483647, 'matri123@gmail.com', 'Femenino', 'prov_default.png', 'A'),
 (6, 'Felipe', 'Suarza', 24546334, 313552122, 'braezapata11@misena.edu.com', 'Masculino', 'prov_default.png', 'A'),
 (7, 'David', 'Fergunso', 10035464, 2147483647, 'julivel@noraver.com', 'Masculino', 'prov_default.png', 'A'),
@@ -68,6 +68,14 @@ CREATE TABLE `compra` (
   `id_proveedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `compra`
+--
+
+INSERT INTO `compra` (`id`, `codigo`, `fecha_compra`, `fecha_entrega`, `total`, `id_estado_pago`, `id_proveedor`) VALUES
+(21, 'prueba', '2022-06-14', '2022-06-14', 100000, 1, 20),
+(22, 'XVO0H', '2022-06-14', '2022-06-18', 9000, 1, 20);
+
 -- --------------------------------------------------------
 
 --
@@ -83,16 +91,6 @@ CREATE TABLE `detalle_venta` (
   `lote_id_prov` int(11) NOT NULL,
   `id_det_venta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `detalle_venta`
---
-
-INSERT INTO `detalle_venta` (`id_detalle`, `det_cantidad`, `det_vencimiento`, `id__det_lote`, `id__det_prod`, `lote_id_prov`, `id_det_venta`) VALUES
-(64, 5, '2022-12-30', 13, 15, 21, 76),
-(69, 5, '2022-12-30', 13, 15, 0, 81),
-(70, 8, '2022-12-30', 13, 15, 0, 82),
-(71, 50, '2023-01-21', 15, 15, 23, 83);
 
 -- --------------------------------------------------------
 
@@ -141,7 +139,6 @@ INSERT INTO `laboratorio` (`id_laboratorio`, `nombre`, `avatar`, `estado`) VALUE
 (31, 'Farmabio S A S', '6293e17093c73-Farmabio.png', 'A'),
 (32, 'Vichy ', '6293e1a2cff5e-kisspng-vichy-idalia-smoothness-and-glow-energizing-crea-electron-5b48e18e156de4.1980454415315029900878.jpg', 'A'),
 (33, 'Genfar', '6293e1c3295ca-GENFAR.png', 'A'),
-(34, 'MARFAM', 'lab_default.jpg', 'I'),
 (35, 'PORTUGAL', '6293e213cf1e7-412__loggo08.png', 'A');
 
 -- --------------------------------------------------------
@@ -156,11 +153,19 @@ CREATE TABLE `lote` (
   `cantidad` int(11) NOT NULL,
   `cantidad_lote` int(11) NOT NULL,
   `vencimiento` date NOT NULL,
-  `precio_compra` decimal(10,3) NOT NULL,
   `estado` varchar(10) NOT NULL DEFAULT 'A',
+  `precio_compra` float NOT NULL,
   `id_compra` int(11) NOT NULL,
   `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `lote`
+--
+
+INSERT INTO `lote` (`id`, `codigo`, `cantidad`, `cantidad_lote`, `vencimiento`, `estado`, `precio_compra`, `id_compra`, `id_producto`) VALUES
+(25, 'prueba', 10, 10, '2022-06-13', 'I', 800, 21, 15),
+(26, '4434', 6000, 6000, '2023-06-30', 'A', 21212, 22, 15);
 
 -- --------------------------------------------------------
 
@@ -207,7 +212,8 @@ INSERT INTO `presentacion` (`id_presentacion`, `nombre`, `estado`) VALUES
 (33, 'CÁPSULA DURA', 'A'),
 (34, 'TABLETA RECUBIERTA', 'A'),
 (35, 'GOTAS – SOLUCIÓN ORAL', 'A'),
-(36, 'LIQUIDO', 'A');
+(36, 'LIQUIDO', 'A'),
+(37, 'pruebaa', 'I');
 
 -- --------------------------------------------------------
 
@@ -233,7 +239,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `concentracion`, `adicional`, `precio`, `avatar`, `estado`, `prod_lab`, `prod_tip_prod`, `prod_present`) VALUES
-(14, 'YODURO DE TIBEZONIO', '5 MG', '', 20000, '629527c4a8fa6-D_NQ_NP_647663-MLM46400916080_062021-O.jpg', 'A', 31, 15, 8),
+(14, 'YODURO DE TIBEZONIO', '5 MG', '', 20000, '62a8c2bf38240-1001145148 FOTOCOPIA DE LA CEDULA BRAYAN ZAPATA.pdf', 'A', 31, 15, 8),
 (15, 'Acetaminofen', '500 MG', 'null', 1000, '6293e9e8e72a2-128968-1-ACETAMINOFEN-FORTE-500+65MG-TAB-CAJ-X-16-MK.jpg', 'A', 33, 12, 8),
 (16, 'Ibuprofeno ', '200 MG', '', 43000, '6295270e2c41e-large-83000431_IBUPROFENO_800MG_TABX10_GF_Blister.jpg', 'A', 27, 12, 34),
 (17, 'Ambroxol', '200 ML', 'Con receta medica', 16000, '6293e9fb7e80d-97481_1_RP_AMBROXOL_15MG_5ML_SOL_ORAL_FCO_X_120ML_MK.jpg', 'A', 26, 12, 16),
@@ -242,10 +248,11 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `concentracion`, `adicional`, `
 (20, 'Gaviscon', '300 ML', 'Doble acción y suscepción oral', 56000, '629526bbd262a-61j67d8qUuS._AC_SX425_.jpg', 'A', 30, 13, 36),
 (21, 'Maalox', '120 ML', '', 54000, '629527714e4dd-unnamed (2).jpg', 'A', 23, 13, 36),
 (22, 'Loratadina', '10 MG', '', 1200, '62952749cf782-unnamed (1).jpg', 'A', 30, 15, 20),
-(23, 'Vitamina C', '50 MG', '', 2600, '629527a71340a-110896-1-VITA-C-500MG-TAB-MAST-CAJ-X-100-MK-NARANJA.jpg', 'A', 27, 18, 20),
+(23, 'Vitamina C', '50 MG', 'null', 1900, '629527a71340a-110896-1-VITA-C-500MG-TAB-MAST-CAJ-X-100-MK-NARANJA.jpg', 'A', 27, 18, 20),
 (24, 'Condones', '', 'Durex', 6000, '629424ca6c326-Captura.JPG', 'A', 30, 18, 14),
 (28, 'Alcohol', '200 ML', 'null', 6500, '6293e9f3645e2-large-81000880_ALCOHOL_ANTISEPTICO_JGB_700ML.jpg', 'A', 27, 18, 36),
-(33, 'Alcoholx', '200 ML', 'null', 6500, 'prod_default.png', 'I', 27, 18, 36);
+(33, 'Alcoholx', '200 ML', 'null', 6500, 'prod_default.png', 'I', 27, 18, 36),
+(34, 'prueba', 'prueba', 'prueba', 10000, '62a8b6f831492-80-806375_gaming-4k-wallpaper-for-pc.jpg', 'A', 31, 16, 18);
 
 -- --------------------------------------------------------
 
@@ -275,7 +282,8 @@ INSERT INTO `proveedor` (`id_proveedor`, `nombre`, `telefono`, `correo`, `direcc
 (20, 'Deposito De Drogas Monaco S A, ANTIOQUIA', 2147483647, '', 'Cl. 46 #45-47', '6295284c3ae5e-descarga.png', 'A'),
 (21, 'Distribuidora De Medicamentos Dismedvital S A S', 2147483647, '', 'CARRERA 52 35 58, MEDELLIN, ANTIOQUIA', '629528a7de57c-Proveedores_Home_Distrimedical_8.png', 'A'),
 (22, 'Distribuidora De Medicamentos Gold Medical S A S', 2147483647, '', 'CARRERA 84 43 54 IN 201', '629529029cf1c-cropped-LOGO-CENTRO-MEDICO.png', 'A'),
-(23, 'Deposito De Medicamentos Hospitalarios S A S', 2147483647, '', ' TRANSVERSAL 6 45 135, MEDELLIN, ANTIOQUIA', '62952968d2ae7-logo-sumintegral-01.jpg', 'A');
+(23, 'Deposito De Medicamentos Hospitalarios S A S', 2147483647, '', ' TRANSVERSAL 6 45 135, MEDELLIN, ANTIOQUIA', '62952968d2ae7-logo-sumintegral-01.jpg', 'A'),
+(24, 'prueba', 2132323279, 'brianmer242003@gmail.com', 'Cra 3a  Bis # 21', '62a8b93550cbd-80-806375_gaming-4k-wallpaper-for-pc.jpg', 'I');
 
 -- --------------------------------------------------------
 
@@ -304,7 +312,8 @@ INSERT INTO `tipo_producto` (`id_tip_prod`, `nombre`, `estado`) VALUES
 (19, 'Antiinflamatorios', 'A'),
 (20, 'Antipiréticos', 'A'),
 (21, 'Antitusivos ', 'A'),
-(22, 'mucolíticos', 'A');
+(22, 'mucolíticos', 'A'),
+(23, 'pruebaccc', 'I');
 
 -- --------------------------------------------------------
 
@@ -353,9 +362,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_us`, `apellidos_us`, `edad`, `dni_us`, `contrasena_us`, `telefono_us`, `residencia_us`, `correo_us`, `sexo_us`, `adicional_us`, `avatar`, `us_tipo`) VALUES
-(1, 'Brayan', 'Zapata', '1992-10-14', 'root', 'root', '3017245403', 'CR 99DD CL 107 ', 'brianmer242003@gmail.com', 'Masculino', 'Gerente de la Asunción', '62a3ae4836984-root.jpg', 3),
-(13, 'Emanuel ', 'López', '2003-01-25', 'Emanuel ', 'Emanuel123', '3018912131', 'calle 46 #20-20', 'emaloso25@gmail.com', 'Masculino', '', '6293f081ac3a3-emanuel.jpg', 1),
-(15, 'Juliana', 'Velásquez', '1994-07-19', 'Juliana', 'Juliana123', '313235231313', 'calle 50A #16-54', 'julivel@noraver.com', 'Femenino', '', '6293f1bcd6544-juliana.jpg', 2);
+(1, 'Brayan', 'Zapata', '1992-10-14', 'root', '$2y$10$2c0L7Dv7PQLcEbfmrhUeIOkmj7BK66gIpdZaY.jSR4gAAqy5wM5he', '3017245403', 'CR 99DD CL 107 ', 'brianmer242003@gmail.com', 'Masculino', 'Gerente de la Asunción', '62a8a8566293e-FondoGamer.jpg', 3),
+(13, 'Emanuel ', 'López', '2003-01-25', 'Emanuel ', '$2y$10$vDFBmCMT8doVoJ3WoCY9GecQgj/3ZnfKkYguqhYYNSaAbOK0mdv8K', '3018912131', 'calle 46 #20-20', 'brianmer242003@gmail.com\n', 'Masculino', '', '6293f081ac3a3-emanuel.jpg', 1),
+(15, 'Juliana', 'Velásquez', '1994-07-19', 'Juliana', '$2y$10$rGubLDBqxHU9vEsSBWaUbeKZkvvfmqmCE3IpVjTznahUx6FNKizx2', '313235231313', 'calle 50A #16-54', 'brianmer242003@gmail.com\n', 'Femenino', '', '6293f1bcd6544-juliana.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -373,6 +382,16 @@ CREATE TABLE `venta` (
   `id_cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`, `id_cliente`) VALUES
+(88, '2022-06-14 12:08:23', '', 0, 3800, 1, 7),
+(89, '2022-06-14 12:13:57', '', 0, 9500, 15, 6),
+(90, '2022-06-14 12:37:11', '', 0, 8400, 1, 7),
+(91, '2022-06-14 12:53:03', '', 0, 130000, 1, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -387,6 +406,17 @@ CREATE TABLE `venta_producto` (
   `producto_id_producto` int(11) NOT NULL,
   `venta_id_venta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `venta_producto`
+--
+
+INSERT INTO `venta_producto` (`id_ventaproducto`, `precio`, `cantidad`, `subtotal`, `producto_id_producto`, `venta_id_venta`) VALUES
+(75, 1900, 2, 3800, 23, 88),
+(76, 1900, 5, 9500, 23, 89),
+(77, 1900, 1, 1900, 23, 90),
+(78, 6500, 1, 6500, 28, 90),
+(79, 1000, 130, 130000, 15, 91);
 
 --
 -- Índices para tablas volcadas
@@ -497,19 +527,19 @@ ALTER TABLE `venta_producto`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT de la tabla `estado_pago`
@@ -521,37 +551,37 @@ ALTER TABLE `estado_pago`
 -- AUTO_INCREMENT de la tabla `laboratorio`
 --
 ALTER TABLE `laboratorio`
-  MODIFY `id_laboratorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_laboratorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `lote`
 --
 ALTER TABLE `lote`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `presentacion`
 --
 ALTER TABLE `presentacion`
-  MODIFY `id_presentacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_presentacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_proveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_producto`
 --
 ALTER TABLE `tipo_producto`
-  MODIFY `id_tip_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_tip_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_us`
@@ -569,13 +599,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_producto`
 --
 ALTER TABLE `venta_producto`
-  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_ventaproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- Restricciones para tablas volcadas
@@ -589,45 +619,11 @@ ALTER TABLE `compra`
   ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_proveedor`) REFERENCES `proveedor` (`id_proveedor`);
 
 --
--- Filtros para la tabla `detalle_venta`
---
-ALTER TABLE `detalle_venta`
-  ADD CONSTRAINT `detalle_venta_ibfk_1` FOREIGN KEY (`id_det_venta`) REFERENCES `venta` (`id_venta`);
-
---
 -- Filtros para la tabla `lote`
 --
 ALTER TABLE `lote`
   ADD CONSTRAINT `lote_ibfk_1` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id`),
   ADD CONSTRAINT `lote_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
-
---
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`prod_tip_prod`) REFERENCES `tipo_producto` (`id_tip_prod`),
-  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`prod_present`) REFERENCES `presentacion` (`id_presentacion`),
-  ADD CONSTRAINT `producto_ibfk_3` FOREIGN KEY (`prod_lab`) REFERENCES `laboratorio` (`id_laboratorio`);
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`us_tipo`) REFERENCES `tipo_us` (`id_tipo_us`);
-
---
--- Filtros para la tabla `venta`
---
-ALTER TABLE `venta`
-  ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`vendedor`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `venta_ibfk_3` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`);
-
---
--- Filtros para la tabla `venta_producto`
---
-ALTER TABLE `venta_producto`
-  ADD CONSTRAINT `venta_producto_ibfk_1` FOREIGN KEY (`venta_id_venta`) REFERENCES `venta` (`id_venta`),
-  ADD CONSTRAINT `venta_producto_ibfk_2` FOREIGN KEY (`producto_id_producto`) REFERENCES `producto` (`id_producto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

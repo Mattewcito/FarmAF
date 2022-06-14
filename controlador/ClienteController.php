@@ -33,7 +33,6 @@ if($_POST['funcion']=='editar'){
     $id = $_POST['id'];
     $telefono = $_POST['telefono'];
     $correo= $_POST['correo'];
-
     $cliente->editar($id,$telefono,$correo);
 }
 if($_POST['funcion']=='borrar'){

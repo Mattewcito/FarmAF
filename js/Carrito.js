@@ -202,7 +202,7 @@ $(document).ready(function () {
         $('#subtotal').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(subtotal));
         $('#con_iva').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(con_iva));
         $('#total_sin_descuento').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(total_sin_descuento));
-        $('#total').html(new Intl.NumberFormat('co-CO', {style: 'currency', currency: 'COP' }).format(total)    );
+        $('#total').html(total);
         $('#vuelto').html(new Intl.NumberFormat('de-DE', {style: 'currency', currency: 'COP' }).format(vuelto));
     }
     function Procesar_compra(){
