@@ -18,7 +18,7 @@ include_once 'Comple/nav.php';
       </div>
       <div class="modal-body">
         <div class="text-center">
-          <img id="avatar3" src="../img/6293d5491bca9-1001145148 FOTO BRAYAN ZAPATA.jpg" class="profile-user-img img-fluid img-circle">
+          <img id="avatar3" src="../img/default.png" class="profile-user-img img-fluid img-circle"style="border: 3px  solid #1C293A">
           <div class="text-center">
             <b>
               <?php

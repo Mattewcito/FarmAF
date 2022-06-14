@@ -43,7 +43,7 @@ class Laboratorio{
             return $this->objetos;
         }
         else{
-            $sql="SELECT * FROM laboratorio where estado='A' and nombre NOT LIKE '' ORDER BY id_LABORATORIO LIMIT 25";
+            $sql="SELECT * FROM laboratorio where estado='A' and nombre NOT LIKE '' ORDER BY id_LABORATORIO LIMIT 50";
             $query = $this->acceso->prepare($sql);
             $query->execute();
             $this->objetos=$query->fetchall();

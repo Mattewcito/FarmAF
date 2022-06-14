@@ -43,7 +43,7 @@ class Tipo{
             return $this->objetos;
         }
         else{
-            $sql="SELECT * FROM tipo_producto where estado='A' and nombre NOT LIKE '' ORDER BY id_tip_prod LIMIT 25";
+            $sql="SELECT * FROM tipo_producto where estado='A' and nombre NOT LIKE '' ORDER BY id_tip_prod LIMIT 50";
             $query = $this->acceso->prepare($sql);
             $query->execute();
             $this->objetos=$query->fetchall();
