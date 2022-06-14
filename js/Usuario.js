@@ -132,13 +132,12 @@
             }
             else{
                 $('#noedit').hide('slow');
-                $('#noedit').show(1000);
-                $('#noedit').hide(3000);
+                $('#noedit').show(2000);
+                $('#noedit').hide(10000);
                 $('#form-photo').trigger('reset');
             }
             
-        });
-    
+        });    
         e.preventDefault();
     })
     })

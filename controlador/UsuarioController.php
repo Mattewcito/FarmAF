@@ -62,7 +62,7 @@ if ($_POST['funcion']== 'cambiar_contra'){
     $usuario->cambiar_contra($id_usuario,$oldpass,$newpass);
 }
 if ($_POST['funcion']== 'cambiar_foto'){
-    if(($_FILES['photo']['type']='image/jpg')||($_FILES['photo']['type']='image/png')||($_FILES['photo']['type']='image/gif')||($_FILES['photo']['type']='image/jpeg')){
+    if(($_FILES['photo']['type']=='image/jpg')||($_FILES['photo']['type']=='image/png')||($_FILES['photo']['type']=='image/gif')||($_FILES['photo']['type']=='image/jpeg')){
         $nombre=uniqid().'-'.$_FILES['photo']['name'];
         $ruta='../img/'.$nombre;
         move_uploaded_file($_FILES['photo']['tmp_name'],$ruta);
