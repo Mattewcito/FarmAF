@@ -126,7 +126,7 @@ $(document).ready(function(){
                         swalWithBootstrapButtons.fire(
                             'Eliminado!',
                             'La venta: '+id+' ha sido Eliminada',
-                            'success'
+                            'error'
                             
                         )
                         listar_ventas();
