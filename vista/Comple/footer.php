@@ -26,6 +26,7 @@
   $.post('../controlador/UsuarioController.php',{funcion},(response)=>{
     const avatar = JSON.parse(response);
     $('#avatar4').attr('src','../img/'+avatar.avatar);
+    $('#avatar3').attr('src','../img/'+avatar.avatar);
   })
   funcion='tipo_usuario';
   $.post('../controlador/UsuarioController.php',{funcion},(response)=>{
