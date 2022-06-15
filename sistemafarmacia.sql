@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-06-2022 a las 20:07:21
+-- Tiempo de generación: 16-06-2022 a las 01:50:18
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -67,14 +67,6 @@ CREATE TABLE `compra` (
   `id_estado_pago` int(11) NOT NULL,
   `id_proveedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `compra`
---
-
-INSERT INTO `compra` (`id`, `codigo`, `fecha_compra`, `fecha_entrega`, `total`, `id_estado_pago`, `id_proveedor`) VALUES
-(21, 'prueba', '2022-06-14', '2022-06-14', 100000, 1, 20),
-(22, 'XVO0H', '2022-06-14', '2022-06-18', 9000, 1, 20);
 
 -- --------------------------------------------------------
 
@@ -159,14 +151,6 @@ CREATE TABLE `lote` (
   `id_producto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `lote`
---
-
-INSERT INTO `lote` (`id`, `codigo`, `cantidad`, `cantidad_lote`, `vencimiento`, `estado`, `precio_compra`, `id_compra`, `id_producto`) VALUES
-(25, 'prueba', 10, 10, '2022-06-13', 'I', 800, 21, 15),
-(26, '4434', 6000, 6000, '2023-06-30', 'A', 21212, 22, 15);
-
 -- --------------------------------------------------------
 
 --
@@ -239,7 +223,6 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `concentracion`, `adicional`, `precio`, `avatar`, `estado`, `prod_lab`, `prod_tip_prod`, `prod_present`) VALUES
-(14, 'YODURO DE TIBEZONIO', '5 MG', '', 20000, '62a8c2bf38240-1001145148 FOTOCOPIA DE LA CEDULA BRAYAN ZAPATA.pdf', 'A', 31, 15, 8),
 (15, 'Acetaminofen', '500 MG', 'null', 1000, '6293e9e8e72a2-128968-1-ACETAMINOFEN-FORTE-500+65MG-TAB-CAJ-X-16-MK.jpg', 'A', 33, 12, 8),
 (16, 'Ibuprofeno ', '200 MG', '', 43000, '6295270e2c41e-large-83000431_IBUPROFENO_800MG_TABX10_GF_Blister.jpg', 'A', 27, 12, 34),
 (17, 'Ambroxol', '200 ML', 'Con receta medica', 16000, '6293e9fb7e80d-97481_1_RP_AMBROXOL_15MG_5ML_SOL_ORAL_FCO_X_120ML_MK.jpg', 'A', 26, 12, 16),
@@ -250,9 +233,7 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `concentracion`, `adicional`, `
 (22, 'Loratadina', '10 MG', '', 1200, '62952749cf782-unnamed (1).jpg', 'A', 30, 15, 20),
 (23, 'Vitamina C', '50 MG', 'null', 1900, '629527a71340a-110896-1-VITA-C-500MG-TAB-MAST-CAJ-X-100-MK-NARANJA.jpg', 'A', 27, 18, 20),
 (24, 'Condones', '', 'Durex', 6000, '629424ca6c326-Captura.JPG', 'A', 30, 18, 14),
-(28, 'Alcohol', '200 ML', 'null', 6500, '6293e9f3645e2-large-81000880_ALCOHOL_ANTISEPTICO_JGB_700ML.jpg', 'A', 27, 18, 36),
-(33, 'Alcoholx', '200 ML', 'null', 6500, 'prod_default.png', 'I', 27, 18, 36),
-(34, 'prueba', 'prueba', 'prueba', 10000, '62a8b6f831492-80-806375_gaming-4k-wallpaper-for-pc.jpg', 'A', 31, 16, 18);
+(28, 'Alcohol', '200 ML', 'null', 6500, '6293e9f3645e2-large-81000880_ALCOHOL_ANTISEPTICO_JGB_700ML.jpg', 'A', 27, 18, 36);
 
 -- --------------------------------------------------------
 
@@ -282,8 +263,7 @@ INSERT INTO `proveedor` (`id_proveedor`, `nombre`, `telefono`, `correo`, `direcc
 (20, 'Deposito De Drogas Monaco S A, ANTIOQUIA', 2147483647, '', 'Cl. 46 #45-47', '6295284c3ae5e-descarga.png', 'A'),
 (21, 'Distribuidora De Medicamentos Dismedvital S A S', 2147483647, '', 'CARRERA 52 35 58, MEDELLIN, ANTIOQUIA', '629528a7de57c-Proveedores_Home_Distrimedical_8.png', 'A'),
 (22, 'Distribuidora De Medicamentos Gold Medical S A S', 2147483647, '', 'CARRERA 84 43 54 IN 201', '629529029cf1c-cropped-LOGO-CENTRO-MEDICO.png', 'A'),
-(23, 'Deposito De Medicamentos Hospitalarios S A S', 2147483647, '', ' TRANSVERSAL 6 45 135, MEDELLIN, ANTIOQUIA', '62952968d2ae7-logo-sumintegral-01.jpg', 'A'),
-(24, 'prueba', 2132323279, 'brianmer242003@gmail.com', 'Cra 3a  Bis # 21', '62a8b93550cbd-80-806375_gaming-4k-wallpaper-for-pc.jpg', 'I');
+(23, 'Deposito De Medicamentos Hospitalarios S A S', 2147483647, '', ' TRANSVERSAL 6 45 135, MEDELLIN, ANTIOQUIA', '62952968d2ae7-logo-sumintegral-01.jpg', 'A');
 
 -- --------------------------------------------------------
 
@@ -312,8 +292,7 @@ INSERT INTO `tipo_producto` (`id_tip_prod`, `nombre`, `estado`) VALUES
 (19, 'Antiinflamatorios', 'A'),
 (20, 'Antipiréticos', 'A'),
 (21, 'Antitusivos ', 'A'),
-(22, 'mucolíticos', 'A'),
-(23, 'pruebaccc', 'I');
+(22, 'mucolíticos', 'A');
 
 -- --------------------------------------------------------
 
@@ -362,9 +341,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_us`, `apellidos_us`, `edad`, `dni_us`, `contrasena_us`, `telefono_us`, `residencia_us`, `correo_us`, `sexo_us`, `adicional_us`, `avatar`, `us_tipo`) VALUES
-(1, 'Brayan', 'Zapata', '1992-10-14', 'root', '$2y$10$2c0L7Dv7PQLcEbfmrhUeIOkmj7BK66gIpdZaY.jSR4gAAqy5wM5he', '3017245403', 'CR 99DD CL 107 ', 'brianmer242003@gmail.com', 'Masculino', 'Gerente de la Asunción', '62a8a8566293e-FondoGamer.jpg', 3),
-(13, 'Emanuel ', 'López', '2003-01-25', 'Emanuel ', '$2y$10$vDFBmCMT8doVoJ3WoCY9GecQgj/3ZnfKkYguqhYYNSaAbOK0mdv8K', '3018912131', 'calle 46 #20-20', 'brianmer242003@gmail.com\n', 'Masculino', '', '6293f081ac3a3-emanuel.jpg', 1),
-(15, 'Juliana', 'Velásquez', '1994-07-19', 'Juliana', '$2y$10$rGubLDBqxHU9vEsSBWaUbeKZkvvfmqmCE3IpVjTznahUx6FNKizx2', '313235231313', 'calle 50A #16-54', 'brianmer242003@gmail.com\n', 'Femenino', '', '6293f1bcd6544-juliana.jpg', 2);
+(1, 'Brayan', 'Zapata', '1992-10-14', 'root', '$2y$10$2c0L7Dv7PQLcEbfmrhUeIOkmj7BK66gIpdZaY.jSR4gAAqy5wM5he', '3017245403', 'CR 99DD CL 107 ', 'brianmer242003@gmail.com', 'Masculino', 'Gerente de la Asunción', '62aa36755b82b-cover_program-farmaceutico.png', 3),
+(13, 'Emanuel ', 'López', '2003-01-25', 'Emanuel', '$2y$10$vDFBmCMT8doVoJ3WoCY9GecQgj/3ZnfKkYguqhYYNSaAbOK0mdv8K', '3018912131', 'calle 46 #20-20', 'brianmer242003@gmail.com\n', 'Masculino', '', '62aa36ede346d-cover_program-farmaceutico.png', 1),
+(15, 'Juliana', 'Velásquez', '1994-07-19', 'Juliana', '$2y$10$rGubLDBqxHU9vEsSBWaUbeKZkvvfmqmCE3IpVjTznahUx6FNKizx2', '313235231313', 'calle 50A #16-54', 'brianmer242003@gmail.com\n', 'Femenino', '', '62aa3758a30d0-perfil-farmaceutica-espana.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -382,16 +361,6 @@ CREATE TABLE `venta` (
   `id_cliente` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `venta`
---
-
-INSERT INTO `venta` (`id_venta`, `fecha`, `cliente`, `dni`, `total`, `vendedor`, `id_cliente`) VALUES
-(88, '2022-06-14 12:08:23', '', 0, 3800, 1, 7),
-(89, '2022-06-14 12:13:57', '', 0, 9500, 15, 6),
-(90, '2022-06-14 12:37:11', '', 0, 8400, 1, 7),
-(91, '2022-06-14 12:53:03', '', 0, 130000, 1, 7);
-
 -- --------------------------------------------------------
 
 --
@@ -406,17 +375,6 @@ CREATE TABLE `venta_producto` (
   `producto_id_producto` int(11) NOT NULL,
   `venta_id_venta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `venta_producto`
---
-
-INSERT INTO `venta_producto` (`id_ventaproducto`, `precio`, `cantidad`, `subtotal`, `producto_id_producto`, `venta_id_venta`) VALUES
-(75, 1900, 2, 3800, 23, 88),
-(76, 1900, 5, 9500, 23, 89),
-(77, 1900, 1, 1900, 23, 90),
-(78, 6500, 1, 6500, 28, 90),
-(79, 1000, 130, 130000, 15, 91);
 
 --
 -- Índices para tablas volcadas
@@ -593,7 +551,7 @@ ALTER TABLE `tipo_us`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
