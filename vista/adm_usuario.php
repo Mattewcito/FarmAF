@@ -22,8 +22,8 @@ include_once 'Comple/nav.php';
           <div class="text-center">
             <b>
               <?php
-            echo $_SESSION['nombre_us'];
-            ?>
+               echo $_SESSION['nombre_us'];
+               ?>
             </b>
           </div>
           <span>Necesitamos tu contraseña para continuar</span>
